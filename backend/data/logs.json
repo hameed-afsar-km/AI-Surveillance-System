@@ -1,0 +1,101 @@
+[
+  {
+    "id": 1,
+    "timestamp": "2026-04-13T06:18:22.719489+00:00",
+    "type": "overcrowding",
+    "message": "Overcrowding: Dense cluster of 10 vehicles in a localised area.",
+    "people_count": 13,
+    "severity": "high",
+    "ai_insight": "Overcrowding detected with 13 people. Recommend dispersing the crowd and monitoring exits."
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-04-13T06:18:24.805778+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 14 & 28 collided \u2014 sudden stop detected!",
+    "people_count": 16,
+    "severity": "critical",
+    "ai_insight": "Alert 'collision' detected with 16 people. Security review recommended."
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-04-13T07:21:42.433016+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 31 & 57 collided \u2014 sudden stop detected!",
+    "people_count": 10,
+    "severity": "critical",
+    "ai_insight": "Alert 'collision' detected with 10 people. Security review recommended."
+  },
+  {
+    "id": 4,
+    "timestamp": "2026-04-13T07:21:54.371929+00:00",
+    "type": "overcrowding",
+    "message": "Overcrowding: Dense cluster of 10 vehicles in a localised area.",
+    "people_count": 14,
+    "severity": "high",
+    "ai_insight": "A dense cluster of 10 vehicles has been detected, with some present for over an hour, indicating an unusual and prolonged gathering. Dispatch security personnel to the location immediately to assess the situation and determine the cause of the vehicle accumulation."
+  },
+  {
+    "id": 5,
+    "timestamp": "2026-04-13T07:22:27.101555+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 31 & 68 collided \u2014 sudden stop detected!",
+    "people_count": 14,
+    "severity": "critical",
+    "ai_insight": "A collision involving two entities with a sudden stop has been detected amidst 14 visible individuals, indicating a potential accident. Immediately dispatch security and medical personnel to the location to assess the situation and provide assistance."
+  },
+  {
+    "id": 6,
+    "timestamp": "2026-04-13T07:24:18.037570+00:00",
+    "type": "fire_hazard",
+    "message": "CRITICAL: Fire/Combustion signature detected in visual feed!",
+    "people_count": 2,
+    "severity": "critical",
+    "ai_insight": "Alert 'fire_hazard' detected with 2 people. Security review recommended."
+  },
+  {
+    "id": 7,
+    "timestamp": "2026-04-13T07:25:21.504287+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 19 & 12 collided \u2014 sudden stop detected!",
+    "people_count": 13,
+    "severity": "critical",
+    "ai_insight": "An accident has occurred where Entities 19 and 12 collided, indicated by a sudden stop, potentially involving a fall or impact among 13 visible individuals. Immediately dispatch emergency medical services and security personnel to the location to assess injuries and manage the scene."
+  },
+  {
+    "id": 8,
+    "timestamp": "2026-04-13T07:25:36.641841+00:00",
+    "type": "overcrowding",
+    "message": "Overcrowding: Dense cluster of 10 vehicles in a localised area.",
+    "people_count": 12,
+    "severity": "high",
+    "ai_insight": "A dense cluster of 10 vehicles and 12 individuals has been detected in a localized area, with a short average presence time. Immediately review the live feed to ascertain if this is a traffic anomaly, a temporary gathering, or a potential security event requiring dispatch."
+  },
+  {
+    "id": 9,
+    "timestamp": "2026-04-13T07:25:55.291826+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 10 & 12 collided \u2014 sudden stop detected!",
+    "people_count": 16,
+    "severity": "critical",
+    "ai_insight": "A collision between two individuals has been detected, causing a sudden stop in movement. Given the accident alert, immediate assessment of the scene is critical. Dispatch security personnel to the location to evaluate potential injuries or blockages and provide assistance."
+  },
+  {
+    "id": 10,
+    "timestamp": "2026-04-13T07:27:03.077075+00:00",
+    "type": "collision",
+    "message": "ACCIDENT ALERT: Entities 1 & 61 collided \u2014 sudden stop detected!",
+    "people_count": 17,
+    "severity": "critical",
+    "ai_insight": "A collision between two individuals has been detected, indicating a potential accident with a sudden stop suggesting a fall or impact. Immediately dispatch security and medical personnel to the location to assess the situation and provide assistance."
+  },
+  {
+    "id": 11,
+    "timestamp": "2026-04-13T07:27:26.576816+00:00",
+    "type": "overcrowding",
+    "message": "Overcrowding: Dense cluster of 10 vehicles in a localised area.",
+    "people_count": 12,
+    "severity": "high",
+    "ai_insight": "A dense cluster of 10 vehicles and 12 individuals has been detected in a localized area, with a short average presence time. Immediately review the live feed to ascertain if this is a traffic anomaly, a temporary gathering, or a potential security event requiring dispatch."
+  }
+]
