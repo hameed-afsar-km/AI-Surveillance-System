@@ -1,331 +1,144 @@
-# 🎥 AI-Based Real-Time Surveillance & Environmental Monitoring System
+<div align="center">
 
-> **Production-grade** multi-layer AI surveillance platform powered by YOLOv8, DeepSORT, Google Gemini, and Streamlit.
+<img src="./assets/logo.png" alt="AI Surveillance Logo" width="200"/>
 
----
+# 🛡️ AI Surveillance & Intelligent Monitoring System
 
-## 📐 Architecture Overview
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![Next.js](https://img.shields.io/badge/Frontend-Next.js%2015-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![Streamlit](https://img.shields.io/badge/Dashboard-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io)
+[![YOLOv8](https://img.shields.io/badge/AI-YOLOv8-0066FF?style=for-the-badge&logo=opencv&logoColor=white)](https://ultralytics.com)
+[![Gemini](https://img.shields.io/badge/Insights-Google%20Gemini-4285F4?style=for-the-badge&logo=google-gemini&logoColor=white)](https://deepmind.google/technologies/gemini/)
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                    VIDEO INPUT LAYER                            │
-│        Webcam / Pre-recorded Files (VideoSource)                │
-└─────────────────────┬───────────────────────────────────────────┘
-                      │ frames
-┌─────────────────────▼───────────────────────────────────────────┐
-│              DETECTION ENGINE  (YOLOv8)                         │
-│         Detect "person" class → bbox + confidence               │
-└─────────────────────┬───────────────────────────────────────────┘
-                      │ detections
-┌─────────────────────▼───────────────────────────────────────────┐
-│             TRACKING ENGINE  (DeepSORT)                         │
-│   Assign unique IDs · position history · zone presence          │
-└──────────────┬──────────────────────────┬───────────────────────┘
-               │ active_tracks            │
-┌──────────────▼────────┐   ┌────────────▼──────────────────────┐
-│  BEHAVIOR ENGINE      │   │    RULE ENGINE (JSON rules)        │
-│  Overcrowding         │   │    Custom conditions evaluated      │
-│  Loitering            │   │    Hot-reload from rules.json       │
-│  Restricted zone      │   └───────────────┬───────────────────┘
-│  Sudden crowd         │                   │
-└──────────────┬────────┘                   │
-               │ BehaviorAlert              │ RuleMatch[]
-┌──────────────▼────────────────────────────▼───────────────────┐
-│                   DECISION ENGINE                              │
-│       Merge & rank alerts by severity → final Decision         │
-└──────────────────────┬────────────────────────────────────────┘
-                       │ Decision
-         ┌─────────────┼──────────────┐
-         │             │              │
-┌────────▼─────┐  ┌────▼──────┐  ┌───▼──────────────────────┐
-│ SOUND ALERT  │  │   EMAIL   │  │  GEMINI AI INSIGHT        │
-│  (playsound) │  │  (SMTP)   │  │  (rate-limited, cached)   │
-└──────────────┘  └───────────┘  └───────────────────────────┘
-                       │
-┌──────────────────────▼─────────────────────────────────────┐
-│                  FLASK REST API                             │
-│  GET /status  POST /start  POST /stop  GET /frame  …        │
-└──────────────────────┬─────────────────────────────────────┘
-                       │ HTTP poll (1-2s)
-┌──────────────────────▼─────────────────────────────────────┐
-│           STREAMLIT DASHBOARD                               │
-│   Live Feed · Metrics · Alert Panel · Event Log · Controls  │
-└─────────────────────────────────────────────────────────────┘
-```
+**A high-performance, multi-layered AI surveillance platform with real-time detection, tracking, and intelligent log analysis.**
+
+[Overview](#-architecture-overview) • [Features](#-key-features) • [Installation](#-setup-instructions) • [API](#-api-reference) • [Contribute](#-contributing)
+
+</div>
 
 ---
 
-## 📁 Project Structure
+## 🏛️ Architecture Overview
 
-```
-AI Surveillance System/
-├── backend/
-│   ├── app.py                # Flask REST API (all endpoints)
-│   ├── config.py             # Central config (reads .env)
-│   ├── vision/
-│   │   ├── video_input.py    # Webcam + file video abstraction
-│   │   ├── detection.py      # YOLOv8 person detector (singleton)
-│   │   └── tracking.py       # DeepSORT tracker + TrackState
-│   ├── logic/
-│   │   ├── behavior.py       # 4 built-in behavior detectors
-│   │   └── rule_engine.py    # JSON custom rule engine (hot-reload)
-│   ├── services/
-│   │   ├── alert_service.py  # Decision engine + dispatcher
-│   │   ├── email_service.py  # Gmail SMTP with retry
-│   │   └── gemini_service.py # Gemini AI (rate-limited + cached)
-│   ├── utils/
-│   │   └── logger.py         # Structured logger + JSON event store
-│   └── data/
-│       ├── rules.json        # Custom surveillance rules
-│       └── logs.json         # Persisted event log
-│
-├── frontend-streamlit/
-│   └── app.py                # Full Streamlit dashboard
-│
-├── videos/
-│   ├── normal.mp4            # Simulation: normal activity
-│   └── crowded.mp4           # Simulation: overcrowding
-│
-├── models/
-│   └── yolov8n.pt            # Auto-downloaded on first run
-│
-├── assets/sounds/
-│   └── alert.wav             # Generated by generate_alert_sound.py
-│
-├── .env                      # Environment variables (configure this!)
-├── requirements.txt
-├── generate_alert_sound.py   # Run once to create alert.wav
-├── simulate_video.py         # Run once to create simulation videos
-└── README.md
-```
+The system is designed with a decoupled architecture for maximum scalability and performance. It processes video streams frame-by-frame, applying detection, tracking, and behavior analysis logic before broadcasting results via a REST API.
+
+<img src="./assets/dashboard_mockup.png" alt="Dashboard Mockup" width="100%" style="border-radius: 10px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);"/>
+
+### 🔄 Data Flow
+1.  **Vision Layer**: YOLOv8 detects entities; DeepSORT maintains identity across frames.
+2.  **Logic Layer**: Analyzes movements against predefined behaviors (Overcrowding, Loitering, etc.) or custom JSON rules.
+3.  **Intelligence Layer**: Google Gemini AI provides semantic summaries and situational context.
+4.  **Action Layer**: Dispatches alerts via Email (SMTP) and plays localized audio warnings.
+5.  **Presentation Layer**: Live dash via Next.js (modern UI) or Streamlit (monitoring hub).
 
 ---
 
-## ⚙️ Setup Instructions
+## 🔥 Key Features
 
-### 1. Prerequisites
+| Feature | Description |
+| :--- | :--- |
+| **🔥 Fire Detection** | Real-time visual fire and smoke detection modules. |
+| **🚨 Overcrowding** | Triggers alerts when person count exceeds threshold in specific zones. |
+| **⌛ Loitering Detection** | Monitors individuals dwelling in restricted areas beyond allotted time. |
+| **🧠 Gemini AI Insights** | Automatic generation of human-readable incident summaries. |
+| **✉️ Automated Alerts** | Instant email notifications with incident details and timestamps. |
+| **⚙️ Live Rule Engine** | Hot-reloadable JSON rules for dynamic site-specific monitoring. |
 
-- Python **3.10+**
-- pip / virtualenv
-- (Optional) CUDA GPU for faster inference
+---
 
-### 2. Clone & Create Virtual Environment
+## 🛠️ Tech Stack
 
-```powershell
-cd "d:\SaaS\AI Surveillance System"
+### Backend
+- **Python 3.10+**: Core logic.
+- **FastAPI / Flask**: API orchestration.
+- **YOLOv8 & DeepSORT**: Computer Vision engine.
+- **Google Generative AI**: LLM backend for insights.
+
+### Frontend Options
+- **Next.js & TailwindCSS**: A premium, responsive interface with Framer Motion animations.
+- **Streamlit**: Dedicated internal monitoring dashboard for rapid deployment.
+
+---
+
+## 🚀 Setup Instructions
+
+### 1️⃣ Clone and Initialize
+```bash
+git clone https://github.com/hameed-afsar-km/AI-Surveillance-System.git
+cd AI-Surveillance-System
 python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-### 3. Install Dependencies
-
-```powershell
-pip install --upgrade pip
+source venv/bin/activate  # Or .\venv\Scripts\Activate.ps1 on Windows
 pip install -r requirements.txt
 ```
 
-> **Windows note:** If `playsound` install fails, use:
-> ```powershell
-> pip install playsound==1.2.2
-> ```
-
-### 4. Configure Environment Variables
-
-Edit `.env` and fill in your credentials:
-
-```env
-GEMINI_API_KEY=AIza...your_key_here...
-EMAIL_SENDER=youremail@gmail.com
-EMAIL_PASSWORD=your_16char_app_password
-EMAIL_RECIPIENTS=recipient@example.com
+### 2️⃣ Configure Environment
+Create a `.env` file in the root:
+```ini
+GEMINI_API_KEY=your_key_here
+EMAIL_SENDER=your_email@gmail.com
+EMAIL_PASSWORD=your_app_password
+EMAIL_RECIPIENTS=admin@example.com
 ```
 
-> **Gmail App Password:** Go to Google Account → Security → 2-Step Verification → App Passwords. Generate one for "Mail".
+### 3️⃣ Start the Services
 
-### 5. Generate Assets (run once)
-
-```powershell
-# Generate alert sound (alert.wav)
-python generate_alert_sound.py
-
-# Generate simulation videos (normal.mp4 + crowded.mp4)
-python simulate_video.py
-```
-
-### 6. YOLOv8 Model
-
-YOLOv8n will **auto-download** on first run to `models/yolov8n.pt`.  
-For a larger model, set in `.env`:
-```env
-YOLO_MODEL_PATH=models/yolov8s.pt
-```
-
----
-
-## 🚀 Running the System
-
-### Terminal 1 – Start Flask Backend
-
-```powershell
-cd "d:\SaaS\AI Surveillance System\backend"
+**Terminal 1: Backend**
+```bash
+cd backend
 python app.py
 ```
 
-You should see:
-```
-[INFO] Starting Flask API on 0.0.0.0:5050
-[INFO] Loading YOLOv8 model…
-```
-
-### Terminal 2 – Start Streamlit Dashboard
-
-```powershell
-cd "d:\SaaS\AI Surveillance System\frontend-streamlit"
-streamlit run app.py --server.port 8501
+**Terminal 2: Streamlit Dashboard**
+```bash
+cd frontend-streamlit
+streamlit run app.py
 ```
 
-Open your browser: **http://localhost:8501**
-
----
-
-## 🎮 Using the Dashboard
-
-| Feature | How |
-|---|---|
-| **Start webcam** | Select "webcam", click ▶ Start |
-| **Simulation mode** | Select "simulation", pick normal.mp4 or crowded.mp4 |
-| **Stop system** | Click ⏹ Stop |
-| **Sound alerts** | Toggle 🔊 Sound Alerts |
-| **View events** | Right panel – Event Timeline |
-| **AI insights** | Appear in Alert Panel when Gemini responds |
+**Terminal 3: Next.js Frontend**
+```bash
+cd frontend-nextjs
+npm install
+npm run dev
+```
 
 ---
 
 ## 🌐 API Reference
 
-| Method | Endpoint | Description |
-|---|---|---|
-| `GET` | `/health` | Server health check |
-| `GET` | `/status` | Full system state snapshot |
-| `POST` | `/start` | Start detection (`mode`, `source` in body) |
-| `POST` | `/stop` | Stop detection |
-| `GET` | `/frame` | Latest frame as base64 JPEG |
-| `GET` | `/stream` | MJPEG video stream |
-| `GET` | `/events?n=50` | Last N events |
-| `GET` | `/rules` | All custom rules |
-| `POST` | `/rules` | Save new ruleset (JSON array) |
-
-**POST /start body:**
-```json
-{
-  "mode": "file",
-  "source": "crowded.mp4"
-}
-```
-
-**GET /status response:**
-```json
-{
-  "running": true,
-  "people_count": 7,
-  "alert": true,
-  "alert_type": "overcrowding",
-  "message": "Overcrowding detected: 7 people (threshold: 5).",
-  "ai_insight": "A large group has gathered...",
-  "severity": "high",
-  "active_ids": [1, 2, 3, 4, 5, 6, 7],
-  "fps": 14.2,
-  "uptime": 142.5
-}
-```
+| Endpoint | Method | Description |
+| :--- | :---: | :--- |
+| `/status` | `GET` | Snapshot of current detection metrics. |
+| `/start` | `POST` | Initialize stream processing (Webcam/File). |
+| `/stop` | `POST` | Terminate active processing. |
+| `/stream` | `GET` | MJPEG real-time video stream. |
+| `/events` | `GET` | Retrieve history of detected incidents. |
 
 ---
 
-## 🔧 Custom Rules (rules.json)
+## 🎨 Design Aesthetics
 
-Rules are hot-reloaded — changes apply without restart.
-
-```json
-[
-  {
-    "name": "Gate Monitoring",
-    "description": "Alert when gate zone has >3 people for >20 seconds",
-    "conditions": {
-      "people_count": ">3",
-      "duration": ">20",
-      "zone": "gate"
-    },
-    "alert_type": "custom",
-    "severity": "medium",
-    "enabled": true
-  }
-]
-```
-
-**Supported condition keys:** `people_count`, `duration`, `zone`  
-**Supported operators:** `>`, `>=`, `<`, `<=`, `==`, `!=`
+- **Dark Mode First**: Optimized for security control rooms.
+- **Inter Font Family**: High legibility for critical alerts.
+- **Glassmorphism**: Modern, premium feel for dashboard elements.
+- **Micro-animations**: Subtle cues for interactive feedback.
 
 ---
 
-## 🚀 Deployment
+## 🤝 Contributing
 
-### Docker (Recommended)
-
-Create `Dockerfile`:
-```dockerfile
-FROM python:3.11-slim
-WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-COPY . .
-EXPOSE 5050
-CMD ["python", "backend/app.py"]
-```
-
-```powershell
-docker build -t ai-surveillance .
-docker run -p 5050:5050 --env-file .env ai-surveillance
-```
-
-### Production Checklist
-
-- [ ] Set `FLASK_DEBUG=False` in `.env`
-- [ ] Use a strong `SECRET_KEY`
-- [ ] Configure firewall to restrict `/start` and `/stop` endpoints
-- [ ] Set up SSL/TLS reverse proxy (nginx)
-- [ ] Use `gunicorn` instead of Flask dev server:
-  ```bash
-  gunicorn -w 1 -b 0.0.0.0:5050 --chdir backend app:app
-  ```
-- [ ] Set up log rotation for `backend/data/system.log`
-- [ ] Store `.env` secrets in a secrets manager (e.g. AWS Secrets Manager)
+Contributions are welcome! Please follow these steps:
+1. Fork the Project.
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`).
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`).
+4. Push to the Branch (`git push origin feature/AmazingFeature`).
+5. Open a Pull Request.
 
 ---
 
-## 🐛 Troubleshooting
+<div align="center">
 
-| Issue | Fix |
-|---|---|
-| `Cannot open video source` | Check webcam index; try `0`, `1`, `2` |
-| YOLOv8 slow on CPU | Use `yolov8n.pt` (nano); enable CUDA if available |
-| Email not sending | Check Gmail App Password; enable 2FA first |
-| Gemini returns empty | Verify `GEMINI_API_KEY` in `.env` |
-| `playsound` error on Windows | Install `playsound==1.2.2` or use `winsound` fallback |
-| DeepSORT tracking jumpy | Increase `max_age` in `tracking.py` |
+Built with ❤️ by **Antigravity** & the AI Surveillance Team
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
-## 📊 Detection Thresholds (configurable in .env)
-
-| Parameter | Default | Description |
-|---|---|---|
-| `OVERCROWDING_THRESHOLD` | 5 | People count trigger |
-| `LOITERING_THRESHOLD_SECONDS` | 30 | Duration trigger (seconds) |
-| `CROWD_FORMATION_DELTA` | 3 | Count jump in 5 frames |
-| `SOUND_ALERT_COOLDOWN` | 30 | Seconds between sound alerts |
-| `EMAIL_ALERT_COOLDOWN` | 120 | Seconds between email alerts |
-| `GEMINI_PERIODIC_SUMMARY_INTERVAL` | 60 | AI summary frequency |
-
----
-
-*Built with ❤️ using YOLOv8 · DeepSORT · Gemini · Flask · Streamlit*
+</div>
