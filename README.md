@@ -22,7 +22,6 @@
 
 The system is designed with a decoupled architecture for maximum scalability and performance. It processes video streams frame-by-frame, applying detection, tracking, and behavior analysis logic before broadcasting results via a REST API.
 
-<img src="./assets/dashboard_mockup.png" alt="Dashboard Mockup" width="100%" style="border-radius: 10px; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);"/>
 
 ### 🔄 Data Flow
 1.  **Vision Layer**: YOLOv8 detects entities; DeepSORT maintains identity across frames.
