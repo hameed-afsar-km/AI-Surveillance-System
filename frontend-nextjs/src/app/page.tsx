@@ -104,7 +104,7 @@ export default function Dashboard() {
         {/* Center Column: Primary Video & Metrics */}
         <div className="flex flex-col gap-6">
           <div className="flex-1 min-h-[460px]">
-            <VideoFeed running={running} starting={starting} />
+            <VideoFeed running={running} starting={starting} progress={status?.loading_progress ?? 0} />
           </div>
           <AlertBanner status={status} />
           <MetricsBar status={status} />

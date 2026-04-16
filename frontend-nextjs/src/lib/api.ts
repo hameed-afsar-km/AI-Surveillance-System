@@ -15,6 +15,7 @@ export interface Status {
   source_name: string;
   periodic_summary: string | null;
   internet_connected: boolean;
+  loading_progress: number;
 }
 
 export interface Event {
@@ -61,6 +62,7 @@ export const api = {
   stop: () => call<{ status: string }>("POST", "/stop"),
   settings: (s: object) => call<{ status: string }>("POST", "/settings", s),
   getSettings: () => call<any>("GET", "/settings"),
+  testEmail: (config: object) => call<{ status?: string, error?: string }>("POST", "/settings/test_email", config),
   // MUST point directly to backend to avoid Next.js glitchy streaming proxy
   streamUrl: () => `${API_BASE}/video_feed`,
 };

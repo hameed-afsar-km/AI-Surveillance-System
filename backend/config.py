@@ -8,11 +8,12 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 # Limit CPU thread contention from PyTorch/OpenBLAS on Windows
-os.environ.setdefault("OMP_NUM_THREADS", "2")
-os.environ.setdefault("MKL_NUM_THREADS", "2")
+os.environ.setdefault("OMP_NUM_THREADS", "4")
+os.environ.setdefault("MKL_NUM_THREADS", "4")
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
 os.environ.setdefault("ULTRALYTICS_OFFLINE", "TRUE")
 os.environ.setdefault("YOLO_VERBOSE", "FALSE")
+os.environ.setdefault("CHECK_EXT_URL", "0")
 
 # Resolve project root (two levels up from backend/)
 ROOT_DIR = Path(__file__).resolve().parent.parent
@@ -75,8 +76,8 @@ class Config:
     VIDEOS_DIR: Path = ROOT_DIR / "videos"
 
     # ── Detection ──────────────────────────────────────────────
-    YOLO_CONFIDENCE: float = 0.25   # Sensitive enough for distant/small people & bikes
-    YOLO_IMGSZ: int = 320           # 320 = fastest CPU inference (~2x faster than 416)
+    YOLO_CONFIDENCE: float = 0.35   # Higher = faster (discards weak hits early)
+    YOLO_IMGSZ: int = 256           # 256 = ULTRA fast CPU inference
     # COCO classes: 0=person, 1=bicycle, 2=car, 3=motorcycle, 5=bus, 7=truck, 9=traffic light, 10=fire hydrant, 11=stop sign, 24=backpack, 39=bottle, 41=cup
     TRACKED_CLASSES: list[int] = [0, 1, 2, 3, 5, 7, 24, 39, 41]
     TARGET_FPS: int = 30       # Camera capture target FPS

@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
 import { VideoOff, Loader2, Cpu } from "lucide-react";
 
-export default function VideoFeed({ running, starting }: { running: boolean; starting?: boolean }) {
+export default function VideoFeed({ running, starting, progress = 0 }: { running: boolean; starting?: boolean; progress?: number }) {
   const imgRef = useRef<HTMLImageElement>(null);
   const [streamOk, setStreamOk] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -52,10 +52,28 @@ export default function VideoFeed({ running, starting }: { running: boolean; sta
 
       {/* Initialising: YOLO/DeepSort loading in background */}
       {starting && !running && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#18181b]">
-          <Cpu size={28} className="text-blue-400 animate-pulse" />
-          <span className="text-sm font-medium text-[#a1a1aa] tracking-widest uppercase">Initialising AI Engines</span>
-          <span className="text-xs text-[#52525b]">Loading YOLO &amp; DeepSort — please wait…</span>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-[#18181b]">
+          <div className="flex flex-col items-center gap-3">
+            <Cpu size={32} className="text-blue-400 animate-pulse" />
+            <span className="text-sm font-medium text-[#a1a1aa] tracking-widest uppercase">Initialising AI Engines</span>
+          </div>
+          
+          <div className="w-64 space-y-2">
+            <div className="h-1.5 w-full bg-[#09090b] rounded-full overflow-hidden border border-[#27272a]">
+              <div 
+                className="h-full bg-blue-500 transition-all duration-500 ease-out shadow-[0_0_10px_rgba(59,130,246,0.5)]" 
+                style={{ width: `${progress}%` }}
+              />
+            </div>
+            <div className="flex justify-between items-center text-[10px] font-mono uppercase tracking-tight">
+              <span className="text-[#52525b]">{progress < 100 ? "Booting PyTorch..." : "Ready"}</span>
+              <span className="text-blue-400">{progress}%</span>
+            </div>
+          </div>
+
+          <span className="text-[11px] text-[#52525b] max-w-[200px] text-center italic">
+            Allocating neural weights and warming up GPU/CPU kernels...
+          </span>
         </div>
       )}
 

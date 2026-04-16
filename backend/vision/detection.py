@@ -96,14 +96,25 @@ class ObjectDetector:
             self._model = YOLO(str(model_path))
             
             import torch
-            # On some Windows systems, CUDA initialization can be the source of hangs.
-            # We'll try to check it quickly.
             try:
                 device = 'cuda' if torch.cuda.is_available() else 'cpu'
             except Exception:
                 device = 'cpu'
                 
             self._model.to(device)
+            
+            # 🚀 SPEED UP: Fuse layers (merges Conv+BatchNorm for faster inference)
+            try:
+                self._model.fuse()
+                log.info("YOLOv8 layers fused for speed optimization.")
+            except Exception:
+                pass
+
+            # 🚀 SPEED UP: Use FP16 if on GPU
+            if device == 'cuda':
+                self._model.half()
+                log.info("Using FP16 Half-Precision (GPU).")
+
             log.info(f"YOLOv8 initialized on device: {device.upper()}")
 
     # ── public ────────────────────────────────────────────────────────────────

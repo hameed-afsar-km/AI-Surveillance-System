@@ -57,6 +57,7 @@ _system_state: dict = {
     "periodic_summary": "",
     "last_updated": time.time(),
     "internet_connected": False,
+    "loading_progress": 0,
 }
 
 # ── Dynamic Connectivity Checker ──────────────────────────────────────────────
@@ -88,6 +89,9 @@ _last_tracks: list = []
 _last_decision = None
 
 _stop_event = threading.Event()
+_ai_ready = False
+_ai_loading_error = None
+
 _grabber_thread: Optional[threading.Thread] = None
 _inference_thread: Optional[threading.Thread] = None
 _start_time: float = 0.0
@@ -114,6 +118,23 @@ def _init_engines() -> None:
     _rule_engine = RuleEngine()
     _alert_svc   = AlertService()
     log.info("All engines ready.")
+
+def _boot_ai_background():
+    """Background task to load AI models immediately on app start."""
+    global _ai_ready, _ai_loading_error
+    log.info("EAGER LOADING: Initialising AI engines in background...")
+    try:
+        _init_engines()
+        # Trigger an early warmup
+        _detector.detect(np.zeros((256, 256, 3), dtype=np.uint8))
+        _ai_ready = True
+        log.info("EAGER LOADING: AI engines are warm and ready.")
+    except Exception as e:
+        _ai_loading_error = str(e)
+        log.error("EAGER LOADING: Failed to boot AI: %s", e)
+
+# Start physical boot immediately
+threading.Thread(target=_boot_ai_background, daemon=True, name="ai-boot-thread").start()
 
 
 # ── Thread 1: Frame Grabber ───────────────────────────────────────────────────
@@ -165,11 +186,28 @@ def _inference_loop() -> None:
 
     # Warm up YOLO (this triggers lazy model load — may take 10-30s on first run)
     log.info("Warming up YOLO… (first run may take up to 30s)")
+    with _state_lock: _system_state["loading_progress"] = 30
+    
     try:
+        # We can't easily hook into ultralytics for progress, so we simulate progress during the call
+        # in a slightly hacky way for UI benefit
+        def _update_prog():
+            # Fast progress simulation
+            for i in range(1, 10):
+                time.sleep(0.1)
+                if _system_state["running"]: break
+                with _state_lock:
+                    _system_state["loading_progress"] = min(95, 30 + (i * 7))
+        
+        pro_thread = threading.Thread(target=_update_prog, daemon=True)
+        pro_thread.start()
+
         _detector.detect(np.zeros((320, 320, 3), dtype=np.uint8))
         log.info("YOLO warmup complete.")
+        with _state_lock: _system_state["loading_progress"] = 100
     except Exception as e:
         log.error("YOLO warmup failed: %s", e)
+        with _state_lock: _system_state["loading_progress"] = 0
 
     _start_time = time.time()
     frame_count = 0
@@ -408,15 +446,36 @@ def start_system():
         _system_state["message"] = "Initialising AI engines…"
         _system_state["source"] = str(video_src.source)
 
-    # Do all heavy work (YOLO load, DeepSort init) in a background thread
-    # so this HTTP response returns IMMEDIATELY to the browser.
     def _startup():
-        global _grabber_thread, _inference_thread
+        global _grabber_thread, _inference_thread, _ai_ready
         try:
+            with _state_lock: _system_state["loading_progress"] = 10
             _stop_event.clear()
-            _init_engines()
+            
+            # If AI isn't ready yet, wait/init
+            max_wait = 600 # Wait up to 10 mins if needed for heavy first load
+            start_wait = time.time()
+            while not _ai_ready and (time.time() - start_wait < max_wait):
+                if _ai_loading_error: raise RuntimeError(_ai_loading_error)
+                time.sleep(0.5)
+                
+                elapsed = time.time() - start_wait
+                # Smooth progress: slower as it gets closer to 99%
+                if elapsed < 30:
+                    prog = 10 + int(elapsed * 2.5) # 10 -> 85
+                else:
+                    prog = min(99, 85 + int((elapsed - 30) * 0.1)) # slow creep to 99
+                
+                with _state_lock: _system_state["loading_progress"] = prog
+
+            if not _ai_ready:
+                raise RuntimeError("AI engines failed to initialize within the time limit. Please check your system resources.")
+            
+            with _state_lock: _system_state["loading_progress"] = 100
+            
             _tracker.reset()
             _behavior.reset()
+            with _state_lock: _system_state["loading_progress"] = 95
 
             _grabber_thread = threading.Thread(
                 target=_frame_grabber_loop, args=(video_src,), daemon=True, name="frame-grabber"
@@ -427,12 +486,14 @@ def start_system():
                 target=_inference_loop, daemon=True, name="inference-loop"
             )
             _inference_thread.start()
-            log.info("System started (mode=%s, source=%s).", mode, source or "default")
+            # Loop will handle 100
+            log.info("System startup initiated (mode=%s, source=%s).", mode, source or "default")
         except Exception as exc:
             log.error("Startup failed: %s", exc)
             with _state_lock:
                 _system_state["starting"] = False
-                _system_state["message"] = f"Startup failed: {exc}"
+                _system_state["loading_progress"] = 0
+                _system_state["message"] = f"CRITICAL: {exc}"
 
     threading.Thread(target=_startup, daemon=True, name="startup-thread").start()
 
@@ -574,6 +635,68 @@ def update_settings():
         
     return jsonify({"status": "ok", "updates": updates})
 
+
+@app.post("/settings/test_email")
+def test_email():
+    """Endpoint to send a test email using provided (unsaved) credentials."""
+    data = request.get_json(silent=True) or {}
+    alert_type = data.get("alert_type", "test_connection")
+    
+    # Resolve recipient based on specific category if provided
+    # Maps internal keys to the data keys sent from UI
+    cat_map = {
+        "fire_hazard": "email_fire",
+        "collision": "email_accident",
+        "medical_emergency": "email_health",
+        "littering": "email_garbage",
+        "overcrowding": "email_traffic"
+    }
+    
+    target_data_key = cat_map.get(alert_type)
+    recipient = data.get(target_data_key) if target_data_key else None
+    
+    # Fallback to test_recipient or sender
+    if not recipient:
+        recipient = data.get("test_recipient") or data.get("email_sender")
+    
+    if not recipient:
+        return jsonify({"error": "No recipient email found for this category."}), 400
+        
+    sender = data.get("email_sender")
+    pwd = data.get("email_password")
+    
+    if not sender or not pwd:
+        return jsonify({"error": "Sender email and password are required for test."}), 400
+
+    old_sender = cfg.EMAIL_SENDER
+    old_pwd = cfg.EMAIL_PASSWORD
+    
+    try:
+        cfg.EMAIL_SENDER = sender
+        cfg.EMAIL_PASSWORD = pwd
+        
+        from services.email_service import EmailService
+        test_svc = EmailService()
+        
+        # Manually force the recipient for this specific test
+        success = test_svc._send_with_retry(
+            alert_type=alert_type,
+            people_count=1,
+            message=f"SIMULATED TEST ALERT for {alert_type.upper()}.",
+            ai_insight="This is a focused department routing test. If you are reading this, the receiver end is correctly configured.",
+            recipients=[recipient],
+            dept_label=test_svc.DEPT_LABELS.get(alert_type, "Custom Department"),
+            max_retries=1
+        )
+        
+        if success:
+            return jsonify({"status": "ok", "message": f"Test sent to {recipient}"})
+        else:
+            return jsonify({"error": "SMTP failed. Check credentials/connection."}), 500
+            
+    finally:
+        cfg.EMAIL_SENDER = old_sender
+        cfg.EMAIL_PASSWORD = old_pwd
 
 @app.get("/videos")
 def list_videos():

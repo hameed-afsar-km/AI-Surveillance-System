@@ -9949,3 +9949,47 @@ D:\SaaS\AI Surveillance System\backend\data\rules.json
 2026-04-17 01:29:38 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
 2026-04-17 01:29:38 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
 2026-04-17 01:29:38 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:30:04 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:33:43 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-17 01:33:43 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 01:33:43 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:43:14 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:43:32 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 01:43:32 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:43:32 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:47:00 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:48:32 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 01:48:32 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:48:32 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:50:45 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:57:55 | INFO     | backend.app               | EAGER LOADING: Initialising AI engines in background...
+2026-04-17 01:57:55 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:57:55 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:58:32 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 01:58:32 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:59:32 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 02:00:47 | INFO     | backend.app               | EAGER LOADING: Initialising AI engines in background...
+2026-04-17 02:00:47 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 02:00:47 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 02:00:51 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-17 02:00:51 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 02:00:55 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 02:01:00 | INFO     | services.email            | Alert email → 'System Debug' (1 recipients) | type=test_connection
+2026-04-17 02:01:51 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 02:02:28 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 02:02:32 | INFO     | services.email            | Alert email → 'System Debug' (1 recipients) | type=test_connection
+2026-04-17 02:05:59 | INFO     | backend.app               | EAGER LOADING: Initialising AI engines in background...
+2026-04-17 02:05:59 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 02:05:59 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 02:06:54 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 02:06:58 | INFO     | services.email            | Alert email → 'Accident Response Department' (1 recipients) | type=collision
+2026-04-17 02:07:41 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-17 02:07:41 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 02:08:41 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 02:10:30 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 02:10:34 | INFO     | services.email            | Alert email → 'System Debug' (1 recipients) | type=test_connection
+2026-04-17 02:11:38 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 02:11:42 | INFO     | services.email            | Alert email → 'Traffic Department' (1 recipients) | type=overcrowding
+2026-04-17 02:16:35 | INFO     | backend.app               | EAGER LOADING: Initialising AI engines in background...
+2026-04-17 02:16:35 | ERROR    | backend.app               | EAGER LOADING: Failed to boot AI: name '_init_engines' is not defined
+2026-04-17 02:16:35 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050

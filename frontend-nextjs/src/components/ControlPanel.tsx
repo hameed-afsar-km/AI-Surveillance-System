@@ -45,6 +45,8 @@ export default function ControlPanel({
     email_traffic: ""
   });
   const [savingSettings, setSavingSettings] = useState(false);
+  const [testStatus, setTestStatus] = useState<null | "loading" | "success" | "error">(null);
+  const [testError, setTestError] = useState("");
 
   // Derived mail toggle (whether sender and password exist)
   const mailEnabled = Boolean(emailConfig.email_sender && emailConfig.email_password);
@@ -79,6 +81,37 @@ export default function ControlPanel({
     await api.settings(emailConfig);
     setSavingSettings(false);
     setShowSettings(false);
+  };
+
+  const handleTestEmail = async (alert_type: string = "test_connection") => {
+    if (!emailConfig.email_sender || !emailConfig.email_password) {
+      setTestStatus("error");
+      setTestError("Need Sender Email & Password first.");
+      return;
+    }
+    setTestStatus("loading");
+    setTestError("");
+    const res = await api.testEmail({ ...emailConfig, alert_type });
+    if (res && !res.error) {
+      setTestStatus("success");
+      setTimeout(() => setTestStatus(null), 4000);
+    } else {
+      setTestStatus("error");
+      setTestError(res?.error || "Connection Failed.");
+    }
+  };
+
+  const [customDepts, setCustomDepts] = useState<{label: string, icon: string, key: string}[]>([]);
+  const [showAddDeptModal, setShowAddDeptModal] = useState(false);
+  const [newDeptName, setNewDeptName] = useState("");
+  
+  const handleAddCategory = () => {
+    if (!newDeptName.trim()) return;
+    const key = `email_custom_${Date.now()}`;
+    setCustomDepts(prev => [...prev, { label: newDeptName.trim(), icon: "📁", key }]);
+    setEmailConfig(prev => ({ ...prev, [key]: "" }));
+    setNewDeptName("");
+    setShowAddDeptModal(false);
   };
 
   const handleMailToggle = () => {
@@ -299,29 +332,96 @@ export default function ControlPanel({
                 </div>
 
                 <div className="space-y-3">
-                   <div className="flex items-center gap-2 mb-3">
-                    <div className="w-1.5 h-4 bg-blue-500 rounded-full"></div>
-                    <h3 className="text-sm font-semibold tracking-wide text-white uppercase">Department Routing</h3>
+                   <div className="flex items-center justify-between mb-3">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-4 bg-blue-500 rounded-full"></div>
+                      <h3 className="text-sm font-semibold tracking-wide text-white uppercase">Department Routing</h3>
+                    </div>
+                    <button onClick={addCategory} className="text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded hover:bg-blue-600/40 transition-all font-bold">+ ADD CATEGORY</button>
                   </div>
 
                   <div className="space-y-3">
-                    <DeptInput label="Accident (Police/Traffic)" icon="🚔" value={emailConfig.email_accident} onChange={v => setEmailConfig(p => ({...p, email_accident: v}))} />
-                    <DeptInput label="Fire Department" icon="🔥" value={emailConfig.email_fire} onChange={v => setEmailConfig(p => ({...p, email_fire: v}))} />
-                    <DeptInput label="Garbage/Municipal" icon="🗑️" value={emailConfig.email_garbage} onChange={v => setEmailConfig(p => ({...p, email_garbage: v}))} />
-                    <DeptInput label="Health Department" icon="🚑" value={emailConfig.email_health} onChange={v => setEmailConfig(p => ({...p, email_health: v}))} />
-                    <DeptInput label="Traffic / Crowding" icon="🚦" value={emailConfig.email_traffic} onChange={v => setEmailConfig(p => ({...p, email_traffic: v}))} />
+                    <DeptInput label="Accident (Police/Traffic)" icon="🚔" value={emailConfig.email_accident} onChange={v => setEmailConfig(p => ({...p, email_accident: v}))} onTest={() => handleTestEmail("collision")} />
+                    <DeptInput label="Fire Department" icon="🔥" value={emailConfig.email_fire} onChange={v => setEmailConfig(p => ({...p, email_fire: v}))} onTest={() => handleTestEmail("fire_hazard")} />
+                    <DeptInput label="Garbage/Municipal" icon="🗑️" value={emailConfig.email_garbage} onChange={v => setEmailConfig(p => ({...p, email_garbage: v}))} onTest={() => handleTestEmail("littering")} />
+                    <DeptInput label="Health Department" icon="🚑" value={emailConfig.email_health} onChange={v => setEmailConfig(p => ({...p, email_health: v}))} onTest={() => handleTestEmail("medical_emergency")} />
+                    <DeptInput label="Traffic / Crowding" icon="🚦" value={emailConfig.email_traffic} onChange={v => setEmailConfig(p => ({...p, email_traffic: v}))} onTest={() => handleTestEmail("overcrowding")} />
+                    
+                    {customDepts.map(d => (
+                      <DeptInput key={d.key} label={d.label} icon={d.icon} value={emailConfig[d.key as keyof typeof emailConfig] as string} onChange={v => setEmailConfig(p => ({...p, [d.key]: v}))} onTest={() => handleTestEmail("test_connection")} />
+                    ))}
                   </div>
                 </div>
               </div>
 
-              <div className="p-4 border-t border-[#27272a] bg-[#18181b] flex justify-end gap-3 shrink-0">
-                <button onClick={() => setShowSettings(false)} className="px-4 py-2 text-sm text-[#a1a1aa] hover:text-white transition-colors">Cancel</button>
-                <button onClick={saveConfig} disabled={savingSettings} className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 text-sm font-semibold rounded shadow-lg flex items-center gap-2 transition-colors disabled:opacity-50">
-                  {savingSettings ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
-                  Apply Config
-                </button>
+              <div className="p-4 border-t border-[#27272a] bg-[#18181b] flex items-center justify-between shrink-0">
+                <div className="flex-1 mr-4">
+                  <AnimatePresence mode="wait">
+                    {testStatus === "loading" && (
+                      <motion.div key="l" initial={{opacity:0}} animate={{opacity:1}} exit={{opacity:0}} className="flex items-center gap-2 text-[12px] text-blue-400">
+                        <Loader2 size={12} className="animate-spin" /> Verifying Connection...
+                      </motion.div>
+                    )}
+                    {testStatus === "success" && (
+                      <motion.div key="s" initial={{opacity:0, x:-5}} animate={{opacity:1, x:0}} className="flex items-center gap-2 text-[12px] text-emerald-500 font-bold">
+                        <Check size={12} /> Test Alert Sent!
+                      </motion.div>
+                    )}
+                    {testStatus === "error" && (
+                      <motion.div key="e" initial={{opacity:0, x:-5}} animate={{opacity:1, x:0}} className="text-[11px] text-red-500 font-medium leading-tight max-w-[180px]">
+                         {testError}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+                
+                <div className="flex gap-3">
+                  <button 
+                    onClick={() => handleTestEmail()} 
+                    disabled={testStatus === "loading" || !emailConfig.email_sender}
+                    className="px-4 py-2 text-sm font-medium text-[#fafafa] bg-[#27272a] hover:bg-[#3f3f46] rounded flex items-center gap-2 transition-all disabled:opacity-30"
+                  >
+                    Global Test
+                  </button>
+                  <button onClick={saveConfig} disabled={savingSettings} className="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 text-sm font-semibold rounded shadow-lg flex items-center gap-2 transition-all disabled:opacity-50">
+                    {savingSettings ? <Loader2 size={16} className="animate-spin" /> : <Save size={16} />}
+                    Apply Config
+                  </button>
+                </div>
               </div>
             </motion.div>
+
+            {/* Sub-Modal for adding category */}
+            <AnimatePresence>
+              {showAddDeptModal && (
+                <motion.div 
+                  initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+                  className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/40 backdrop-blur-[2px]"
+                >
+                  <motion.div 
+                    initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.9, opacity: 0 }}
+                    className="bg-[#18181b] border border-[#3f3f46] rounded-xl p-6 w-full max-w-sm shadow-2xl space-y-4"
+                  >
+                    <div>
+                      <h3 className="text-lg font-bold text-white mb-1">New Ministry / Dept</h3>
+                      <p className="text-xs text-[#a1a1aa]">Register a custom alert category for the AI surveillance suite.</p>
+                    </div>
+                    <input 
+                      autoFocus
+                      placeholder="e.g. Navigation Branch"
+                      value={newDeptName}
+                      onChange={e => setNewDeptName(e.target.value)}
+                      onKeyDown={e => e.key === "Enter" && handleAddCategory()}
+                      className="w-full bg-[#09090b] border border-[#27272a] rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500 outline-none transition-all"
+                    />
+                    <div className="flex gap-3 pt-2">
+                       <button onClick={() => setShowAddDeptModal(false)} className="flex-1 px-4 py-2 text-sm text-[#a1a1aa] hover:text-white transition-colors">Cancel</button>
+                       <button onClick={handleAddCategory} className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 rounded text-sm transition-all">Add Dept</button>
+                    </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.div>
         )}
       </AnimatePresence>
@@ -329,17 +429,25 @@ export default function ControlPanel({
   );
 }
 
-function DeptInput({ label, icon, value, onChange }: { label: string, icon: string, value: string, onChange: (v: string) => void }) {
+function DeptInput({ label, icon, value, onChange, onTest }: { label: string, icon: string, value: string, onChange: (v: string) => void, onTest: () => void }) {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 group/item">
       <div className="w-8 h-8 rounded shrink-0 bg-[#27272a]/50 text-base flex items-center justify-center grayscale opacity-80">{icon}</div>
-      <div className="flex-1">
+      <div className="flex-1 relative flex items-center">
         <input 
           placeholder={`Email for ${label}...`}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-[#09090b] border border-[#27272a] rounded px-3 py-1.5 text-[13px] text-white focus:border-blue-500 outline-none transition-colors placeholder-[#52525b]"
+          className="w-full bg-[#09090b] border border-[#27272a] rounded px-3 py-1.5 text-[13px] text-white focus:border-blue-500 outline-none transition-colors placeholder-[#52525b] pr-10"
         />
+        <button 
+          onClick={onTest}
+          disabled={!value}
+          title={`Test ${label} Receiver`}
+          className="absolute right-2 text-[#52525b] hover:text-emerald-400 transition-colors disabled:opacity-0"
+        >
+          <Radio size={14} />
+        </button>
       </div>
     </div>
   );

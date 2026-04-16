@@ -138,6 +138,7 @@ class EmailService:
         "littering":         ["EMAIL_DEPT_MUNICIPAL"],
         "garbage_hotspot":   ["EMAIL_DEPT_MUNICIPAL"],
         "overcrowding":      ["EMAIL_DEPT_TRAFFIC"],
+        "test_connection":   ["EMAIL_SENDER"],
     }
 
     DEPT_LABELS: dict = {
@@ -147,6 +148,7 @@ class EmailService:
         "littering":         "Garbage/Municipal Department",
         "garbage_hotspot":   "Garbage/Municipal Department",
         "overcrowding":      "Traffic Department",
+        "test_connection":   "System Debug",
     }
 
     def __init__(self) -> None:
