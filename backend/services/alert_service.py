@@ -20,6 +20,7 @@ from config import cfg
 from logic.behavior import BehaviorAlert
 from logic.rule_engine import RuleMatch
 from services.email_service import EmailService
+from services.sms_service import SmsService
 from services.gemini_service import GeminiService
 from utils.logger import get_logger, log_event
 
@@ -76,6 +77,7 @@ class AlertService:
 
     def __init__(self) -> None:
         self._email_svc = EmailService()
+        self._sms_svc = SmsService()
         self._gemini_svc = GeminiService()
         self._lock = threading.Lock()
 
@@ -146,17 +148,32 @@ class AlertService:
         log.warning("ALERT dispatched | type=%s | count=%d | %s",
                     decision.alert_type, people_count, decision.message[:80])
 
-        # Sound alert (non-blocking)
-        threading.Thread(target=self._play_sound, daemon=True).start()
-
-        # Email alert (non-blocking)
-        threading.Thread(
-            target=self._email_svc.send_alert,
-            args=(decision.alert_type, people_count, decision.message, ai_insight),
-            daemon=True,
-        ).start()
+        # Dispatch alerts (non-blocking)
+        threading.Thread(target=self._dispatch_notifications, 
+                         args=(decision, people_count, ai_insight), 
+                         daemon=True).start()
 
         return decision
+
+    def _dispatch_notifications(self, decision: Decision, people_count: int, ai_insight: str):
+        """Orchestrate the sequence: Sound -> Email -> (Fallback) SMS."""
+        
+        # 1. Sound (Immediate)
+        self._play_sound()
+
+        # 2. Email (Ministry Notification)
+        log.info("Attempting Email notification...")
+        email_success = self._email_svc.send_alert(
+            decision.alert_type, people_count, decision.message, ai_insight
+        )
+
+        # 3. SMS Fallback (Twilio Local SMS)
+        # Shift to SMS if Email fails (usually due to network issues)
+        if not email_success:
+            log.warning("Email notification failed. Shifting to SMS fallback...")
+            self._sms_svc.send_alert(decision.alert_type, decision.message)
+        else:
+            log.info("Email sent successfully. No SMS fallback required.")
 
     def get_periodic_summary(self, people_count: int, uptime: float, history: list) -> str | None:
         if not self._ai_enabled:

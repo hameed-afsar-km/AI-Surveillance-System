@@ -7307,3 +7307,546 @@ AttributeError: 'Track' object has no attribute 'class_id'
 2026-04-13 12:57:40 | INFO     | backend.app               | Heartbeat: frame=510 FPS=1.4
 2026-04-13 12:57:41 | DEBUG    | vision.tracking           | New track: ID=90, class=2
 2026-04-13 12:57:42 | DEBUG    | vision.tracking           | New track: ID=91, class=0
+2026-04-16 10:39:24 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 10:39:35 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 10:39:35 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 10:39:35 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 10:39:53 | INFO     | vision.detection          | Loading YOLOv8 model from: D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-16 10:39:54 | INFO     | vision.detection          | YOLOv8 initialized on device: CPU
+2026-04-16 10:39:55 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 10:39:55 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 10:39:55 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 10:39:55 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 10:39:55 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 10:39:55 | INFO     | backend.app               | All engines ready.
+2026-04-16 10:39:56 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 10:39:56 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 10:39:56 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 10:39:56 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-16 10:39:57 | INFO     | backend.app               | Warmup complete.
+2026-04-16 10:39:57 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\fire accident.mp4'>).
+2026-04-16 10:39:59 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 10:39:59 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 10:40:01 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-16 10:40:05 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 10:40:05 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 10:40:05 | INFO     | backend.app               | Heartbeat: frame=30 FPS=5.9
+2026-04-16 10:40:06 | DEBUG    | vision.tracking           | New track: ID=4, class=0
+2026-04-16 10:40:07 | INFO     | backend.app               | Heartbeat: frame=60 FPS=13.7
+2026-04-16 10:40:08 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=6.5s
+2026-04-16 10:40:08 | DEBUG    | vision.tracking           | New track: ID=7, class=0
+2026-04-16 10:40:09 | INFO     | backend.app               | Heartbeat: frame=90 FPS=13.9
+2026-04-16 10:40:11 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=5.1s
+2026-04-16 10:40:11 | INFO     | backend.app               | Heartbeat: frame=120 FPS=17.4
+2026-04-16 10:40:13 | DEBUG    | vision.tracking           | New track: ID=10, class=0
+2026-04-16 10:40:13 | DEBUG    | vision.tracking           | New track: ID=11, class=2
+2026-04-16 10:40:13 | INFO     | backend.app               | Heartbeat: frame=150 FPS=17.2
+2026-04-16 10:40:14 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=5.8s
+2026-04-16 10:40:14 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 10:40:15 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 10:40:15 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 10:40:15 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 10:40:15 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 18:25:32 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:36:18 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:36:37 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 19:36:37 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 19:36:37 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 19:36:43 | INFO     | vision.detection          | Loading YOLOv8 model from: D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-16 19:36:43 | INFO     | vision.detection          | YOLOv8 initialized on device: CPU
+2026-04-16 19:36:43 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 19:36:43 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 19:36:43 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 19:36:43 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 19:36:43 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 19:36:43 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 19:36:43 | INFO     | backend.app               | All engines ready.
+2026-04-16 19:36:43 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 19:36:43 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 19:36:43 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 19:36:43 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-16 19:36:44 | INFO     | backend.app               | Warmup complete.
+2026-04-16 19:36:44 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\fire accident.mp4'>).
+2026-04-16 19:36:45 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:36:45 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 19:36:49 | INFO     | backend.app               | Heartbeat: frame=30 FPS=0.0
+2026-04-16 19:36:54 | INFO     | backend.app               | Heartbeat: frame=60 FPS=5.6
+2026-04-16 19:36:55 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-16 19:36:59 | INFO     | backend.app               | Heartbeat: frame=90 FPS=6.6
+2026-04-16 19:37:00 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:37:00 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 19:37:00 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:37:01 | DEBUG    | vision.tracking           | New track: ID=7, class=0
+2026-04-16 19:37:02 | INFO     | backend.app               | Heartbeat: frame=120 FPS=5.8
+2026-04-16 19:37:02 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=7.1s
+2026-04-16 19:37:03 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=1.3s
+2026-04-16 19:37:04 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-16 19:37:04 | INFO     | backend.app               | Heartbeat: frame=150 FPS=9.8
+2026-04-16 19:37:05 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 19:37:05 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 19:37:06 | INFO     | backend.app               | Heartbeat: frame=180 FPS=14.4
+2026-04-16 19:37:09 | INFO     | backend.app               | Heartbeat: frame=210 FPS=12.5
+2026-04-16 19:37:10 | DEBUG    | vision.tracking           | New track: ID=11, class=0
+2026-04-16 19:37:11 | INFO     | backend.app               | Heartbeat: frame=240 FPS=13.2
+2026-04-16 19:37:11 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-16 19:37:11 | DEBUG    | vision.tracking           | New track: ID=13, class=2
+2026-04-16 19:37:11 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=7.5s
+2026-04-16 19:37:11 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=1.6s
+2026-04-16 19:37:12 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=27.0s
+2026-04-16 19:37:13 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=1.6s
+2026-04-16 19:37:13 | INFO     | backend.app               | Heartbeat: frame=270 FPS=13.4
+2026-04-16 19:37:14 | INFO     | backend.app               | Heartbeat: frame=300 FPS=15.8
+2026-04-16 19:37:16 | INFO     | backend.app               | Heartbeat: frame=330 FPS=16.8
+2026-04-16 19:37:18 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:37:18 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 13 made an abnormal sudden stop from high speed!
+2026-04-16 19:37:18 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:37:19 | INFO     | backend.app               | Heartbeat: frame=360 FPS=16.3
+2026-04-16 19:37:21 | INFO     | backend.app               | Heartbeat: frame=390 FPS=11.9
+2026-04-16 19:37:23 | INFO     | backend.app               | Heartbeat: frame=420 FPS=15.4
+2026-04-16 19:37:23 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 19:37:23 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 19:37:25 | INFO     | backend.app               | Heartbeat: frame=450 FPS=15.7
+2026-04-16 19:37:27 | INFO     | backend.app               | Heartbeat: frame=480 FPS=14.9
+2026-04-16 19:37:29 | INFO     | backend.app               | Heartbeat: frame=510 FPS=15.6
+2026-04-16 19:37:31 | INFO     | backend.app               | Heartbeat: frame=540 FPS=14.7
+2026-04-16 19:37:32 | INFO     | backend.app               | Heartbeat: frame=570 FPS=15.5
+2026-04-16 19:37:34 | INFO     | backend.app               | Heartbeat: frame=600 FPS=15.8
+2026-04-16 19:37:36 | INFO     | backend.app               | Heartbeat: frame=630 FPS=15.6
+2026-04-16 19:37:37 | DEBUG    | vision.tracking           | New track: ID=17, class=0
+2026-04-16 19:37:39 | INFO     | backend.app               | Heartbeat: frame=660 FPS=15.9
+2026-04-16 19:37:41 | INFO     | backend.app               | Heartbeat: frame=690 FPS=13.2
+2026-04-16 19:37:43 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=6.4s
+2026-04-16 19:37:43 | INFO     | backend.app               | Heartbeat: frame=720 FPS=12.8
+2026-04-16 19:37:45 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:37:46 | INFO     | backend.app               | Heartbeat: frame=750 FPS=13.5
+2026-04-16 19:37:48 | INFO     | backend.app               | Heartbeat: frame=780 FPS=11.4
+2026-04-16 19:37:50 | INFO     | backend.app               | Heartbeat: frame=810 FPS=14.7
+2026-04-16 19:37:51 | DEBUG    | vision.tracking           | New track: ID=18, class=0
+2026-04-16 19:37:54 | DEBUG    | vision.tracking           | New track: ID=19, class=0
+2026-04-16 19:37:55 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:37:55 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 18 & 19 collided — sudden stop detected!
+2026-04-16 19:37:55 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:37:55 | DEBUG    | services.email            | Email cooldown active for 'collision' (88s remaining).
+2026-04-16 19:37:55 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 19:37:56 | INFO     | backend.app               | Heartbeat: frame=840 FPS=11.1
+2026-04-16 19:37:56 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=4.8s
+2026-04-16 19:37:56 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=2.3s
+2026-04-16 19:37:58 | INFO     | backend.app               | Heartbeat: frame=870 FPS=5.8
+2026-04-16 19:38:00 | INFO     | backend.app               | Heartbeat: frame=900 FPS=13.7
+2026-04-16 19:38:02 | INFO     | backend.app               | Heartbeat: frame=930 FPS=14.8
+2026-04-16 19:38:04 | INFO     | backend.app               | Heartbeat: frame=960 FPS=14.2
+2026-04-16 19:38:07 | DEBUG    | vision.tracking           | New track: ID=22, class=0
+2026-04-16 19:38:07 | INFO     | backend.app               | Heartbeat: frame=990 FPS=12.9
+2026-04-16 19:38:10 | INFO     | backend.app               | Heartbeat: frame=1020 FPS=10.6
+2026-04-16 19:38:11 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:38:11 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 19:38:11 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:38:11 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (54s remaining).
+2026-04-16 19:38:11 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 19:38:12 | DEBUG    | vision.tracking           | New track: ID=26, class=0
+2026-04-16 19:38:12 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=5.2s
+2026-04-16 19:38:13 | INFO     | backend.app               | Heartbeat: frame=1050 FPS=10.8
+2026-04-16 19:38:14 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=2.0s
+2026-04-16 19:38:15 | INFO     | backend.app               | Heartbeat: frame=1080 FPS=10.6
+2026-04-16 19:38:16 | DEBUG    | vision.tracking           | New track: ID=28, class=0
+2026-04-16 19:38:18 | INFO     | backend.app               | Heartbeat: frame=1110 FPS=12.3
+2026-04-16 19:38:23 | INFO     | backend.app               | Heartbeat: frame=1140 FPS=10.0
+2026-04-16 19:38:24 | DEBUG    | vision.tracking           | New track: ID=31, class=0
+2026-04-16 19:38:24 | DEBUG    | vision.tracking           | New track: ID=32, class=2
+2026-04-16 19:38:26 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=10.1s
+2026-04-16 19:38:27 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=75.5s
+2026-04-16 19:38:27 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 19:38:27 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 19:38:27 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 19:38:27 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 19:51:17 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:51:17 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:51:17 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:51:17 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:58:38 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 19:58:44 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 19:58:44 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 19:58:44 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 19:58:44 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 19:58:44 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 19:58:44 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 19:58:44 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 19:58:44 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 19:58:44 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 19:58:44 | INFO     | backend.app               | All engines ready.
+2026-04-16 19:58:44 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 19:58:44 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 19:58:44 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 19:58:44 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-16 19:58:44 | INFO     | backend.app               | Warmup complete.
+2026-04-16 19:58:44 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\fire accident.mp4'>).
+2026-04-16 19:58:46 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 19:58:46 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 19:58:46 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-16 19:58:47 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-16 19:58:48 | INFO     | services.alert            | AI insights disabled.
+2026-04-16 19:58:50 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=4.0s
+2026-04-16 19:58:50 | INFO     | backend.app               | Heartbeat: frame=30 FPS=5.9
+2026-04-16 19:58:51 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=3.5s
+2026-04-16 19:58:54 | INFO     | backend.app               | Heartbeat: frame=60 FPS=5.3
+2026-04-16 19:58:59 | INFO     | backend.app               | Heartbeat: frame=90 FPS=7.1
+2026-04-16 19:59:00 | DEBUG    | vision.tracking           | New track: ID=6, class=0
+2026-04-16 19:59:03 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 19:59:04 | INFO     | backend.app               | Heartbeat: frame=120 FPS=6.7
+2026-04-16 19:59:04 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:59:05 | DEBUG    | vision.tracking           | New track: ID=9, class=0
+2026-04-16 19:59:06 | INFO     | backend.app               | Heartbeat: frame=150 FPS=6.2
+2026-04-16 19:59:06 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=6.6s
+2026-04-16 19:59:07 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=1.4s
+2026-04-16 19:59:08 | DEBUG    | vision.tracking           | New track: ID=10, class=0
+2026-04-16 19:59:08 | INFO     | backend.app               | Heartbeat: frame=180 FPS=15.1
+2026-04-16 19:59:10 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 19:59:10 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 19:59:10 | INFO     | backend.app               | Heartbeat: frame=210 FPS=14.5
+2026-04-16 19:59:12 | INFO     | backend.app               | Heartbeat: frame=240 FPS=12.7
+2026-04-16 19:59:14 | DEBUG    | vision.tracking           | New track: ID=13, class=0
+2026-04-16 19:59:14 | INFO     | backend.app               | Heartbeat: frame=270 FPS=12.9
+2026-04-16 19:59:15 | DEBUG    | vision.tracking           | New track: ID=14, class=0
+2026-04-16 19:59:15 | DEBUG    | vision.tracking           | New track: ID=15, class=2
+2026-04-16 19:59:15 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=7.4s
+2026-04-16 19:59:15 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=1.6s
+2026-04-16 19:59:16 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=30.2s
+2026-04-16 19:59:16 | INFO     | backend.app               | Heartbeat: frame=300 FPS=14.6
+2026-04-16 19:59:17 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=1.7s
+2026-04-16 19:59:18 | INFO     | backend.app               | Heartbeat: frame=330 FPS=15.3
+2026-04-16 19:59:20 | INFO     | backend.app               | Heartbeat: frame=360 FPS=16.4
+2026-04-16 19:59:22 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 15 made an abnormal sudden stop from high speed!
+2026-04-16 19:59:22 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:59:22 | INFO     | backend.app               | Heartbeat: frame=390 FPS=15.8
+2026-04-16 19:59:24 | INFO     | backend.app               | Heartbeat: frame=420 FPS=15.3
+2026-04-16 19:59:26 | INFO     | backend.app               | Heartbeat: frame=450 FPS=15.9
+2026-04-16 19:59:26 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 19:59:26 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 19:59:28 | INFO     | backend.app               | Heartbeat: frame=480 FPS=16.0
+2026-04-16 19:59:30 | INFO     | backend.app               | Heartbeat: frame=510 FPS=15.3
+2026-04-16 19:59:32 | INFO     | backend.app               | Heartbeat: frame=540 FPS=15.0
+2026-04-16 19:59:34 | INFO     | backend.app               | Heartbeat: frame=570 FPS=15.4
+2026-04-16 19:59:36 | INFO     | backend.app               | Heartbeat: frame=600 FPS=14.9
+2026-04-16 19:59:38 | INFO     | backend.app               | Heartbeat: frame=630 FPS=14.6
+2026-04-16 19:59:40 | INFO     | backend.app               | Heartbeat: frame=660 FPS=14.8
+2026-04-16 19:59:41 | DEBUG    | vision.tracking           | New track: ID=19, class=0
+2026-04-16 19:59:42 | INFO     | backend.app               | Heartbeat: frame=690 FPS=14.6
+2026-04-16 19:59:44 | INFO     | backend.app               | Heartbeat: frame=720 FPS=13.6
+2026-04-16 19:59:47 | INFO     | backend.app               | Heartbeat: frame=750 FPS=12.4
+2026-04-16 19:59:47 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=6.5s
+2026-04-16 19:59:49 | INFO     | backend.app               | Heartbeat: frame=780 FPS=12.1
+2026-04-16 19:59:51 | INFO     | backend.app               | Heartbeat: frame=810 FPS=13.3
+2026-04-16 19:59:53 | INFO     | backend.app               | Heartbeat: frame=840 FPS=13.2
+2026-04-16 19:59:55 | DEBUG    | vision.tracking           | New track: ID=20, class=0
+2026-04-16 19:59:55 | INFO     | backend.app               | Heartbeat: frame=870 FPS=15.6
+2026-04-16 19:59:58 | DEBUG    | vision.tracking           | New track: ID=21, class=0
+2026-04-16 19:59:58 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 20 & 21 collided — sudden stop detected!
+2026-04-16 19:59:58 | INFO     | backend.app               | Heartbeat: frame=900 FPS=14.7
+2026-04-16 19:59:58 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 19:59:58 | DEBUG    | services.email            | Email cooldown active for 'collision' (88s remaining).
+2026-04-16 19:59:58 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 19:59:59 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=4.0s
+2026-04-16 20:00:00 | INFO     | backend.app               | Heartbeat: frame=930 FPS=12.3
+2026-04-16 20:00:00 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=2.6s
+2026-04-16 20:00:02 | INFO     | backend.app               | Heartbeat: frame=960 FPS=14.5
+2026-04-16 20:00:04 | INFO     | backend.app               | Heartbeat: frame=990 FPS=15.0
+2026-04-16 20:00:06 | INFO     | backend.app               | Heartbeat: frame=1020 FPS=15.4
+2026-04-16 20:00:08 | INFO     | backend.app               | Heartbeat: frame=1050 FPS=16.0
+2026-04-16 20:00:09 | DEBUG    | vision.tracking           | New track: ID=22, class=0
+2026-04-16 20:00:10 | INFO     | backend.app               | Heartbeat: frame=1080 FPS=14.9
+2026-04-16 20:00:13 | INFO     | backend.app               | Heartbeat: frame=1110 FPS=11.8
+2026-04-16 20:00:13 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:00:13 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:00:13 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (56s remaining).
+2026-04-16 20:00:13 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:00:14 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=4.6s
+2026-04-16 20:00:14 | DEBUG    | vision.tracking           | New track: ID=26, class=0
+2026-04-16 20:00:15 | INFO     | backend.app               | Heartbeat: frame=1140 FPS=12.3
+2026-04-16 20:00:15 | DEBUG    | vision.tracking           | New track: ID=27, class=0
+2026-04-16 20:00:16 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=2.0s
+2026-04-16 20:00:17 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=1.5s
+2026-04-16 20:00:17 | INFO     | backend.app               | Heartbeat: frame=1170 FPS=16.4
+2026-04-16 20:00:18 | DEBUG    | vision.tracking           | New track: ID=28, class=0
+2026-04-16 20:00:19 | INFO     | backend.app               | Heartbeat: frame=1200 FPS=13.2
+2026-04-16 20:00:22 | INFO     | backend.app               | Heartbeat: frame=1230 FPS=13.1
+2026-04-16 20:00:24 | INFO     | backend.app               | Heartbeat: frame=1260 FPS=12.3
+2026-04-16 20:00:24 | DEBUG    | vision.tracking           | New track: ID=31, class=0
+2026-04-16 20:00:25 | DEBUG    | vision.tracking           | New track: ID=32, class=0
+2026-04-16 20:00:25 | DEBUG    | vision.tracking           | New track: ID=33, class=2
+2026-04-16 20:00:25 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=7.6s
+2026-04-16 20:00:26 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=1.6s
+2026-04-16 20:00:26 | INFO     | backend.app               | Heartbeat: frame=1290 FPS=13.8
+2026-04-16 20:00:26 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=71.4s
+2026-04-16 20:00:27 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=1.7s
+2026-04-16 20:00:28 | INFO     | backend.app               | Heartbeat: frame=1320 FPS=14.4
+2026-04-16 20:00:30 | INFO     | backend.app               | Heartbeat: frame=1350 FPS=16.1
+2026-04-16 20:00:32 | INFO     | backend.app               | Heartbeat: frame=1380 FPS=15.8
+2026-04-16 20:00:32 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 33 made an abnormal sudden stop from high speed!
+2026-04-16 20:00:32 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:00:32 | DEBUG    | services.email            | Email cooldown active for 'collision' (54s remaining).
+2026-04-16 20:00:32 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:00:34 | INFO     | backend.app               | Heartbeat: frame=1410 FPS=14.4
+2026-04-16 20:00:36 | INFO     | backend.app               | Heartbeat: frame=1440 FPS=14.1
+2026-04-16 20:00:38 | INFO     | backend.app               | Heartbeat: frame=1470 FPS=14.6
+2026-04-16 20:00:40 | INFO     | backend.app               | Heartbeat: frame=1500 FPS=14.5
+2026-04-16 20:00:42 | INFO     | backend.app               | Heartbeat: frame=1530 FPS=14.8
+2026-04-16 20:00:44 | INFO     | backend.app               | Heartbeat: frame=1560 FPS=14.5
+2026-04-16 20:00:46 | INFO     | backend.app               | Heartbeat: frame=1590 FPS=14.9
+2026-04-16 20:00:48 | INFO     | backend.app               | Heartbeat: frame=1620 FPS=14.2
+2026-04-16 20:00:50 | INFO     | backend.app               | Heartbeat: frame=1650 FPS=15.2
+2026-04-16 20:00:52 | DEBUG    | vision.tracking           | New track: ID=37, class=0
+2026-04-16 20:00:53 | INFO     | backend.app               | Heartbeat: frame=1680 FPS=13.4
+2026-04-16 20:00:55 | INFO     | backend.app               | Heartbeat: frame=1710 FPS=13.8
+2026-04-16 20:00:58 | INFO     | backend.app               | Heartbeat: frame=1740 FPS=12.0
+2026-04-16 20:00:59 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=6.7s
+2026-04-16 20:01:00 | INFO     | backend.app               | Heartbeat: frame=1770 FPS=11.7
+2026-04-16 20:01:02 | INFO     | backend.app               | Heartbeat: frame=1800 FPS=15.1
+2026-04-16 20:01:04 | INFO     | backend.app               | Heartbeat: frame=1830 FPS=12.7
+2026-04-16 20:01:06 | INFO     | backend.app               | Heartbeat: frame=1860 FPS=14.3
+2026-04-16 20:01:07 | DEBUG    | vision.tracking           | New track: ID=38, class=0
+2026-04-16 20:01:09 | INFO     | backend.app               | Heartbeat: frame=1890 FPS=14.9
+2026-04-16 20:01:09 | DEBUG    | vision.tracking           | New track: ID=39, class=0
+2026-04-16 20:01:09 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 38 & 39 collided — sudden stop detected!
+2026-04-16 20:01:10 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:01:10 | DEBUG    | services.email            | Email cooldown active for 'collision' (16s remaining).
+2026-04-16 20:01:10 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:01:11 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=4.3s
+2026-04-16 20:01:11 | INFO     | backend.app               | Heartbeat: frame=1920 FPS=12.2
+2026-04-16 20:01:12 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=2.2s
+2026-04-16 20:01:14 | INFO     | backend.app               | Heartbeat: frame=1950 FPS=10.3
+2026-04-16 20:01:16 | INFO     | backend.app               | Heartbeat: frame=1980 FPS=14.0
+2026-04-16 20:01:18 | INFO     | backend.app               | Heartbeat: frame=2010 FPS=15.3
+2026-04-16 20:01:20 | INFO     | backend.app               | Heartbeat: frame=2040 FPS=14.7
+2026-04-16 20:01:21 | DEBUG    | vision.tracking           | New track: ID=42, class=0
+2026-04-16 20:01:22 | INFO     | backend.app               | Heartbeat: frame=2070 FPS=15.0
+2026-04-16 20:01:24 | INFO     | backend.app               | Heartbeat: frame=2100 FPS=14.4
+2026-04-16 20:01:25 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:01:25 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:01:26 | DEBUG    | vision.tracking           | Track exited: ID=42 duration=4.4s
+2026-04-16 20:01:26 | INFO     | backend.app               | Heartbeat: frame=2130 FPS=12.7
+2026-04-16 20:01:26 | DEBUG    | vision.tracking           | New track: ID=46, class=0
+2026-04-16 20:01:27 | DEBUG    | vision.tracking           | New track: ID=47, class=0
+2026-04-16 20:01:28 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=1.8s
+2026-04-16 20:01:28 | DEBUG    | vision.tracking           | Track exited: ID=47 duration=1.3s
+2026-04-16 20:01:28 | INFO     | backend.app               | Heartbeat: frame=2160 FPS=16.9
+2026-04-16 20:01:29 | DEBUG    | vision.tracking           | New track: ID=48, class=0
+2026-04-16 20:01:29 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 20:01:29 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:01:30 | INFO     | backend.app               | Heartbeat: frame=2190 FPS=14.0
+2026-04-16 20:01:32 | INFO     | backend.app               | Heartbeat: frame=2220 FPS=14.2
+2026-04-16 20:01:35 | INFO     | backend.app               | Heartbeat: frame=2250 FPS=12.6
+2026-04-16 20:01:35 | DEBUG    | vision.tracking           | New track: ID=51, class=0
+2026-04-16 20:01:36 | DEBUG    | vision.tracking           | New track: ID=52, class=0
+2026-04-16 20:01:36 | DEBUG    | vision.tracking           | New track: ID=53, class=2
+2026-04-16 20:01:37 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=7.6s
+2026-04-16 20:01:37 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=1.6s
+2026-04-16 20:01:37 | INFO     | backend.app               | Heartbeat: frame=2280 FPS=12.3
+2026-04-16 20:01:38 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=72.5s
+2026-04-16 20:01:38 | DEBUG    | vision.tracking           | Track exited: ID=52 duration=1.7s
+2026-04-16 20:01:39 | INFO     | backend.app               | Heartbeat: frame=2310 FPS=13.9
+2026-04-16 20:01:41 | INFO     | backend.app               | Heartbeat: frame=2340 FPS=15.4
+2026-04-16 20:01:43 | INFO     | backend.app               | Heartbeat: frame=2370 FPS=15.1
+2026-04-16 20:01:44 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 53 made an abnormal sudden stop from high speed!
+2026-04-16 20:01:44 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:01:45 | INFO     | backend.app               | Heartbeat: frame=2400 FPS=15.4
+2026-04-16 20:01:47 | INFO     | backend.app               | Heartbeat: frame=2430 FPS=14.3
+2026-04-16 20:01:49 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:01:49 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:01:49 | INFO     | backend.app               | Heartbeat: frame=2460 FPS=14.9
+2026-04-16 20:01:51 | INFO     | backend.app               | Heartbeat: frame=2490 FPS=15.3
+2026-04-16 20:01:53 | INFO     | backend.app               | Heartbeat: frame=2520 FPS=14.9
+2026-04-16 20:01:55 | INFO     | backend.app               | Heartbeat: frame=2550 FPS=13.9
+2026-04-16 20:01:57 | INFO     | backend.app               | Heartbeat: frame=2580 FPS=14.5
+2026-04-16 20:01:59 | INFO     | backend.app               | Heartbeat: frame=2610 FPS=15.3
+2026-04-16 20:02:02 | INFO     | backend.app               | Heartbeat: frame=2640 FPS=14.1
+2026-04-16 20:02:04 | DEBUG    | vision.tracking           | New track: ID=57, class=0
+2026-04-16 20:02:05 | INFO     | backend.app               | Heartbeat: frame=2670 FPS=11.7
+2026-04-16 20:02:07 | INFO     | backend.app               | Heartbeat: frame=2700 FPS=11.1
+2026-04-16 20:02:10 | INFO     | backend.app               | Heartbeat: frame=2730 FPS=10.8
+2026-04-16 20:02:12 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=7.6s
+2026-04-16 20:02:13 | INFO     | backend.app               | Heartbeat: frame=2760 FPS=10.6
+2026-04-16 20:02:15 | INFO     | backend.app               | Heartbeat: frame=2790 FPS=12.7
+2026-04-16 20:02:17 | INFO     | backend.app               | Heartbeat: frame=2820 FPS=13.0
+2026-04-16 20:02:19 | INFO     | backend.app               | Heartbeat: frame=2850 FPS=14.2
+2026-04-16 20:02:20 | DEBUG    | vision.tracking           | New track: ID=58, class=0
+2026-04-16 20:02:21 | INFO     | backend.app               | Heartbeat: frame=2880 FPS=15.1
+2026-04-16 20:02:23 | DEBUG    | vision.tracking           | New track: ID=59, class=0
+2026-04-16 20:02:23 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 58 & 59 collided — sudden stop detected!
+2026-04-16 20:02:23 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:02:23 | DEBUG    | services.email            | Email cooldown active for 'collision' (86s remaining).
+2026-04-16 20:02:23 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:02:24 | INFO     | backend.app               | Heartbeat: frame=2910 FPS=12.5
+2026-04-16 20:02:24 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=4.1s
+2026-04-16 20:02:25 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=2.7s
+2026-04-16 20:02:26 | INFO     | backend.app               | Heartbeat: frame=2940 FPS=12.4
+2026-04-16 20:02:28 | INFO     | backend.app               | Heartbeat: frame=2970 FPS=14.3
+2026-04-16 20:02:30 | INFO     | backend.app               | Heartbeat: frame=3000 FPS=14.4
+2026-04-16 20:02:32 | INFO     | backend.app               | Heartbeat: frame=3030 FPS=14.4
+2026-04-16 20:02:34 | INFO     | backend.app               | Heartbeat: frame=3060 FPS=14.6
+2026-04-16 20:02:35 | DEBUG    | vision.tracking           | New track: ID=60, class=0
+2026-04-16 20:02:36 | INFO     | backend.app               | Heartbeat: frame=3090 FPS=15.3
+2026-04-16 20:02:38 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:02:38 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:02:38 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (51s remaining).
+2026-04-16 20:02:38 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:02:39 | INFO     | backend.app               | Heartbeat: frame=3120 FPS=12.5
+2026-04-16 20:02:39 | DEBUG    | vision.tracking           | Track exited: ID=60 duration=4.5s
+2026-04-16 20:02:39 | DEBUG    | vision.tracking           | New track: ID=64, class=0
+2026-04-16 20:02:40 | DEBUG    | vision.tracking           | New track: ID=65, class=0
+2026-04-16 20:02:41 | INFO     | backend.app               | Heartbeat: frame=3150 FPS=14.6
+2026-04-16 20:02:41 | DEBUG    | vision.tracking           | Track exited: ID=64 duration=1.9s
+2026-04-16 20:02:41 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=1.4s
+2026-04-16 20:02:43 | DEBUG    | vision.tracking           | New track: ID=66, class=0
+2026-04-16 20:02:43 | INFO     | backend.app               | Heartbeat: frame=3180 FPS=14.5
+2026-04-16 20:02:45 | INFO     | backend.app               | Heartbeat: frame=3210 FPS=14.0
+2026-04-16 20:02:48 | INFO     | backend.app               | Heartbeat: frame=3240 FPS=12.4
+2026-04-16 20:02:49 | DEBUG    | vision.tracking           | New track: ID=69, class=0
+2026-04-16 20:02:50 | INFO     | backend.app               | Heartbeat: frame=3270 FPS=12.7
+2026-04-16 20:02:50 | DEBUG    | vision.tracking           | New track: ID=70, class=0
+2026-04-16 20:02:50 | DEBUG    | vision.tracking           | New track: ID=71, class=2
+2026-04-16 20:02:50 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=7.5s
+2026-04-16 20:02:50 | DEBUG    | vision.tracking           | Track exited: ID=69 duration=1.6s
+2026-04-16 20:02:51 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=74.6s
+2026-04-16 20:02:52 | DEBUG    | vision.tracking           | Track exited: ID=70 duration=1.8s
+2026-04-16 20:02:52 | INFO     | backend.app               | Heartbeat: frame=3300 FPS=14.5
+2026-04-16 20:02:54 | INFO     | backend.app               | Heartbeat: frame=3330 FPS=14.6
+2026-04-16 20:02:56 | INFO     | backend.app               | Heartbeat: frame=3360 FPS=12.8
+2026-04-16 20:02:57 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 71 made an abnormal sudden stop from high speed!
+2026-04-16 20:02:58 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:02:58 | DEBUG    | services.email            | Email cooldown active for 'collision' (51s remaining).
+2026-04-16 20:02:58 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:02:58 | INFO     | backend.app               | Heartbeat: frame=3390 FPS=13.4
+2026-04-16 20:03:00 | INFO     | backend.app               | Heartbeat: frame=3420 FPS=14.5
+2026-04-16 20:03:02 | INFO     | backend.app               | Heartbeat: frame=3450 FPS=14.7
+2026-04-16 20:03:04 | INFO     | backend.app               | Heartbeat: frame=3480 FPS=15.1
+2026-04-16 20:03:06 | INFO     | backend.app               | Heartbeat: frame=3510 FPS=15.1
+2026-04-16 20:03:08 | INFO     | backend.app               | Heartbeat: frame=3540 FPS=15.2
+2026-04-16 20:03:10 | INFO     | backend.app               | Heartbeat: frame=3570 FPS=15.3
+2026-04-16 20:03:12 | INFO     | backend.app               | Heartbeat: frame=3600 FPS=15.2
+2026-04-16 20:03:14 | INFO     | backend.app               | Heartbeat: frame=3630 FPS=14.9
+2026-04-16 20:03:16 | INFO     | backend.app               | Heartbeat: frame=3660 FPS=15.2
+2026-04-16 20:03:17 | DEBUG    | vision.tracking           | New track: ID=75, class=0
+2026-04-16 20:03:19 | INFO     | backend.app               | Heartbeat: frame=3690 FPS=15.1
+2026-04-16 20:03:21 | INFO     | backend.app               | Heartbeat: frame=3720 FPS=12.8
+2026-04-16 20:03:23 | INFO     | backend.app               | Heartbeat: frame=3750 FPS=13.1
+2026-04-16 20:03:23 | DEBUG    | vision.tracking           | Track exited: ID=75 duration=6.4s
+2026-04-16 20:03:25 | INFO     | backend.app               | Heartbeat: frame=3780 FPS=13.8
+2026-04-16 20:03:27 | INFO     | backend.app               | Heartbeat: frame=3810 FPS=15.2
+2026-04-16 20:03:29 | INFO     | backend.app               | Heartbeat: frame=3840 FPS=15.2
+2026-04-16 20:03:31 | DEBUG    | vision.tracking           | New track: ID=76, class=0
+2026-04-16 20:03:31 | INFO     | backend.app               | Heartbeat: frame=3870 FPS=15.2
+2026-04-16 20:03:33 | DEBUG    | vision.tracking           | New track: ID=78, class=0
+2026-04-16 20:03:33 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 76 & 78 collided — sudden stop detected!
+2026-04-16 20:03:33 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:03:33 | DEBUG    | services.email            | Email cooldown active for 'collision' (15s remaining).
+2026-04-16 20:03:33 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:03:34 | INFO     | backend.app               | Heartbeat: frame=3900 FPS=14.4
+2026-04-16 20:03:35 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=4.1s
+2026-04-16 20:03:36 | INFO     | backend.app               | Heartbeat: frame=3930 FPS=11.3
+2026-04-16 20:03:36 | DEBUG    | vision.tracking           | Track exited: ID=78 duration=2.4s
+2026-04-16 20:03:38 | INFO     | backend.app               | Heartbeat: frame=3960 FPS=14.1
+2026-04-16 20:03:40 | INFO     | backend.app               | Heartbeat: frame=3990 FPS=14.7
+2026-04-16 20:03:42 | INFO     | backend.app               | Heartbeat: frame=4020 FPS=15.2
+2026-04-16 20:03:44 | INFO     | backend.app               | Heartbeat: frame=4050 FPS=15.2
+2026-04-16 20:03:45 | DEBUG    | vision.tracking           | New track: ID=79, class=0
+2026-04-16 20:03:46 | INFO     | backend.app               | Heartbeat: frame=4080 FPS=15.2
+2026-04-16 20:03:48 | INFO     | backend.app               | Heartbeat: frame=4110 FPS=13.4
+2026-04-16 20:03:49 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:03:49 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:03:49 | DEBUG    | vision.tracking           | Track exited: ID=79 duration=4.5s
+2026-04-16 20:03:50 | DEBUG    | vision.tracking           | New track: ID=83, class=0
+2026-04-16 20:03:50 | DEBUG    | vision.tracking           | New track: ID=84, class=0
+2026-04-16 20:03:50 | INFO     | backend.app               | Heartbeat: frame=4140 FPS=12.7
+2026-04-16 20:03:52 | DEBUG    | vision.tracking           | Track exited: ID=83 duration=1.9s
+2026-04-16 20:03:52 | DEBUG    | vision.tracking           | Track exited: ID=84 duration=1.4s
+2026-04-16 20:03:52 | INFO     | backend.app               | Heartbeat: frame=4170 FPS=15.6
+2026-04-16 20:03:53 | DEBUG    | vision.tracking           | New track: ID=85, class=0
+2026-04-16 20:03:54 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 20:03:54 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:03:55 | INFO     | backend.app               | Heartbeat: frame=4200 FPS=14.9
+2026-04-16 20:03:57 | INFO     | backend.app               | Heartbeat: frame=4230 FPS=13.2
+2026-04-16 20:03:59 | DEBUG    | vision.tracking           | New track: ID=88, class=0
+2026-04-16 20:03:59 | INFO     | backend.app               | Heartbeat: frame=4260 FPS=12.9
+2026-04-16 20:04:00 | DEBUG    | vision.tracking           | New track: ID=89, class=0
+2026-04-16 20:04:00 | DEBUG    | vision.tracking           | New track: ID=90, class=2
+2026-04-16 20:04:00 | DEBUG    | vision.tracking           | Track exited: ID=85 duration=7.4s
+2026-04-16 20:04:00 | DEBUG    | vision.tracking           | Track exited: ID=88 duration=1.7s
+2026-04-16 20:04:01 | INFO     | backend.app               | Heartbeat: frame=4290 FPS=14.0
+2026-04-16 20:04:01 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=71.3s
+2026-04-16 20:04:02 | DEBUG    | vision.tracking           | Track exited: ID=89 duration=1.8s
+2026-04-16 20:04:03 | INFO     | backend.app               | Heartbeat: frame=4320 FPS=14.3
+2026-04-16 20:04:05 | INFO     | backend.app               | Heartbeat: frame=4350 FPS=15.6
+2026-04-16 20:04:07 | INFO     | backend.app               | Heartbeat: frame=4380 FPS=15.3
+2026-04-16 20:04:07 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 90 made an abnormal sudden stop from high speed!
+2026-04-16 20:04:07 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:04:09 | INFO     | backend.app               | Heartbeat: frame=4410 FPS=15.0
+2026-04-16 20:04:11 | INFO     | backend.app               | Heartbeat: frame=4440 FPS=14.6
+2026-04-16 20:04:13 | INFO     | backend.app               | Heartbeat: frame=4470 FPS=15.1
+2026-04-16 20:04:14 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:04:14 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:04:15 | INFO     | backend.app               | Heartbeat: frame=4500 FPS=14.8
+2026-04-16 20:04:17 | INFO     | backend.app               | Heartbeat: frame=4530 FPS=13.6
+2026-04-16 20:04:19 | INFO     | backend.app               | Heartbeat: frame=4560 FPS=14.9
+2026-04-16 20:04:21 | INFO     | backend.app               | Heartbeat: frame=4590 FPS=15.1
+2026-04-16 20:04:23 | INFO     | backend.app               | Heartbeat: frame=4620 FPS=14.8
+2026-04-16 20:04:25 | INFO     | backend.app               | Heartbeat: frame=4650 FPS=15.1
+2026-04-16 20:04:27 | DEBUG    | vision.tracking           | New track: ID=94, class=0
+2026-04-16 20:04:28 | INFO     | backend.app               | Heartbeat: frame=4680 FPS=14.6
+2026-04-16 20:04:30 | INFO     | backend.app               | Heartbeat: frame=4710 FPS=13.7
+2026-04-16 20:04:32 | INFO     | backend.app               | Heartbeat: frame=4740 FPS=12.9
+2026-04-16 20:04:33 | DEBUG    | vision.tracking           | Track exited: ID=94 duration=6.4s
+2026-04-16 20:04:34 | INFO     | backend.app               | Heartbeat: frame=4770 FPS=12.9
+2026-04-16 20:04:36 | INFO     | backend.app               | Heartbeat: frame=4800 FPS=14.6
+2026-04-16 20:04:38 | INFO     | backend.app               | Heartbeat: frame=4830 FPS=15.2
+2026-04-16 20:04:40 | INFO     | backend.app               | Heartbeat: frame=4860 FPS=15.0
+2026-04-16 20:04:41 | DEBUG    | vision.tracking           | New track: ID=95, class=0
+2026-04-16 20:04:43 | INFO     | backend.app               | Heartbeat: frame=4890 FPS=15.1
+2026-04-16 20:04:43 | DEBUG    | vision.tracking           | New track: ID=96, class=0
+2026-04-16 20:04:43 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 95 & 96 collided — sudden stop detected!
+2026-04-16 20:04:44 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:04:44 | DEBUG    | services.email            | Email cooldown active for 'collision' (90s remaining).
+2026-04-16 20:04:44 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:04:45 | DEBUG    | vision.tracking           | Track exited: ID=95 duration=4.1s
+2026-04-16 20:04:45 | INFO     | backend.app               | Heartbeat: frame=4920 FPS=12.4
+2026-04-16 20:04:46 | DEBUG    | vision.tracking           | Track exited: ID=96 duration=2.6s
+2026-04-16 20:04:47 | INFO     | backend.app               | Heartbeat: frame=4950 FPS=12.5
+2026-04-16 20:04:49 | INFO     | backend.app               | Heartbeat: frame=4980 FPS=14.2
+2026-04-16 20:04:51 | INFO     | backend.app               | Heartbeat: frame=5010 FPS=13.7
+2026-04-16 20:04:54 | INFO     | backend.app               | Heartbeat: frame=5040 FPS=14.1
+2026-04-16 20:04:56 | DEBUG    | vision.tracking           | New track: ID=97, class=0
+2026-04-16 20:04:56 | INFO     | backend.app               | Heartbeat: frame=5070 FPS=14.2
+2026-04-16 20:04:58 | INFO     | backend.app               | Heartbeat: frame=5100 FPS=13.8
+2026-04-16 20:04:59 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:04:59 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:04:59 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (54s remaining).
+2026-04-16 20:04:59 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:05:00 | INFO     | backend.app               | Heartbeat: frame=5130 FPS=12.4
+2026-04-16 20:05:00 | DEBUG    | vision.tracking           | Track exited: ID=97 duration=4.4s
+2026-04-16 20:05:00 | DEBUG    | vision.tracking           | New track: ID=101, class=0
+2026-04-16 20:05:01 | DEBUG    | vision.tracking           | New track: ID=102, class=0
+2026-04-16 20:05:02 | INFO     | backend.app               | Heartbeat: frame=5160 FPS=16.6
+2026-04-16 20:05:02 | DEBUG    | vision.tracking           | Track exited: ID=101 duration=1.8s
+2026-04-16 20:05:03 | DEBUG    | vision.tracking           | Track exited: ID=102 duration=1.3s
+2026-04-16 20:05:04 | DEBUG    | vision.tracking           | New track: ID=103, class=0
+2026-04-16 20:05:04 | INFO     | backend.app               | Heartbeat: frame=5190 FPS=13.8
+2026-04-16 20:05:07 | INFO     | backend.app               | Heartbeat: frame=5220 FPS=14.5
+2026-04-16 20:05:09 | INFO     | backend.app               | Heartbeat: frame=5250 FPS=12.2
+2026-04-16 20:05:10 | DEBUG    | vision.tracking           | New track: ID=106, class=0
+2026-04-16 20:05:11 | DEBUG    | vision.tracking           | New track: ID=107, class=0
+2026-04-16 20:05:11 | DEBUG    | vision.tracking           | New track: ID=108, class=2
+2026-04-16 20:05:11 | INFO     | backend.app               | Heartbeat: frame=5280 FPS=13.6
+2026-04-16 20:05:11 | DEBUG    | vision.tracking           | Track exited: ID=103 duration=7.5s
+2026-04-16 20:05:11 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=1.6s
+2026-04-16 20:05:12 | DEBUG    | vision.tracking           | Track exited: ID=90 duration=72.1s
+2026-04-16 20:05:13 | DEBUG    | vision.tracking           | Track exited: ID=107 duration=1.8s
+2026-04-16 20:05:13 | INFO     | backend.app               | Heartbeat: frame=5310 FPS=13.5
+2026-04-16 20:05:15 | INFO     | backend.app               | Heartbeat: frame=5340 FPS=15.5
+2026-04-16 20:05:17 | INFO     | backend.app               | Heartbeat: frame=5370 FPS=15.8
+2026-04-16 20:05:18 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 108 made an abnormal sudden stop from high speed!
+2026-04-16 20:05:18 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:05:18 | DEBUG    | services.email            | Email cooldown active for 'collision' (56s remaining).
+2026-04-16 20:05:18 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 20:05:19 | INFO     | backend.app               | Heartbeat: frame=5400 FPS=15.6
+2026-04-16 20:05:21 | INFO     | backend.app               | Heartbeat: frame=5430 FPS=14.5
+2026-04-16 20:05:23 | INFO     | backend.app               | Heartbeat: frame=5460 FPS=14.7
+2026-04-16 20:05:25 | INFO     | backend.app               | Heartbeat: frame=5490 FPS=15.0
