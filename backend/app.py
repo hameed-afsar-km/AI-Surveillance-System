@@ -254,44 +254,53 @@ def _inference_loop() -> None:
 
 def _mjpeg_generator():
     """
-    Streams at full camera FPS by ALWAYS compositing the latest raw frame
-    with last-known detections. Never queues on inference — the video
-    advances at camera speed, bounding boxes update at inference speed.
+    Streams at full camera FPS.
+    Fix: Ensures we always yield something so Flask worker threads don't livelock.
     """
-    target_interval = 1.0 / 30.0  # Hard 30fps cap
+    target_interval = 1.0 / 30.0
     encode_params = [int(cv2.IMWRITE_JPEG_QUALITY), 75]
+    
+    # Pre-create a "No Signal" black frame to save CPU
+    no_signal = np.zeros((480, 640, 3), dtype=np.uint8)
+    cv2.putText(no_signal, "INITIALIZING FEED...", (160, 240),
+                cv2.FONT_HERSHEY_SIMPLEX, 1.0, (100, 100, 100), 2)
+    _, no_signal_buf = cv2.imencode('.jpg', no_signal, encode_params)
+    no_signal_bytes = (
+        b'--frame\r\n'
+        b'Content-Type: image/jpeg\r\n\r\n' + no_signal_buf.tobytes() + b'\r\n'
+    )
 
     while True:
         t0 = time.time()
 
-        # Always grab the freshest raw frame
         with _raw_frame_lock:
             raw = _latest_raw_frame
 
         if raw is not None:
-            frame = raw.copy()
-
-            # Overlay last-known bounding boxes (from inference thread)
-            with _tracks_lock:
-                tracks = list(_last_tracks)
-                dec = _last_decision
-
-            if _tracker is not None and tracks:
-                try:
-                    frame = _tracker.draw(frame, tracks)
-                except Exception:
-                    pass
-
-            _draw_overlay(frame, len(tracks), dec)
-
             try:
+                frame = raw.copy()
+
+                with _tracks_lock:
+                    tracks = list(_last_tracks)
+                    dec = _last_decision
+
+                if _tracker is not None and tracks:
+                    frame = _tracker.draw(frame, tracks)
+
+                _draw_overlay(frame, len(tracks), dec)
+
                 _, buf = cv2.imencode('.jpg', frame, encode_params)
                 yield (
                     b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + buf.tobytes() + b'\r\n'
                 )
-            except Exception:
-                pass
+            except Exception as e:
+                log.error("Stream encode error: %s", e)
+                yield no_signal_bytes
+        else:
+            # Important: Yield a placeholder so the connection doesn't hang
+            # and the worker thread can be reclaimed if the client leaves.
+            yield no_signal_bytes
 
         # Throttle to 30fps
         elapsed = time.time() - t0

@@ -11,6 +11,8 @@ from dotenv import load_dotenv
 os.environ.setdefault("OMP_NUM_THREADS", "2")
 os.environ.setdefault("MKL_NUM_THREADS", "2")
 os.environ.setdefault("KMP_DUPLICATE_LIB_OK", "TRUE")
+os.environ.setdefault("ULTRALYTICS_OFFLINE", "TRUE")
+os.environ.setdefault("YOLO_VERBOSE", "FALSE")
 
 # Resolve project root (two levels up from backend/)
 ROOT_DIR = Path(__file__).resolve().parent.parent

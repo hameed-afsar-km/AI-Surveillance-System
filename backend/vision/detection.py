@@ -70,25 +70,41 @@ class ObjectDetector:
         if self._initialized:
             return
         self._initialized = True
-        self._load_model()
+        self._model = None
+        self._model_lock = threading.Lock()
 
     # ── init ──────────────────────────────────────────────────────────────────
 
     def _load_model(self) -> None:
-        from ultralytics import YOLO  # deferred import for fast startup
+        with self._model_lock:
+            if self._model is not None:
+                return
+            
+            # Prevent hangs/online checks
+            import os
+            os.environ["ULTRALYTICS_OFFLINE"] = "True"
+            os.environ["YOLO_VERBOSE"] = "False"
 
-        model_path = cfg.YOLO_MODEL_PATH
-        if not model_path.exists():
-            log.info("YOLOv8 model not found locally – downloading yolov8n.pt …")
-            model_path.parent.mkdir(parents=True, exist_ok=True)
+            from ultralytics import YOLO  # deferred import
 
-        log.info("Loading YOLOv8 model from: %s", model_path)
-        self._model = YOLO(str(model_path))
-        
-        import torch
-        device = 'cuda' if torch.cuda.is_available() else 'cpu'
-        self._model.to(device)
-        log.info(f"YOLOv8 initialized on device: {device.upper()}")
+            model_path = cfg.YOLO_MODEL_PATH
+            if not model_path.exists():
+                log.info("YOLOv8 model not found locally – downloading yolov8n.pt …")
+                model_path.parent.mkdir(parents=True, exist_ok=True)
+
+            log.info("Loading YOLOv8 model from: %s", model_path)
+            self._model = YOLO(str(model_path))
+            
+            import torch
+            # On some Windows systems, CUDA initialization can be the source of hangs.
+            # We'll try to check it quickly.
+            try:
+                device = 'cuda' if torch.cuda.is_available() else 'cpu'
+            except Exception:
+                device = 'cpu'
+                
+            self._model.to(device)
+            log.info(f"YOLOv8 initialized on device: {device.upper()}")
 
     # ── public ────────────────────────────────────────────────────────────────
 
@@ -98,6 +114,9 @@ class ObjectDetector:
 
         Returns list of Detection objects for class 'person' only.
         """
+        if self._model is None:
+            self._load_model()
+
         if frame is None or frame.size == 0:
             return []
 
