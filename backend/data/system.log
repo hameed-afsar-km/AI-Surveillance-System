@@ -7850,3 +7850,245 @@ AttributeError: 'Track' object has no attribute 'class_id'
 2026-04-16 20:05:21 | INFO     | backend.app               | Heartbeat: frame=5430 FPS=14.5
 2026-04-16 20:05:23 | INFO     | backend.app               | Heartbeat: frame=5460 FPS=14.7
 2026-04-16 20:05:25 | INFO     | backend.app               | Heartbeat: frame=5490 FPS=15.0
+2026-04-16 20:05:27 | INFO     | backend.app               | Heartbeat: frame=5520 FPS=14.7
+2026-04-16 20:05:27 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 20:05:29 | INFO     | backend.app               | Heartbeat: frame=5550 FPS=14.0
+2026-04-16 20:05:31 | INFO     | backend.app               | Heartbeat: frame=5580 FPS=14.5
+2026-04-16 20:05:33 | INFO     | backend.app               | Heartbeat: frame=5610 FPS=15.0
+2026-04-16 20:05:35 | INFO     | backend.app               | Heartbeat: frame=5640 FPS=14.7
+2026-04-16 20:05:37 | INFO     | backend.app               | Heartbeat: frame=5670 FPS=14.5
+2026-04-16 20:05:38 | DEBUG    | vision.tracking           | New track: ID=112, class=0
+2026-04-16 20:05:40 | INFO     | backend.app               | Heartbeat: frame=5700 FPS=15.0
+2026-04-16 20:05:42 | INFO     | backend.app               | Heartbeat: frame=5730 FPS=12.5
+2026-04-16 20:05:44 | DEBUG    | vision.tracking           | Track exited: ID=112 duration=6.4s
+2026-04-16 20:05:44 | INFO     | backend.app               | Heartbeat: frame=5760 FPS=12.8
+2026-04-16 20:05:49 | INFO     | backend.app               | Heartbeat: frame=5790 FPS=14.5
+2026-04-16 20:05:49 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 20:05:49 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 20:05:49 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 20:05:49 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 20:05:51 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-16 20:05:51 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-16 20:05:51 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 20:05:51 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 20:05:51 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 20:05:51 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 20:05:51 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 20:05:51 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 20:05:51 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 20:05:51 | INFO     | backend.app               | All engines ready.
+2026-04-16 20:05:51 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 20:05:51 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 20:05:51 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 20:05:51 | INFO     | backend.app               | System started (mode=file, source=car bike collision.mp4).
+2026-04-16 20:05:52 | INFO     | backend.app               | Warmup complete.
+2026-04-16 20:05:52 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\car bike collision.mp4'>).
+2026-04-16 20:05:53 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=2, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=3, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=5, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=6, class=2
+2026-04-16 20:05:53 | DEBUG    | vision.tracking           | New track: ID=7, class=2
+2026-04-16 20:05:55 | DEBUG    | vision.tracking           | New track: ID=8, class=2
+2026-04-16 20:05:56 | DEBUG    | vision.tracking           | New track: ID=10, class=2
+2026-04-16 20:05:58 | DEBUG    | vision.tracking           | New track: ID=12, class=2
+2026-04-16 20:05:58 | DEBUG    | vision.tracking           | New track: ID=13, class=2
+2026-04-16 20:06:01 | DEBUG    | vision.tracking           | New track: ID=16, class=0
+2026-04-16 20:06:01 | DEBUG    | vision.tracking           | New track: ID=17, class=0
+2026-04-16 20:06:01 | DEBUG    | vision.tracking           | New track: ID=18, class=7
+2026-04-16 20:06:02 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:06:02 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 3 & 18 collided — sudden stop detected!
+2026-04-16 20:06:02 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:02 | DEBUG    | vision.tracking           | New track: ID=19, class=3
+2026-04-16 20:06:02 | DEBUG    | vision.tracking           | New track: ID=21, class=0
+2026-04-16 20:06:03 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:06:03 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=16 | Overcrowding: Dense cluster of 11 vehicles in a localised area.
+2026-04-16 20:06:03 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:03 | DEBUG    | vision.tracking           | New track: ID=24, class=2
+2026-04-16 20:06:03 | DEBUG    | vision.tracking           | New track: ID=25, class=0
+2026-04-16 20:06:04 | INFO     | backend.app               | Heartbeat: frame=30 FPS=6.6
+2026-04-16 20:06:04 | DEBUG    | vision.tracking           | New track: ID=27, class=0
+2026-04-16 20:06:04 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=9.4s
+2026-04-16 20:06:05 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=7.2s
+2026-04-16 20:06:07 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=5.9s
+2026-04-16 20:06:07 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:06:07 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:07 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=5.6s
+2026-04-16 20:06:07 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=8.9s
+2026-04-16 20:06:07 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=4.8s
+2026-04-16 20:06:07 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=4.8s
+2026-04-16 20:06:08 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 20:06:08 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-16 20:06:08 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 20:06:08 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 20:06:11 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\normal flow.mp4' @ 30.0 fps
+2026-04-16 20:06:11 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-16 20:06:11 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 20:06:11 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 20:06:11 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 20:06:11 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 20:06:11 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 20:06:11 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 20:06:11 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 20:06:11 | INFO     | backend.app               | All engines ready.
+2026-04-16 20:06:11 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 20:06:11 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 20:06:11 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 20:06:11 | INFO     | backend.app               | System started (mode=file, source=normal flow.mp4).
+2026-04-16 20:06:11 | INFO     | backend.app               | Warmup complete.
+2026-04-16 20:06:11 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\normal flow.mp4'>).
+2026-04-16 20:06:11 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 20:06:11 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:12 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=7, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=8, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=9, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=10, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=13, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=14, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=15, class=2
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=16, class=5
+2026-04-16 20:06:12 | DEBUG    | vision.tracking           | New track: ID=17, class=2
+2026-04-16 20:06:13 | DEBUG    | vision.tracking           | New track: ID=19, class=2
+2026-04-16 20:06:13 | DEBUG    | vision.tracking           | New track: ID=22, class=5
+2026-04-16 20:06:13 | DEBUG    | vision.tracking           | New track: ID=23, class=2
+2026-04-16 20:06:14 | DEBUG    | vision.tracking           | New track: ID=24, class=2
+2026-04-16 20:06:14 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:06:14 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=14 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 20:06:14 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:14 | DEBUG    | vision.tracking           | New track: ID=25, class=2
+2026-04-16 20:06:16 | DEBUG    | vision.tracking           | New track: ID=28, class=2
+2026-04-16 20:06:16 | DEBUG    | vision.tracking           | New track: ID=29, class=2
+2026-04-16 20:06:17 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 20:06:17 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 20:06:17 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 20:06:17 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:06:17 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=17 | ACCIDENT ALERT: Entities 7 & 29 collided — sudden stop detected!
+2026-04-16 20:06:17 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:17 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 20:06:17 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 20:06:17 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 20:06:17 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 20:06:17 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 20:06:17 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 20:06:17 | INFO     | backend.app               | All engines ready.
+2026-04-16 20:06:17 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 20:06:17 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 20:06:17 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 20:06:17 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-16 20:06:17 | INFO     | backend.app               | Warmup complete.
+2026-04-16 20:06:17 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\fire accident.mp4'>).
+2026-04-16 20:06:17 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 20:06:17 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-16 20:06:17 | WARNING  | services.gemini           | Gemini Quota Exceeded. Falling back to local intelligence.
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=52, class=0
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=53, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=54, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=55, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=57, class=5
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=58, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=59, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=60, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=61, class=2
+2026-04-16 20:06:19 | DEBUG    | vision.tracking           | New track: ID=62, class=2
+2026-04-16 20:06:19 | INFO     | backend.app               | Heartbeat: frame=30 FPS=2.4
+2026-04-16 20:06:19 | WARNING  | services.gemini           | Gemini Quota Exceeded. Falling back to local intelligence.
+2026-04-16 20:06:19 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 2 & 52 collided — sudden stop detected!
+2026-04-16 20:06:20 | DEBUG    | vision.tracking           | New track: ID=63, class=2
+2026-04-16 20:06:20 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:20 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 20:06:20 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:21 | INFO     | backend.app               | Heartbeat: frame=30 FPS=3.4
+2026-04-16 20:06:21 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=4.1s
+2026-04-16 20:06:21 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=1.9s
+2026-04-16 20:06:22 | DEBUG    | vision.tracking           | Track exited: ID=52 duration=2.7s
+2026-04-16 20:06:22 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=2.4s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=3.8s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=3.8s
+2026-04-16 20:06:23 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=6.4s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=4.1s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=4.1s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=60 duration=4.1s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=4.1s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=4.1s
+2026-04-16 20:06:23 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=3.8s
+2026-04-16 20:06:24 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:06:24 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:24 | INFO     | backend.app               | Heartbeat: frame=60 FPS=7.7
+2026-04-16 20:06:25 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:06:25 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:26 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 20:06:26 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 20:06:26 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 20:06:27 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 20:06:27 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 20:06:27 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-16 20:06:27 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 20:06:28 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 20:06:28 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 20:06:28 | INFO     | backend.app               | Initialising detection engines …
+2026-04-16 20:06:29 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 20:06:29 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 20:06:29 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 20:06:29 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 20:06:29 | INFO     | services.gemini           | Gemini model 'gemini-2.5-flash' initialised.
+2026-04-16 20:06:29 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 20:06:29 | INFO     | backend.app               | All engines ready.
+2026-04-16 20:06:29 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 20:06:29 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 20:06:29 | INFO     | backend.app               | Warming up neural network...
+2026-04-16 20:06:29 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-16 20:06:29 | INFO     | backend.app               | Warmup complete.
+2026-04-16 20:06:29 | INFO     | backend.app               | Inference Thread started (source=<VideoSource source='D:\\SaaS\\AI Surveillance System\\videos\\fire accident.mp4'>).
+2026-04-16 20:06:29 | WARNING  | services.gemini           | Gemini Quota Exceeded. Falling back to local intelligence.
+2026-04-16 20:06:29 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 20:06:29 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-16 20:06:31 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-16 20:06:31 | WARNING  | services.gemini           | Gemini Quota Exceeded. Falling back to local intelligence.
+2026-04-16 20:06:31 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 2 & 3 collided — sudden stop detected!
+2026-04-16 20:06:32 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:32 | INFO     | backend.app               | Heartbeat: frame=30 FPS=7.7
+2026-04-16 20:06:33 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=3.4s
+2026-04-16 20:06:33 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=2.2s
+2026-04-16 20:06:34 | INFO     | backend.app               | Heartbeat: frame=60 FPS=9.2
+2026-04-16 20:06:36 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 20:06:36 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:36 | INFO     | backend.app               | Heartbeat: frame=90 FPS=14.4
+2026-04-16 20:06:39 | INFO     | backend.app               | Heartbeat: frame=120 FPS=12.7
+2026-04-16 20:06:41 | INFO     | backend.app               | Heartbeat: frame=150 FPS=12.2
+2026-04-16 20:06:44 | INFO     | backend.app               | Heartbeat: frame=180 FPS=12.4
+2026-04-16 20:06:44 | DEBUG    | vision.tracking           | New track: ID=6, class=0
+2026-04-16 20:06:46 | INFO     | backend.app               | Heartbeat: frame=210 FPS=12.6
+2026-04-16 20:06:49 | WARNING  | services.gemini           | Gemini Quota Exceeded. Falling back to local intelligence.
+2026-04-16 20:06:49 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-16 20:06:49 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:06:49 | INFO     | backend.app               | Heartbeat: frame=240 FPS=11.0
+2026-04-16 20:06:50 | DEBUG    | vision.tracking           | New track: ID=10, class=0
+2026-04-16 20:06:50 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=5.9s
+2026-04-16 20:06:52 | INFO     | backend.app               | Heartbeat: frame=270 FPS=9.3
+2026-04-16 20:06:53 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=2.3s
+2026-04-16 20:06:54 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-16 20:06:54 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-16 20:06:54 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 20:06:55 | INFO     | backend.app               | Heartbeat: frame=300 FPS=11.6
+2026-04-16 20:07:01 | INFO     | backend.app               | Heartbeat: frame=330 FPS=9.1
+2026-04-16 20:07:03 | DEBUG    | vision.tracking           | New track: ID=15, class=0
+2026-04-16 20:07:03 | DEBUG    | vision.tracking           | New track: ID=16, class=2
+2026-04-16 20:07:05 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=10.6s
+2026-04-16 20:07:06 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=36.1s
+2026-04-16 20:07:06 | INFO     | backend.app               | Heartbeat: frame=360 FPS=5.2
+2026-04-16 20:07:06 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=3.6s
+2026-04-16 20:07:11 | INFO     | backend.app               | Heartbeat: frame=390 FPS=6.1
+2026-04-16 20:07:13 | ERROR    | services.gemini           | Gemini API error: 403 Your API key was reported as leaked. Please use another API key.
+2026-04-16 20:07:13 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 16 made an abnormal sudden stop from high speed!
+2026-04-16 20:07:13 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 20:07:13 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 20:07:13 | INFO     | backend.app               | Detection loop finished.
+2026-04-16 20:07:13 | INFO     | backend.app               | System stopped by API request.
+2026-04-16 20:07:13 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 20:07:13 | DEBUG    | services.email            | Email cooldown active for 'collision' (83s remaining).
+2026-04-16 20:07:13 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
