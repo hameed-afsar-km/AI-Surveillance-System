@@ -40,6 +40,7 @@ app.config["SECRET_KEY"] = cfg.SECRET_KEY
 _state_lock = threading.Lock()
 _system_state: dict = {
     "running": False,
+    "starting": False,
     "people_count": 0,
     "alert": False,
     "alert_type": "none",
@@ -55,7 +56,27 @@ _system_state: dict = {
     "last_decision": {},
     "periodic_summary": "",
     "last_updated": time.time(),
+    "internet_connected": False,
 }
+
+# ── Dynamic Connectivity Checker ──────────────────────────────────────────────
+def _internet_checker_loop():
+    import socket
+    while True:
+        try:
+            # Ping Google Public DNS
+            socket.create_connection(("8.8.8.8", 53), timeout=2)
+            is_connected = True
+        except OSError:
+            is_connected = False
+            
+        with _state_lock:
+            _system_state["internet_connected"] = is_connected
+            
+        time.sleep(15)
+
+# Start internet checker immediately
+threading.Thread(target=_internet_checker_loop, daemon=True, name="internet-checker").start()
 
 # Latest RAW frame from grabber thread (always up to date at camera FPS)
 _raw_frame_lock = threading.Lock()
@@ -140,18 +161,27 @@ def _inference_loop() -> None:
     The inference rate is limited by CPU/GPU speed.
     The stream is NOT blocked by this — it uses last-known results.
     """
-    global _last_tracks, _last_decision, _latest_annotated_frame, _start_time
+    global _last_tracks, _last_decision, _start_time
 
-    # Warm up YOLO
-    log.info("Warming up YOLO…")
-    _detector.detect(np.zeros((320, 320, 3), dtype=np.uint8))
-    log.info("YOLO warmup complete.")
+    # Warm up YOLO (this triggers lazy model load — may take 10-30s on first run)
+    log.info("Warming up YOLO… (first run may take up to 30s)")
+    try:
+        _detector.detect(np.zeros((320, 320, 3), dtype=np.uint8))
+        log.info("YOLO warmup complete.")
+    except Exception as e:
+        log.error("YOLO warmup failed: %s", e)
 
     _start_time = time.time()
     frame_count = 0
     fps_counter = 0
     fps_timer = time.time()
     fps_window = 10  # measure inference fps every 10 inferences
+
+    # Mark system as truly live now that warmup is done
+    with _state_lock:
+        _system_state["running"] = True
+        _system_state["starting"] = False
+        _system_state["message"] = "System live."
 
     log.info("Inference Thread started.")
 
@@ -352,13 +382,14 @@ def start_system():
     global _grabber_thread, _inference_thread, _stop_event
 
     with _state_lock:
-        if _system_state["running"]:
-            return jsonify({"error": "Already running."}), 400
+        if _system_state["running"] or _system_state.get("starting"):
+            return jsonify({"error": "Already running or starting."}), 400
 
     data = request.get_json(silent=True) or {}
     mode   = data.get("mode", "webcam")
     source = data.get("source", "")
 
+    # Validate source exists BEFORE returning (fast check, no model loading)
     from vision.video_input import VideoSource
     try:
         if mode == "file" and source:
@@ -371,28 +402,41 @@ def start_system():
     except (FileNotFoundError, RuntimeError) as exc:
         return jsonify({"error": str(exc)}), 400
 
-    _stop_event.clear()
-    _init_engines()
-    _tracker.reset()
-    _behavior.reset()
-
+    # Mark as starting so UI can show loading state immediately
     with _state_lock:
+        _system_state["starting"] = True
+        _system_state["message"] = "Initialising AI engines…"
         _system_state["source"] = str(video_src.source)
 
-    # Start grabber thread first (feeds raw frames)
-    _grabber_thread = threading.Thread(
-        target=_frame_grabber_loop, args=(video_src,), daemon=True, name="frame-grabber"
-    )
-    _grabber_thread.start()
+    # Do all heavy work (YOLO load, DeepSort init) in a background thread
+    # so this HTTP response returns IMMEDIATELY to the browser.
+    def _startup():
+        global _grabber_thread, _inference_thread
+        try:
+            _stop_event.clear()
+            _init_engines()
+            _tracker.reset()
+            _behavior.reset()
 
-    # Start inference thread (processes frames asynchronously)
-    _inference_thread = threading.Thread(
-        target=_inference_loop, daemon=True, name="inference-loop"
-    )
-    _inference_thread.start()
+            _grabber_thread = threading.Thread(
+                target=_frame_grabber_loop, args=(video_src,), daemon=True, name="frame-grabber"
+            )
+            _grabber_thread.start()
 
-    log.info("System started (mode=%s, source=%s).", mode, source or "default")
-    return jsonify({"status": "started", "mode": mode, "source": str(video_src.source)})
+            _inference_thread = threading.Thread(
+                target=_inference_loop, daemon=True, name="inference-loop"
+            )
+            _inference_thread.start()
+            log.info("System started (mode=%s, source=%s).", mode, source or "default")
+        except Exception as exc:
+            log.error("Startup failed: %s", exc)
+            with _state_lock:
+                _system_state["starting"] = False
+                _system_state["message"] = f"Startup failed: {exc}"
+
+    threading.Thread(target=_startup, daemon=True, name="startup-thread").start()
+
+    return jsonify({"status": "starting", "mode": mode, "source": str(video_src.source)})
 
 
 @app.post("/stop")
@@ -415,6 +459,7 @@ def stop_system():
 
     with _state_lock:
         _system_state["running"] = False
+        _system_state["starting"] = False
         _system_state["message"] = "System stopped by user."
 
     log.info("System stopped.")
@@ -470,14 +515,64 @@ def save_rules():
     return jsonify({"status": "saved", "count": len(data)})
 
 
+@app.get("/settings")
+def get_settings():
+    # Return current email settings
+    return jsonify({
+        "sound_enabled": True,  # These are currently runtime memory bounds, default to True on load
+        "ai_enabled": True,     
+        "email_sender": cfg.EMAIL_SENDER,
+        "email_password": cfg.EMAIL_PASSWORD, # Don't send password to UI in prod ideally, but doing it for UI simplicity
+        "email_accident": os.getenv("EMAIL_DEPT_ACCIDENT", os.getenv("EMAIL_DEPT_POLICE", "")),
+        "email_fire": os.getenv("EMAIL_DEPT_FIRE", ""),
+        "email_garbage": os.getenv("EMAIL_DEPT_MUNICIPAL", ""),
+        "email_health": os.getenv("EMAIL_DEPT_MEDICAL", ""),
+        "email_traffic": os.getenv("EMAIL_DEPT_TRAFFIC", ""),
+    })
+
+
 @app.post("/settings")
 def update_settings():
     data = request.get_json(silent=True) or {}
+    
+    # Live runtime toggles
     if "sound_enabled" in data and _alert_svc:
         _alert_svc.toggle_sound(bool(data["sound_enabled"]))
     if "ai_enabled" in data and _alert_svc:
         _alert_svc.toggle_ai(bool(data["ai_enabled"]))
-    return jsonify({"status": "ok"})
+        
+    # Persistent changes to .env file
+    env_path = ROOT_DIR / ".env"
+    from dotenv import set_key
+    
+    env_keys = {
+        "email_sender": "EMAIL_SENDER",
+        "email_password": "EMAIL_PASSWORD",
+        "email_fire": "EMAIL_DEPT_FIRE",
+        "email_accident": "EMAIL_DEPT_ACCIDENT",
+        "email_garbage": "EMAIL_DEPT_MUNICIPAL",
+        "email_health": "EMAIL_DEPT_MEDICAL",
+        "email_traffic": "EMAIL_DEPT_TRAFFIC",
+    }
+    
+    updates = 0
+    for k, env_k in env_keys.items():
+        if k in data:
+            set_key(str(env_path), env_k, data[k])
+            os.environ[env_k] = data[k] # update current process env
+            
+            # Since some variables like EMAIL_SENDER are loaded into `cfg` at startup,
+            # we need to override the `cfg` values directly too:
+            if hasattr(cfg, env_k):
+                setattr(cfg, env_k, data[k])
+                
+            updates += 1
+            
+    # Notify EmailService to reload configuration
+    if _alert_svc and updates > 0:
+        _alert_svc.reload_email_config()
+        
+    return jsonify({"status": "ok", "updates": updates})
 
 
 @app.get("/videos")

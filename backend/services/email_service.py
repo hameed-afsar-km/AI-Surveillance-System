@@ -132,27 +132,36 @@ class EmailService:
 
     # Map alert_type → which env variables hold the recipient addresses
     DEPT_ROUTING: dict = {
-        "fire_hazard":       ["EMAIL_DEPT_FIRE", "EMAIL_DEPT_POLICE"],
-        "collision":         ["EMAIL_DEPT_POLICE", "EMAIL_DEPT_MEDICAL"],
-        "medical_emergency": ["EMAIL_DEPT_MEDICAL", "EMAIL_DEPT_POLICE"],
+        "fire_hazard":       ["EMAIL_DEPT_FIRE"],
+        "collision":         ["EMAIL_DEPT_ACCIDENT"],
+        "medical_emergency": ["EMAIL_DEPT_MEDICAL"],
         "littering":         ["EMAIL_DEPT_MUNICIPAL"],
-        "overcrowding":      ["EMAIL_DEPT_POLICE"],
+        "garbage_hotspot":   ["EMAIL_DEPT_MUNICIPAL"],
+        "overcrowding":      ["EMAIL_DEPT_TRAFFIC"],
     }
 
     DEPT_LABELS: dict = {
-        "fire_hazard":       "Fire Department & Police",
-        "collision":         "Police & Medical Emergency",
-        "medical_emergency": "Medical Emergency & Police",
-        "littering":         "Municipal / Sanitation Dept",
-        "overcrowding":      "Police Department",
+        "fire_hazard":       "Fire Department",
+        "collision":         "Accident Response Department",
+        "medical_emergency": "Health Department",
+        "littering":         "Garbage/Municipal Department",
+        "garbage_hotspot":   "Garbage/Municipal Department",
+        "overcrowding":      "Traffic Department",
     }
 
     def __init__(self) -> None:
         self._lock = threading.Lock()
         self._last_sent: dict[str, float] = {}  # per alert_type cooldown
-        self._enabled = bool(cfg.EMAIL_SENDER and cfg.EMAIL_PASSWORD)
-        if not self._enabled:
-            log.warning("Email alerts disabled – EMAIL_SENDER or EMAIL_PASSWORD not set.")
+        self.reload_config()
+
+    def reload_config(self) -> None:
+        """Called when settings are updated from the UI to refresh email settings"""
+        with self._lock:
+            self._enabled = bool(cfg.EMAIL_SENDER and cfg.EMAIL_PASSWORD)
+            if not self._enabled:
+                log.warning("Email alerts disabled – EMAIL_SENDER or EMAIL_PASSWORD not set.")
+            else:
+                log.info("Email alerts ENABLED for sender: %s", cfg.EMAIL_SENDER)
 
     def _get_recipients(self, alert_type: str) -> list[str]:
         """Return the right department email(s) for this alert type."""
@@ -163,7 +172,7 @@ class EmailService:
             if val:
                 recipients.extend([e.strip() for e in val.split(",") if e.strip()])
         # Fallback: send to all generic recipients if dept routing not configured
-        if not recipients:
+        if not recipients and hasattr(cfg, "EMAIL_RECIPIENTS"):
             recipients = list(cfg.EMAIL_RECIPIENTS)
         return recipients
 

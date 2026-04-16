@@ -8114,3 +8114,1838 @@ AttributeError: 'Track' object has no attribute 'class_id'
 2026-04-16 23:00:39 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
 2026-04-16 23:00:39 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
 2026-04-16 23:00:39 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:00:50 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 23:03:03 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 23:03:03 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 23:03:03 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:03:17 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-16 23:03:17 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-16 23:03:17 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:03:26 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-16 23:03:26 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-16 23:03:26 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:07:38 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-16 23:07:47 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-16 23:07:47 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-16 23:07:47 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:11:03 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-16 23:11:03 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-16 23:11:03 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-16 23:42:16 | INFO     | test_yolo                 | Loading model from D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-16 23:42:16 | INFO     | test_yolo                 | Loading model from D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Model loaded into RAM.
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Moving to device: cpu
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Model loaded into RAM.
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Moving to device: cpu
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Model on device.
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Running dummy inference...
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Model on device.
+2026-04-16 23:42:17 | INFO     | test_yolo                 | Running dummy inference...
+2026-04-16 23:42:18 | INFO     | test_yolo                 | Inference OK.
+2026-04-16 23:42:32 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 23:42:32 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-16 23:42:32 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 23:42:32 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-16 23:42:32 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 23:42:32 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 23:42:32 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-16 23:42:32 | INFO     | services.alert            | AlertService initialised.
+D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-16 23:42:32 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-16 23:42:32 | INFO     | backend.app               | All engines ready.
+2026-04-16 23:42:32 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-16 23:42:32 | INFO     | services.alert            | AlertService initialised.
+2026-04-16 23:42:32 | INFO     | backend.app               | All engines ready.
+2026-04-16 23:42:32 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 23:42:32 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 23:42:32 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-16 23:42:32 | INFO     | backend.app               | Warming up YOLO…
+2026-04-16 23:42:32 | INFO     | backend.app               | System started (mode=webcam, source=0).
+2026-04-16 23:42:33 | INFO     | vision.detection          | Loading YOLOv8 model from: D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-16 23:42:33 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-16 23:42:33 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-16 23:42:33 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-16 23:42:33 | INFO     | backend.app               | Warming up YOLO…
+2026-04-16 23:42:33 | INFO     | backend.app               | System started (mode=file, source=car bike collision.mp4).
+2026-04-16 23:42:33 | INFO     | vision.detection          | YOLOv8 initialized on device: CPU
+2026-04-16 23:42:33 | ERROR    | vision.detection          | YOLO inference error: 'Conv' object has no attribute 'bn'
+2026-04-16 23:42:33 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-16 23:42:33 | INFO     | backend.app               | Inference Thread started.
+2026-04-16 23:42:35 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-16 23:42:35 | INFO     | backend.app               | Inference Thread started.
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=2, class=2
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=3, class=2
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=5, class=2
+2026-04-16 23:42:37 | DEBUG    | vision.tracking           | New track: ID=6, class=2
+2026-04-16 23:42:41 | DEBUG    | vision.tracking           | New track: ID=20, class=7
+2026-04-16 23:42:43 | DEBUG    | vision.tracking           | New track: ID=29, class=2
+2026-04-16 23:42:50 | DEBUG    | vision.tracking           | New track: ID=41, class=2
+2026-04-16 23:43:03 | DEBUG    | vision.tracking           | New track: ID=67, class=2
+2026-04-16 23:43:03 | DEBUG    | vision.tracking           | New track: ID=68, class=2
+2026-04-16 23:43:03 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=11 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:43:04 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:43:06 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=15.3s
+2026-04-16 23:43:06 | DEBUG    | vision.tracking           | New track: ID=77, class=2
+2026-04-16 23:43:06 | DEBUG    | vision.tracking           | New track: ID=80, class=2
+2026-04-16 23:43:06 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=12 | ACCIDENT ALERT: Entities 68 & 80 collided — sudden stop detected!
+2026-04-16 23:43:06 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:43:08 | DEBUG    | vision.tracking           | New track: ID=93, class=2
+2026-04-16 23:43:11 | DEBUG    | vision.tracking           | Track exited: ID=80 duration=4.7s
+2026-04-16 23:43:12 | DEBUG    | vision.tracking           | New track: ID=106, class=2
+2026-04-16 23:43:12 | DEBUG    | vision.tracking           | New track: ID=113, class=2
+2026-04-16 23:43:13 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:43:13 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:43:14 | DEBUG    | vision.tracking           | New track: ID=117, class=2
+2026-04-16 23:43:14 | DEBUG    | vision.tracking           | New track: ID=118, class=0
+2026-04-16 23:43:14 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=37.7s
+2026-04-16 23:43:15 | DEBUG    | vision.tracking           | New track: ID=124, class=2
+2026-04-16 23:43:17 | DEBUG    | vision.tracking           | Track exited: ID=113 duration=4.7s
+2026-04-16 23:43:17 | DEBUG    | vision.tracking           | Track exited: ID=77 duration=11.4s
+2026-04-16 23:43:17 | DEBUG    | vision.tracking           | Track exited: ID=118 duration=3.2s
+2026-04-16 23:43:20 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:43:20 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:43:20 | DEBUG    | vision.tracking           | New track: ID=141, class=2
+2026-04-16 23:43:20 | DEBUG    | vision.tracking           | New track: ID=147, class=2
+2026-04-16 23:43:22 | DEBUG    | vision.tracking           | New track: ID=150, class=2
+2026-04-16 23:43:24 | DEBUG    | vision.tracking           | New track: ID=154, class=2
+2026-04-16 23:43:24 | DEBUG    | vision.tracking           | New track: ID=155, class=2
+2026-04-16 23:43:25 | DEBUG    | vision.tracking           | Track exited: ID=147 duration=4.8s
+2026-04-16 23:43:26 | DEBUG    | vision.tracking           | New track: ID=157, class=0
+2026-04-16 23:43:26 | DEBUG    | vision.tracking           | New track: ID=159, class=2
+2026-04-16 23:43:26 | DEBUG    | vision.tracking           | New track: ID=161, class=2
+2026-04-16 23:43:26 | DEBUG    | vision.tracking           | Track exited: ID=124 duration=11.0s
+2026-04-16 23:43:27 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=50.1s
+2026-04-16 23:43:29 | DEBUG    | vision.tracking           | Track exited: ID=67 duration=24.3s
+2026-04-16 23:43:29 | DEBUG    | vision.tracking           | Track exited: ID=154 duration=3.7s
+2026-04-16 23:43:30 | DEBUG    | vision.tracking           | Track exited: ID=141 duration=9.0s
+2026-04-16 23:43:35 | DEBUG    | vision.tracking           | Track exited: ID=68 duration=30.7s
+2026-04-16 23:43:35 | DEBUG    | vision.tracking           | Track exited: ID=159 duration=8.3s
+2026-04-16 23:43:37 | DEBUG    | vision.tracking           | New track: ID=171, class=2
+2026-04-16 23:43:39 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 20 & 155 collided — sudden stop detected!
+2026-04-16 23:43:39 | DEBUG    | vision.tracking           | New track: ID=173, class=2
+2026-04-16 23:43:39 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:43:39 | DEBUG    | services.email            | Email cooldown active for 'collision' (101s remaining).
+2026-04-16 23:43:39 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:43:41 | DEBUG    | vision.tracking           | New track: ID=175, class=2
+2026-04-16 23:43:41 | DEBUG    | vision.tracking           | New track: ID=176, class=2
+2026-04-16 23:43:41 | DEBUG    | vision.tracking           | New track: ID=179, class=2
+2026-04-16 23:43:42 | DEBUG    | vision.tracking           | Track exited: ID=157 duration=16.1s
+2026-04-16 23:43:43 | DEBUG    | vision.tracking           | Track exited: ID=161 duration=16.1s
+2026-04-16 23:43:43 | DEBUG    | vision.tracking           | New track: ID=181, class=2
+2026-04-16 23:43:43 | DEBUG    | vision.tracking           | New track: ID=184, class=2
+2026-04-16 23:43:44 | DEBUG    | vision.tracking           | Track exited: ID=171 duration=6.4s
+2026-04-16 23:43:44 | DEBUG    | vision.tracking           | Track exited: ID=175 duration=3.3s
+2026-04-16 23:43:45 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=68.7s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=68.7s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=68.7s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=68.7s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=64.3s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=62.7s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=93 duration=37.0s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=33.5s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=117 duration=31.3s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=150 duration=23.5s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=155 duration=21.3s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=173 duration=6.0s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=176 duration=4.5s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=179 duration=4.1s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=181 duration=2.6s
+2026-04-16 23:43:45 | DEBUG    | vision.tracking           | Track exited: ID=184 duration=2.2s
+2026-04-16 23:43:47 | DEBUG    | vision.tracking           | New track: ID=11, class=2
+2026-04-16 23:43:47 | DEBUG    | vision.tracking           | New track: ID=13, class=2
+2026-04-16 23:43:47 | DEBUG    | vision.tracking           | New track: ID=15, class=2
+2026-04-16 23:43:47 | DEBUG    | vision.tracking           | New track: ID=22, class=2
+2026-04-16 23:43:48 | DEBUG    | vision.tracking           | New track: ID=27, class=2
+2026-04-16 23:43:49 | DEBUG    | vision.tracking           | New track: ID=34, class=2
+2026-04-16 23:43:51 | DEBUG    | vision.tracking           | New track: ID=46, class=2
+2026-04-16 23:43:53 | DEBUG    | vision.tracking           | New track: ID=56, class=2
+2026-04-16 23:43:53 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=6.1s
+2026-04-16 23:43:54 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=77.0s
+2026-04-16 23:43:55 | DEBUG    | vision.tracking           | New track: ID=63, class=2
+2026-04-16 23:43:56 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=65.4s
+2026-04-16 23:43:56 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=4.4s
+2026-04-16 23:43:57 | DEBUG    | vision.tracking           | New track: ID=69, class=2
+2026-04-16 23:43:58 | DEBUG    | vision.tracking           | New track: ID=73, class=2
+2026-04-16 23:43:59 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=5.9s
+2026-04-16 23:44:01 | DEBUG    | vision.tracking           | Track exited: ID=73 duration=3.0s
+2026-04-16 23:44:03 | DEBUG    | vision.tracking           | New track: ID=89, class=2
+2026-04-16 23:44:06 | DEBUG    | vision.tracking           | New track: ID=91, class=2
+2026-04-16 23:44:13 | DEBUG    | vision.tracking           | Track exited: ID=34 duration=23.1s
+2026-04-16 23:44:13 | DEBUG    | vision.tracking           | New track: ID=99, class=2
+2026-04-16 23:44:16 | DEBUG    | vision.tracking           | New track: ID=100, class=2
+2026-04-16 23:44:19 | DEBUG    | vision.tracking           | Track exited: ID=89 duration=15.8s
+2026-04-16 23:44:24 | DEBUG    | vision.tracking           | Track exited: ID=69 duration=26.0s
+2026-04-16 23:44:27 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=39.6s
+2026-04-16 23:44:28 | DEBUG    | vision.tracking           | Track exited: ID=99 duration=14.0s
+2026-04-16 23:44:31 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=13 | ACCIDENT ALERT: Entities 27 & 100 collided — sudden stop detected!
+2026-04-16 23:44:32 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:44:32 | DEBUG    | services.email            | Email cooldown active for 'collision' (48s remaining).
+2026-04-16 23:44:32 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:44:33 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=37.8s
+2026-04-16 23:44:33 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=12 | Overcrowding: Dense cluster of 11 vehicles in a localised area.
+2026-04-16 23:44:33 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:44:33 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (40s remaining).
+2026-04-16 23:44:33 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:44:33 | DEBUG    | vision.tracking           | New track: ID=126, class=2
+2026-04-16 23:44:35 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=91 duration=29.1s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=118.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=118.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=118.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=118.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=118.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=114.3s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=83.5s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=48.7s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=48.5s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=46.8s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=100 duration=18.9s
+2026-04-16 23:44:35 | DEBUG    | vision.tracking           | Track exited: ID=126 duration=2.1s
+2026-04-16 23:44:36 | DEBUG    | vision.tracking           | New track: ID=8, class=2
+2026-04-16 23:44:37 | DEBUG    | vision.tracking           | New track: ID=9, class=7
+2026-04-16 23:44:37 | DEBUG    | vision.tracking           | New track: ID=14, class=2
+2026-04-16 23:44:37 | DEBUG    | vision.tracking           | New track: ID=21, class=2
+2026-04-16 23:44:39 | DEBUG    | vision.tracking           | New track: ID=32, class=2
+2026-04-16 23:44:39 | DEBUG    | vision.tracking           | New track: ID=33, class=2
+2026-04-16 23:44:40 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=3.3s
+2026-04-16 23:44:40 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=123.3s
+2026-04-16 23:44:41 | DEBUG    | vision.tracking           | New track: ID=37, class=2
+2026-04-16 23:44:42 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=4.7s
+2026-04-16 23:44:45 | DEBUG    | vision.tracking           | New track: ID=59, class=2
+2026-04-16 23:44:45 | DEBUG    | vision.tracking           | New track: ID=62, class=2
+2026-04-16 23:44:46 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=6.5s
+2026-04-16 23:44:46 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=5.0s
+2026-04-16 23:44:48 | DEBUG    | vision.tracking           | New track: ID=81, class=2
+2026-04-16 23:44:48 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=3.0s
+2026-04-16 23:44:49 | DEBUG    | vision.tracking           | New track: ID=82, class=2
+2026-04-16 23:44:49 | DEBUG    | vision.tracking           | New track: ID=83, class=2
+2026-04-16 23:44:49 | DEBUG    | vision.tracking           | New track: ID=85, class=2
+2026-04-16 23:44:49 | DEBUG    | vision.tracking           | New track: ID=86, class=2
+2026-04-16 23:44:52 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=136.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=136.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=136.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=136.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=136.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=65.9s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=16.0s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=15.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=13.2s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=7.9s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=81 duration=5.1s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=82 duration=4.0s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=83 duration=4.0s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=85 duration=3.7s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | Track exited: ID=86 duration=3.7s
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | New track: ID=7, class=2
+2026-04-16 23:44:53 | DEBUG    | vision.tracking           | New track: ID=12, class=2
+2026-04-16 23:44:54 | DEBUG    | vision.tracking           | New track: ID=18, class=2
+2026-04-16 23:44:54 | DEBUG    | vision.tracking           | New track: ID=19, class=2
+2026-04-16 23:45:01 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=142.9s
+2026-04-16 23:45:01 | DEBUG    | vision.tracking           | New track: ID=26, class=2
+2026-04-16 23:45:04 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=13 | ACCIDENT ALERT: Entity 14 made an abnormal sudden stop from high speed!
+2026-04-16 23:45:04 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:45:04 | DEBUG    | services.email            | Email cooldown active for 'collision' (16s remaining).
+2026-04-16 23:45:04 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:45:06 | DEBUG    | vision.tracking           | New track: ID=36, class=2
+2026-04-16 23:45:08 | DEBUG    | vision.tracking           | New track: ID=45, class=2
+2026-04-16 23:45:10 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=16.0s
+2026-04-16 23:45:12 | DEBUG    | vision.tracking           | New track: ID=61, class=2
+2026-04-16 23:45:13 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=4.7s
+2026-04-16 23:45:14 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=85.0s
+2026-04-16 23:45:15 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=158.8s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=158.8s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=158.8s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=158.8s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=158.8s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=80.3s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=39.0s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=38.5s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=34.5s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=22.4s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=21.6s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=21.0s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=14.5s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=9.0s
+2026-04-16 23:45:15 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=3.2s
+2026-04-16 23:45:17 | DEBUG    | vision.tracking           | New track: ID=16, class=2
+2026-04-16 23:45:17 | DEBUG    | vision.tracking           | New track: ID=25, class=2
+2026-04-16 23:45:18 | DEBUG    | vision.tracking           | New track: ID=30, class=2
+2026-04-16 23:45:25 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=169.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=155.6s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=94.7s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=49.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=46.7s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=31.5s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=24.9s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=9.2s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=8.8s
+2026-04-16 23:45:26 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=7.6s
+2026-04-16 23:45:31 | DEBUG    | vision.tracking           | New track: ID=23, class=2
+2026-04-16 23:45:32 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=11 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:45:32 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:45:35 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=178.2s
+2026-04-16 23:45:38 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:45:38 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:45:39 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=12 | ACCIDENT ALERT: Entity 13 made an abnormal sudden stop from high speed!
+2026-04-16 23:45:40 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:45:40 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=183.4s
+2026-04-16 23:45:41 | DEBUG    | vision.tracking           | New track: ID=52, class=2
+2026-04-16 23:45:42 | DEBUG    | vision.tracking           | New track: ID=54, class=2
+2026-04-16 23:45:42 | DEBUG    | vision.tracking           | New track: ID=55, class=2
+2026-04-16 23:45:43 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=49.2s
+2026-04-16 23:45:45 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=3.1s
+2026-04-16 23:45:45 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:45:45 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:45:46 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=29.3s
+2026-04-16 23:45:48 | DEBUG    | vision.tracking           | New track: ID=84, class=2
+2026-04-16 23:45:48 | DEBUG    | vision.tracking           | Track exited: ID=69 duration=111.6s
+2026-04-16 23:45:50 | DEBUG    | vision.tracking           | New track: ID=87, class=2
+2026-04-16 23:45:52 | DEBUG    | vision.tracking           | Track exited: ID=80 duration=166.3s
+2026-04-16 23:45:53 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=196.1s
+2026-04-16 23:45:59 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=202.5s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=202.5s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=167.3s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=132.5s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=82.7s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=82.4s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=79.6s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=81 duration=71.5s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=85 duration=70.1s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=86 duration=70.1s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=42.4s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=27.6s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=52 duration=17.7s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=17.4s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=84 duration=11.2s
+2026-04-16 23:45:59 | DEBUG    | vision.tracking           | Track exited: ID=87 duration=9.3s
+2026-04-16 23:46:00 | DEBUG    | vision.tracking           | New track: ID=10, class=2
+2026-04-16 23:46:06 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=208.2s
+2026-04-16 23:46:06 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=12 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:46:06 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:46:06 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (92s remaining).
+2026-04-16 23:46:06 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:46:11 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=143.6s
+2026-04-16 23:46:16 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=15.7s
+2026-04-16 23:46:17 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=220.3s
+2026-04-16 23:46:18 | DEBUG    | vision.tracking           | New track: ID=57, class=2
+2026-04-16 23:46:20 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=11 | ACCIDENT ALERT: Entities 59 & 57 collided — sudden stop detected!
+2026-04-16 23:46:20 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:46:20 | DEBUG    | services.email            | Email cooldown active for 'collision' (86s remaining).
+2026-04-16 23:46:20 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:46:21 | DEBUG    | vision.tracking           | New track: ID=65, class=2
+2026-04-16 23:46:22 | DEBUG    | vision.tracking           | New track: ID=70, class=2
+2026-04-16 23:46:23 | DEBUG    | vision.tracking           | New track: ID=72, class=2
+2026-04-16 23:46:25 | DEBUG    | vision.tracking           | New track: ID=75, class=2
+2026-04-16 23:46:28 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=102.9s
+2026-04-16 23:46:28 | DEBUG    | vision.tracking           | Track exited: ID=75 duration=3.0s
+2026-04-16 23:46:28 | DEBUG    | vision.tracking           | Track exited: ID=70 duration=6.0s
+2026-04-16 23:46:29 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=162.8s
+2026-04-16 23:46:30 | DEBUG    | vision.tracking           | New track: ID=98, class=2
+2026-04-16 23:46:32 | DEBUG    | vision.tracking           | New track: ID=104, class=2
+2026-04-16 23:46:32 | DEBUG    | vision.tracking           | New track: ID=105, class=0
+2026-04-16 23:46:33 | DEBUG    | vision.tracking           | Track exited: ID=93 duration=204.8s
+2026-04-16 23:46:35 | DEBUG    | vision.tracking           | Track exited: ID=72 duration=11.8s
+2026-04-16 23:46:35 | DEBUG    | vision.tracking           | Track exited: ID=105 duration=3.1s
+2026-04-16 23:46:36 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=204.6s
+2026-04-16 23:46:38 | DEBUG    | vision.tracking           | New track: ID=130, class=2
+2026-04-16 23:46:38 | DEBUG    | vision.tracking           | Track exited: ID=98 duration=7.7s
+2026-04-16 23:46:39 | DEBUG    | vision.tracking           | New track: ID=137, class=2
+2026-04-16 23:46:40 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=105.4s
+2026-04-16 23:46:41 | DEBUG    | vision.tracking           | New track: ID=143, class=2
+2026-04-16 23:46:41 | DEBUG    | vision.tracking           | New track: ID=144, class=0
+2026-04-16 23:46:42 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=16 | Overcrowding: Dense cluster of 11 vehicles in a localised area.
+2026-04-16 23:46:42 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:46:42 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (56s remaining).
+2026-04-16 23:46:42 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:46:42 | DEBUG    | vision.tracking           | Track exited: ID=130 duration=4.3s
+2026-04-16 23:46:42 | DEBUG    | vision.tracking           | Track exited: ID=137 duration=2.8s
+2026-04-16 23:46:53 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 91 & 104 collided — sudden stop detected!
+2026-04-16 23:46:53 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:46:53 | DEBUG    | services.email            | Email cooldown active for 'collision' (52s remaining).
+2026-04-16 23:46:53 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:46:54 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=33.5s
+2026-04-16 23:46:56 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=13 | MEDICAL ALERT: Person 144 shows abnormal movement — sudden freeze from movement.
+2026-04-16 23:46:56 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:46:59 | DEBUG    | vision.tracking           | New track: ID=198, class=2
+2026-04-16 23:46:59 | DEBUG    | vision.tracking           | New track: ID=200, class=2
+2026-04-16 23:47:00 | DEBUG    | vision.tracking           | New track: ID=207, class=2
+2026-04-16 23:47:01 | DEBUG    | vision.tracking           | Track exited: ID=143 duration=20.0s
+2026-04-16 23:47:01 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:47:01 | INFO     | services.email            | Alert email → 'Medical Emergency & Police' (2 recipients) | type=medical_emergency
+2026-04-16 23:47:01 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=264.9s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=264.9s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=264.9s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=260.5s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=91 duration=175.8s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=99 duration=168.3s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=145.1s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=144.6s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=128.5s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=43.4s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=104 duration=29.6s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=144 duration=20.8s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=198 duration=2.4s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=200 duration=2.0s
+2026-04-16 23:47:02 | DEBUG    | vision.tracking           | Track exited: ID=207 duration=1.4s
+2026-04-16 23:47:04 | DEBUG    | vision.tracking           | New track: ID=24, class=2
+2026-04-16 23:47:05 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=269.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=269.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=269.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=269.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=269.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=199.2s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=146.3s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=132.8s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=132.0s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=109.1s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=108.7s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=65.5s
+2026-04-16 23:47:06 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=2.0s
+2026-04-16 23:47:08 | DEBUG    | vision.tracking           | New track: ID=31, class=7
+2026-04-16 23:47:11 | DEBUG    | vision.tracking           | New track: ID=39, class=2
+2026-04-16 23:47:11 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=113.1s
+2026-04-16 23:47:12 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=205.1s
+2026-04-16 23:47:13 | DEBUG    | vision.tracking           | New track: ID=44, class=2
+2026-04-16 23:47:13 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=126.7s
+2026-04-16 23:47:15 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=134.2s
+2026-04-16 23:47:16 | DEBUG    | vision.tracking           | New track: ID=51, class=2
+2026-04-16 23:47:19 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=268.0s
+2026-04-16 23:47:20 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=10.8s
+2026-04-16 23:47:20 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=279.3s
+2026-04-16 23:47:25 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=13 | ACCIDENT ALERT: Entities 2 & 39 collided — sudden stop detected!
+2026-04-16 23:47:25 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=214.0s
+2026-04-16 23:47:25 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:47:25 | DEBUG    | services.email            | Email cooldown active for 'collision' (20s remaining).
+2026-04-16 23:47:25 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:47:26 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=14.4s
+2026-04-16 23:47:27 | DEBUG    | vision.tracking           | New track: ID=76, class=2
+2026-04-16 23:47:28 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=12.0s
+2026-04-16 23:47:31 | DEBUG    | vision.tracking           | New track: ID=95, class=2
+2026-04-16 23:47:31 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=295.3s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=80 duration=265.8s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=172.7s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=172.4s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=157.5s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=44 duration=19.2s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=4.8s
+2026-04-16 23:47:32 | DEBUG    | vision.tracking           | Track exited: ID=95 duration=1.1s
+2026-04-16 23:47:36 | DEBUG    | vision.tracking           | New track: ID=38, class=2
+2026-04-16 23:47:38 | DEBUG    | vision.tracking           | New track: ID=50, class=2
+2026-04-16 23:47:40 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:47:40 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=13 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:47:40 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=303.7s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=227.0s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=183.9s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=183.3s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=167.3s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=142.0s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=4.4s
+2026-04-16 23:47:40 | DEBUG    | vision.tracking           | Track exited: ID=50 duration=2.7s
+2026-04-16 23:47:41 | DEBUG    | vision.tracking           | New track: ID=17, class=2
+2026-04-16 23:47:44 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:47:44 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:47:46 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=309.4s
+2026-04-16 23:47:57 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 44 & 17 collided — sudden stop detected!
+2026-04-16 23:47:58 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:48:01 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=247.7s
+2026-04-16 23:48:02 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:48:03 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:48:03 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=326.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=326.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=326.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=326.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=326.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=256.1s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=197.8s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=188.5s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=182.0s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=170.7s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=151.3s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=72 duration=99.6s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=44 duration=50.2s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=35.8s
+2026-04-16 23:48:03 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=21.5s
+2026-04-16 23:48:06 | DEBUG    | vision.tracking           | New track: ID=35, class=2
+2026-04-16 23:48:08 | DEBUG    | vision.tracking           | New track: ID=43, class=2
+2026-04-16 23:48:10 | DEBUG    | vision.tracking           | New track: ID=48, class=2
+2026-04-16 23:48:11 | DEBUG    | vision.tracking           | New track: ID=53, class=2
+2026-04-16 23:48:12 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=214.5s
+2026-04-16 23:48:12 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=215.0s
+2026-04-16 23:48:15 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=39.4s
+2026-04-16 23:48:18 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=204.0s
+2026-04-16 23:48:18 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=156.3s
+2026-04-16 23:48:18 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=14 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:48:18 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:48:18 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (86s remaining).
+2026-04-16 23:48:18 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:48:19 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=342.6s
+2026-04-16 23:48:20 | DEBUG    | vision.tracking           | Track exited: ID=43 duration=11.5s
+2026-04-16 23:48:21 | DEBUG    | vision.tracking           | New track: ID=90, class=2
+2026-04-16 23:48:35 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=13 | ACCIDENT ALERT: Entities 67 & 90 collided — sudden stop detected!
+2026-04-16 23:48:35 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:48:35 | DEBUG    | services.email            | Email cooldown active for 'collision' (87s remaining).
+2026-04-16 23:48:35 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:48:39 | DEBUG    | vision.tracking           | New track: ID=120, class=2
+2026-04-16 23:48:40 | DEBUG    | vision.tracking           | New track: ID=121, class=2
+2026-04-16 23:48:42 | DEBUG    | vision.tracking           | New track: ID=133, class=2
+2026-04-16 23:48:42 | DEBUG    | vision.tracking           | Track exited: ID=35 duration=35.7s
+2026-04-16 23:48:44 | DEBUG    | vision.tracking           | Track exited: ID=121 duration=4.0s
+2026-04-16 23:48:44 | DEBUG    | vision.tracking           | Track exited: ID=67 duration=340.8s
+2026-04-16 23:48:45 | DEBUG    | vision.tracking           | Track exited: ID=133 duration=2.6s
+2026-04-16 23:48:46 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=34.8s
+2026-04-16 23:48:47 | DEBUG    | vision.tracking           | New track: ID=158, class=2
+2026-04-16 23:48:47 | DEBUG    | vision.tracking           | New track: ID=163, class=2
+2026-04-16 23:48:53 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=376.3s
+2026-04-16 23:48:53 | DEBUG    | vision.tracking           | Track exited: ID=144 duration=132.2s
+2026-04-16 23:48:54 | DEBUG    | vision.tracking           | New track: ID=183, class=2
+2026-04-16 23:48:54 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=14 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:48:54 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:48:54 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (51s remaining).
+2026-04-16 23:48:54 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:48:55 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=44.5s
+2026-04-16 23:48:55 | DEBUG    | vision.tracking           | New track: ID=190, class=2
+2026-04-16 23:48:56 | DEBUG    | vision.tracking           | New track: ID=193, class=2
+2026-04-16 23:48:57 | DEBUG    | vision.tracking           | Track exited: ID=90 duration=35.6s
+2026-04-16 23:48:57 | DEBUG    | vision.tracking           | New track: ID=195, class=2
+2026-04-16 23:48:58 | DEBUG    | vision.tracking           | New track: ID=202, class=2
+2026-04-16 23:49:05 | DEBUG    | vision.tracking           | Track exited: ID=193 duration=9.0s
+2026-04-16 23:49:08 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=15 | ACCIDENT ALERT: Entities 163 & 190 collided — sudden stop detected!
+2026-04-16 23:49:08 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:49:09 | DEBUG    | services.email            | Email cooldown active for 'collision' (54s remaining).
+2026-04-16 23:49:09 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:49:09 | DEBUG    | vision.tracking           | Track exited: ID=120 duration=30.6s
+2026-04-16 23:49:09 | DEBUG    | vision.tracking           | Track exited: ID=183 duration=15.5s
+2026-04-16 23:49:09 | DEBUG    | vision.tracking           | Track exited: ID=195 duration=12.0s
+2026-04-16 23:49:10 | DEBUG    | vision.tracking           | New track: ID=221, class=2
+2026-04-16 23:49:12 | DEBUG    | vision.tracking           | New track: ID=238, class=2
+2026-04-16 23:49:13 | DEBUG    | vision.tracking           | Track exited: ID=221 duration=2.7s
+2026-04-16 23:49:15 | DEBUG    | vision.tracking           | Track exited: ID=190 duration=19.0s
+2026-04-16 23:49:15 | DEBUG    | vision.tracking           | Track exited: ID=202 duration=16.9s
+2026-04-16 23:49:15 | DEBUG    | vision.tracking           | New track: ID=247, class=2
+2026-04-16 23:49:15 | DEBUG    | vision.tracking           | New track: ID=248, class=2
+2026-04-16 23:49:16 | DEBUG    | vision.tracking           | New track: ID=251, class=2
+2026-04-16 23:49:16 | DEBUG    | vision.tracking           | Track exited: ID=158 duration=29.4s
+2026-04-16 23:49:19 | DEBUG    | vision.tracking           | New track: ID=265, class=2
+2026-04-16 23:49:20 | DEBUG    | vision.tracking           | Track exited: ID=251 duration=4.3s
+2026-04-16 23:49:22 | DEBUG    | vision.tracking           | New track: ID=280, class=2
+2026-04-16 23:49:24 | DEBUG    | vision.tracking           | Track exited: ID=265 duration=4.1s
+2026-04-16 23:49:24 | DEBUG    | vision.tracking           | New track: ID=285, class=2
+2026-04-16 23:49:24 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=408.3s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=408.3s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=408.3s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=408.3s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=173 duration=345.5s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=284.0s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=204.6s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=136.4s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=163 duration=37.5s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=238 duration=12.4s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=247 duration=9.8s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=248 duration=9.8s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=280 duration=2.8s
+2026-04-16 23:49:25 | DEBUG    | vision.tracking           | Track exited: ID=285 duration=1.2s
+2026-04-16 23:49:27 | DEBUG    | vision.tracking           | New track: ID=28, class=2
+2026-04-16 23:49:32 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=292.1s
+2026-04-16 23:49:32 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=4.6s
+2026-04-16 23:49:33 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=343.9s
+2026-04-16 23:49:40 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entity 35 made an abnormal sudden stop from high speed!
+2026-04-16 23:49:41 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:49:41 | DEBUG    | services.email            | Email cooldown active for 'collision' (22s remaining).
+2026-04-16 23:49:41 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:49:43 | DEBUG    | vision.tracking           | New track: ID=64, class=2
+2026-04-16 23:49:45 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=291.3s
+2026-04-16 23:49:45 | DEBUG    | vision.tracking           | New track: ID=71, class=2
+2026-04-16 23:49:46 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=429.3s
+2026-04-16 23:49:46 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=162.1s
+2026-04-16 23:49:46 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=285.3s
+2026-04-16 23:49:48 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=352.4s
+2026-04-16 23:49:49 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=4.0s
+2026-04-16 23:49:50 | DEBUG    | vision.tracking           | New track: ID=94, class=2
+2026-04-16 23:49:51 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=434.3s
+2026-04-16 23:49:52 | DEBUG    | vision.tracking           | New track: ID=103, class=2
+2026-04-16 23:49:54 | DEBUG    | vision.tracking           | Track exited: ID=89 duration=351.5s
+2026-04-16 23:49:55 | DEBUG    | vision.tracking           | Track exited: ID=94 duration=4.2s
+2026-04-16 23:49:55 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=439.0s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=439.0s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=439.0s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=368.9s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=368.9s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=362.3s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=73 duration=357.5s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=82 duration=306.9s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=302.5s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=264.0s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=104 duration=203.6s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=105 duration=203.6s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=35 duration=109.2s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=64 duration=12.6s
+2026-04-16 23:49:56 | DEBUG    | vision.tracking           | Track exited: ID=103 duration=3.2s
+2026-04-16 23:49:59 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=11 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:49:59 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:50:01 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=177.5s
+2026-04-16 23:50:02 | DEBUG    | vision.tracking           | New track: ID=58, class=2
+2026-04-16 23:50:02 | DEBUG    | vision.tracking           | New track: ID=66, class=2
+2026-04-16 23:50:03 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=174.2s
+2026-04-16 23:50:03 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=374.4s
+2026-04-16 23:50:04 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:50:04 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:50:05 | DEBUG    | vision.tracking           | New track: ID=74, class=2
+2026-04-16 23:50:13 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=16 | ACCIDENT ALERT: Entities 6 & 81 collided — sudden stop detected!
+2026-04-16 23:50:14 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:50:14 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=328.4s
+2026-04-16 23:50:15 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=179.3s
+2026-04-16 23:50:17 | DEBUG    | vision.tracking           | Track exited: ID=81 duration=329.7s
+2026-04-16 23:50:18 | DEBUG    | vision.tracking           | New track: ID=96, class=2
+2026-04-16 23:50:18 | DEBUG    | vision.tracking           | New track: ID=97, class=2
+2026-04-16 23:50:18 | DEBUG    | vision.tracking           | Track exited: ID=43 duration=129.5s
+2026-04-16 23:50:18 | DEBUG    | vision.tracking           | Track exited: ID=74 duration=12.9s
+2026-04-16 23:50:19 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=462.3s
+2026-04-16 23:50:19 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:50:19 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:50:19 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=17.5s
+2026-04-16 23:50:19 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=16.9s
+2026-04-16 23:50:20 | DEBUG    | vision.tracking           | New track: ID=107, class=2
+2026-04-16 23:50:20 | DEBUG    | vision.tracking           | New track: ID=109, class=2
+2026-04-16 23:50:20 | DEBUG    | vision.tracking           | New track: ID=112, class=2
+2026-04-16 23:50:21 | DEBUG    | vision.tracking           | Track exited: ID=94 duration=30.4s
+2026-04-16 23:50:21 | DEBUG    | vision.tracking           | Track exited: ID=97 duration=3.0s
+2026-04-16 23:50:21 | DEBUG    | vision.tracking           | New track: ID=114, class=2
+2026-04-16 23:50:21 | DEBUG    | vision.tracking           | New track: ID=116, class=2
+2026-04-16 23:50:22 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=465.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=465.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=465.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=465.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=465.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=73 duration=384.3s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=100 duration=365.8s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=345.8s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=305.6s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=95 duration=171.5s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=96 duration=4.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=107 duration=2.5s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=109 duration=2.5s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=112 duration=1.9s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=114 duration=0.7s
+2026-04-16 23:50:22 | DEBUG    | vision.tracking           | Track exited: ID=116 duration=0.7s
+2026-04-16 23:50:27 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=267.0s
+2026-04-16 23:50:29 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=335.0s
+2026-04-16 23:50:30 | DEBUG    | vision.tracking           | New track: ID=49, class=2
+2026-04-16 23:50:30 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=403.1s
+2026-04-16 23:50:31 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=202.7s
+2026-04-16 23:50:32 | DEBUG    | vision.tracking           | New track: ID=60, class=2
+2026-04-16 23:50:33 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=401.7s
+2026-04-16 23:50:33 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=356.4s
+2026-04-16 23:50:34 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=477.0s
+2026-04-16 23:50:34 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=356.9s
+2026-04-16 23:50:34 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=325.1s
+2026-04-16 23:50:35 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=33.3s
+2026-04-16 23:50:39 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=325.5s
+2026-04-16 23:50:39 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=15 | Overcrowding: Dense cluster of 12 vehicles in a localised area.
+2026-04-16 23:50:39 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:50:39 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (85s remaining).
+2026-04-16 23:50:39 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:50:45 | DEBUG    | vision.tracking           | Track exited: ID=72 duration=261.7s
+2026-04-16 23:50:46 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=15 | ACCIDENT ALERT: Entities 1 & 87 collided — sudden stop detected!
+2026-04-16 23:50:47 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:50:47 | DEBUG    | services.email            | Email cooldown active for 'collision' (92s remaining).
+2026-04-16 23:50:47 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:50:47 | DEBUG    | vision.tracking           | New track: ID=92, class=2
+2026-04-16 23:50:48 | DEBUG    | vision.tracking           | Track exited: ID=60 duration=15.3s
+2026-04-16 23:50:48 | DEBUG    | vision.tracking           | Track exited: ID=77 duration=462.4s
+2026-04-16 23:50:51 | DEBUG    | vision.tracking           | Track exited: ID=92 duration=4.0s
+2026-04-16 23:50:51 | DEBUG    | vision.tracking           | Track exited: ID=87 duration=301.6s
+2026-04-16 23:50:52 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=496.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=496.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=496.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=496.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=496.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=93 duration=464.6s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=426.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=417.8s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=372.0s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=346.5s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=162.3s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=161.6s
+2026-04-16 23:50:53 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=23.2s
+2026-04-16 23:51:01 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=384.2s
+2026-04-16 23:51:02 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=505.1s
+2026-04-16 23:51:03 | DEBUG    | vision.tracking           | Track exited: ID=35 duration=176.6s
+2026-04-16 23:51:03 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=382.3s
+2026-04-16 23:51:03 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=321.7s
+2026-04-16 23:51:05 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=173.5s
+2026-04-16 23:51:07 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=288.5s
+2026-04-16 23:51:07 | DEBUG    | vision.tracking           | Track exited: ID=64 duration=83.7s
+2026-04-16 23:51:09 | DEBUG    | vision.tracking           | Track exited: ID=68 duration=485.1s
+2026-04-16 23:51:09 | DEBUG    | vision.tracking           | Track exited: ID=73 duration=430.5s
+2026-04-16 23:51:12 | DEBUG    | vision.tracking           | Track exited: ID=77 duration=485.5s
+2026-04-16 23:51:14 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=378.7s
+2026-04-16 23:51:19 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=366.5s
+2026-04-16 23:51:20 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=12 | ACCIDENT ALERT: Entities 9 & 50 collided — sudden stop detected!
+2026-04-16 23:51:21 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:51:21 | DEBUG    | services.email            | Email cooldown active for 'collision' (58s remaining).
+2026-04-16 23:51:21 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:51:24 | DEBUG    | vision.tracking           | Track exited: ID=106 duration=492.0s
+2026-04-16 23:51:24 | DEBUG    | vision.tracking           | New track: ID=125, class=0
+2026-04-16 23:51:24 | DEBUG    | vision.tracking           | New track: ID=129, class=2
+2026-04-16 23:51:25 | DEBUG    | vision.tracking           | Track exited: ID=109 duration=65.5s
+2026-04-16 23:51:27 | DEBUG    | vision.tracking           | Track exited: ID=75 duration=301.8s
+2026-04-16 23:51:27 | DEBUG    | vision.tracking           | New track: ID=140, class=2
+2026-04-16 23:51:28 | DEBUG    | vision.tracking           | Track exited: ID=125 duration=3.9s
+2026-04-16 23:51:29 | DEBUG    | vision.tracking           | Track exited: ID=90 duration=187.3s
+2026-04-16 23:51:30 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=533.6s
+2026-04-16 23:51:32 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=406.8s
+2026-04-16 23:51:34 | DEBUG    | vision.tracking           | Track exited: ID=140 duration=6.1s
+2026-04-16 23:51:35 | DEBUG    | vision.tracking           | Track exited: ID=113 duration=502.3s
+2026-04-16 23:51:35 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=14 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:51:35 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:51:35 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (29s remaining).
+2026-04-16 23:51:35 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:51:35 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=468.5s
+2026-04-16 23:51:38 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=541.9s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=541.9s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=541.9s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=541.9s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=124 duration=503.3s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=141 duration=498.6s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=155 duration=494.5s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=157 duration=492.6s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=161 duration=492.3s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=421.9s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=143 duration=297.8s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=50 duration=241.0s
+2026-04-16 23:51:39 | DEBUG    | vision.tracking           | Track exited: ID=129 duration=14.1s
+2026-04-16 23:51:46 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=244.0s
+2026-04-16 23:51:52 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=434.0s
+2026-04-16 23:51:53 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=485.1s
+2026-04-16 23:51:55 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=16 | ACCIDENT ALERT: Entities 1 & 49 collided — sudden stop detected!
+2026-04-16 23:51:55 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:51:55 | DEBUG    | services.email            | Email cooldown active for 'collision' (24s remaining).
+2026-04-16 23:51:55 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=485.4s
+2026-04-16 23:51:57 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=560.8s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=554.7s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=490.7s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=34 duration=488.2s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=440.7s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=436.5s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=281.5s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=261.4s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=43 duration=229.0s
+2026-04-16 23:51:57 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=87.6s
+2026-04-16 23:52:05 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=157.0s
+2026-04-16 23:52:06 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=446.8s
+2026-04-16 23:52:06 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=563.8s
+2026-04-16 23:52:06 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=15 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-16 23:52:06 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:52:07 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=556.3s
+2026-04-16 23:52:09 | DEBUG    | vision.tracking           | Track exited: ID=31 duration=300.6s
+2026-04-16 23:52:10 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=573.4s
+2026-04-16 23:52:11 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:52:11 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:52:11 | DEBUG    | vision.tracking           | New track: ID=78, class=2
+2026-04-16 23:52:12 | DEBUG    | vision.tracking           | Track exited: ID=60 duration=99.6s
+2026-04-16 23:52:13 | DEBUG    | vision.tracking           | Track exited: ID=44 duration=300.1s
+2026-04-16 23:52:13 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=130.9s
+2026-04-16 23:52:14 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=425.0s
+2026-04-16 23:52:15 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=279.1s
+2026-04-16 23:52:21 | DEBUG    | vision.tracking           | Track exited: ID=86 duration=450.7s
+2026-04-16 23:52:25 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=15 | ACCIDENT ALERT: Entities 6 & 22 collided — sudden stop detected!
+2026-04-16 23:52:26 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:52:30 | DEBUG    | vision.tracking           | Track exited: ID=91 duration=504.6s
+2026-04-16 23:52:31 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:52:31 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:52:32 | DEBUG    | vision.tracking           | Track exited: ID=78 duration=20.2s
+2026-04-16 23:52:33 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=596.6s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=596.6s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=596.6s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=596.6s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=596.6s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=525.9s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=476.5s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=434.9s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=411.5s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=372.4s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=70 duration=371.1s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=72 duration=369.9s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=105 duration=361.2s
+2026-04-16 23:52:33 | DEBUG    | vision.tracking           | Track exited: ID=130 duration=355.5s
+2026-04-16 23:52:37 | DEBUG    | vision.tracking           | New track: ID=40, class=2
+2026-04-16 23:52:38 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=601.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=531.8s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=531.6s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=481.5s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=477.5s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=441.7s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=440.1s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=334.6s
+2026-04-16 23:52:38 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=1.0s
+2026-04-16 23:52:46 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=459.0s
+2026-04-16 23:52:47 | DEBUG    | vision.tracking           | Track exited: ID=50 duration=309.6s
+2026-04-16 23:52:48 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=312.3s
+2026-04-16 23:52:49 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=13 | Overcrowding: Dense cluster of 12 vehicles in a localised area.
+2026-04-16 23:52:49 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:52:49 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (82s remaining).
+2026-04-16 23:52:49 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:52:58 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=620.3s
+2026-04-16 23:53:01 | DEBUG    | vision.tracking           | Track exited: ID=78 duration=49.6s
+2026-04-16 23:53:03 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=13 | ACCIDENT ALERT: Entities 1 & 97 collided — sudden stop detected!
+2026-04-16 23:53:03 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:53:03 | DEBUG    | services.email            | Email cooldown active for 'collision' (87s remaining).
+2026-04-16 23:53:03 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:53:06 | DEBUG    | vision.tracking           | Track exited: ID=97 duration=168.3s
+2026-04-16 23:53:08 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=559.1s
+2026-04-16 23:53:11 | DEBUG    | vision.tracking           | New track: ID=134, class=2
+2026-04-16 23:53:14 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=637.9s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=637.9s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=637.9s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=637.9s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=637.9s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=41 duration=624.3s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=77 duration=608.6s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=477.8s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=143 duration=393.8s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=347.5s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=121 duration=274.7s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=192.5s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=37.1s
+2026-04-16 23:53:15 | DEBUG    | vision.tracking           | Track exited: ID=134 duration=3.6s
+2026-04-16 23:53:18 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=571.6s
+2026-04-16 23:53:18 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=641.8s
+2026-04-16 23:53:20 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=483.3s
+2026-04-16 23:53:25 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=649.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=649.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=649.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=649.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=649.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=643.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=579.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=577.2s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=572.4s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=528.2s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=526.5s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=520.9s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=512.1s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=381.9s
+2026-04-16 23:53:26 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=344.3s
+2026-04-16 23:53:42 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 8 & 33 collided — sudden stop detected!
+2026-04-16 23:53:43 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:53:43 | DEBUG    | services.email            | Email cooldown active for 'collision' (48s remaining).
+2026-04-16 23:53:43 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:53:43 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=595.9s
+2026-04-16 23:53:46 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=519.1s
+2026-04-16 23:53:46 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=546.9s
+2026-04-16 23:53:47 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=671.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=671.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=671.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=671.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=665.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=67 duration=644.6s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=599.5s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=551.6s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=548.9s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=511.4s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=449.9s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=447.3s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=404.3s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=372.1s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=337.5s
+2026-04-16 23:53:48 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=225.6s
+2026-04-16 23:53:53 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=676.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=606.4s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=556.3s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=540.0s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=515.9s
+2026-04-16 23:53:53 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=402.1s
+2026-04-16 23:53:59 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=610.1s
+2026-04-16 23:54:01 | DEBUG    | vision.tracking           | Track exited: ID=34 duration=611.4s
+2026-04-16 23:54:01 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=409.6s
+2026-04-16 23:54:01 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=532.4s
+2026-04-16 23:54:02 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=615.4s
+2026-04-16 23:54:03 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=549.9s
+2026-04-16 23:54:05 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=215.1s
+2026-04-16 23:54:05 | DEBUG    | vision.tracking           | Track exited: ID=46 duration=614.0s
+2026-04-16 23:54:12 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=266.1s
+2026-04-16 23:54:15 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=14 | ACCIDENT ALERT: Entities 1 & 93 collided — sudden stop detected!
+2026-04-16 23:54:15 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:54:15 | DEBUG    | services.email            | Email cooldown active for 'collision' (16s remaining).
+2026-04-16 23:54:15 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:54:17 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=701.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=93 duration=669.4s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=73 duration=619.7s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=99 duration=604.5s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=85 duration=568.7s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=564.2s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=516.0s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=44 duration=425.1s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=401.8s
+2026-04-16 23:54:18 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=255.3s
+2026-04-16 23:54:21 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=634.8s
+2026-04-16 23:54:27 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=710.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=710.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=710.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=710.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=710.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=67 duration=683.6s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=69 duration=630.4s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=590.7s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=590.4s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=574.1s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=550.0s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=535.5s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=443.3s
+2026-04-16 23:54:27 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=264.6s
+2026-04-16 23:54:32 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=578.7s
+2026-04-16 23:54:33 | DEBUG    | vision.tracking           | New track: ID=42, class=2
+2026-04-16 23:54:39 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=560.4s
+2026-04-16 23:54:45 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=16 | ACCIDENT ALERT: Entities 6 & 19 collided — sudden stop detected!
+2026-04-16 23:54:46 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:54:47 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=129.5s
+2026-04-16 23:54:47 | DEBUG    | vision.tracking           | Track exited: ID=42 duration=14.0s
+2026-04-16 23:54:47 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=15 | Overcrowding: Dense cluster of 13 vehicles in a localised area.
+2026-04-16 23:54:47 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:54:48 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=396.4s
+2026-04-16 23:54:48 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=731.4s
+2026-04-16 23:54:50 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=733.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=733.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=733.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=733.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=733.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=67 duration=706.7s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=663.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=613.7s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=613.5s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=595.8s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=558.6s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=454.3s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=43 duration=401.7s
+2026-04-16 23:54:50 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=304.9s
+2026-04-16 23:54:51 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-16 23:54:51 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:54:55 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-16 23:54:55 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-16 23:54:55 | DEBUG    | vision.tracking           | New track: ID=47, class=2
+2026-04-16 23:54:57 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=617.1s
+2026-04-16 23:54:58 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=620.7s
+2026-04-16 23:55:02 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=738.9s
+2026-04-16 23:55:02 | DEBUG    | vision.tracking           | Track exited: ID=47 duration=6.3s
+2026-04-16 23:55:02 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=601.0s
+2026-04-16 23:55:02 | DEBUG    | vision.tracking           | Track exited: ID=63 duration=666.8s
+2026-04-16 23:55:05 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=592.5s
+2026-04-16 23:55:05 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=678.3s
+2026-04-16 23:55:05 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=620.2s
+2026-04-16 23:55:11 | DEBUG    | vision.tracking           | Track exited: ID=89 duration=668.2s
+2026-04-16 23:55:14 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=571.6s
+2026-04-16 23:55:16 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=12 | ACCIDENT ALERT: Entities 2 & 78 collided — sudden stop detected!
+2026-04-16 23:55:16 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:55:16 | DEBUG    | services.email            | Email cooldown active for 'collision' (95s remaining).
+2026-04-16 23:55:16 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:55:18 | DEBUG    | vision.tracking           | Track exited: ID=118 duration=723.7s
+2026-04-16 23:55:18 | DEBUG    | vision.tracking           | New track: ID=139, class=2
+2026-04-16 23:55:21 | DEBUG    | vision.tracking           | Track exited: ID=99 duration=667.6s
+2026-04-16 23:55:22 | DEBUG    | vision.tracking           | New track: ID=152, class=2
+2026-04-16 23:55:24 | DEBUG    | vision.tracking           | Track exited: ID=143 duration=523.5s
+2026-04-16 23:55:24 | DEBUG    | vision.tracking           | Track exited: ID=144 duration=523.5s
+2026-04-16 23:55:26 | DEBUG    | vision.tracking           | New track: ID=167, class=2
+2026-04-16 23:55:28 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=771.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=771.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=771.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=771.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=701.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=126 duration=655.1s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=651.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=81 duration=640.7s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=619.8s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=343.1s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=78 duration=197.0s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=134 duration=137.5s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=139 duration=9.9s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=152 duration=6.5s
+2026-04-16 23:55:28 | DEBUG    | vision.tracking           | Track exited: ID=167 duration=2.1s
+2026-04-16 23:55:33 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=771.8s
+2026-04-16 23:55:33 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=616.1s
+2026-04-16 23:55:35 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=657.9s
+2026-04-16 23:55:35 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=640.7s
+2026-04-16 23:55:35 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=14 | Overcrowding: Dense cluster of 12 vehicles in a localised area.
+2026-04-16 23:55:35 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:55:35 | DEBUG    | services.email            | Email cooldown active for 'overcrowding' (80s remaining).
+2026-04-16 23:55:35 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:55:36 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=658.8s
+2026-04-16 23:55:37 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=635.7s
+2026-04-16 23:55:38 | DEBUG    | vision.tracking           | Track exited: ID=42 duration=65.3s
+2026-04-16 23:55:40 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=509.1s
+2026-04-16 23:55:40 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=783.6s
+2026-04-16 23:55:41 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=599.7s
+2026-04-16 23:55:42 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=561.3s
+2026-04-16 23:55:44 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=788.1s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=788.1s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=788.1s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=717.4s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=667.7s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=638.3s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=584.4s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=75 duration=559.7s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=497.6s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=50 duration=487.1s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=483.3s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=74 duration=339.3s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=314.9s
+2026-04-16 23:55:45 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=187.3s
+2026-04-16 23:55:46 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=12 | ACCIDENT ALERT: Entities 1 & 8 collided — sudden stop detected!
+2026-04-16 23:55:46 | INFO     | services.alert            | Attempting Email notification...
+2026-04-16 23:55:46 | DEBUG    | services.email            | Email cooldown active for 'collision' (64s remaining).
+2026-04-16 23:55:46 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-16 23:55:48 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=791.7s
+2026-04-16 23:55:54 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=796.8s
+2026-04-16 23:55:54 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=677.0s
+2026-04-16 23:55:58 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=649.2s
+2026-04-16 23:56:00 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=683.1s
+2026-04-16 23:56:01 | ERROR    | vision.tracking           | DeepSORT update error (auto-resetting tracker): Inconsistent object during array creation? Content of sequences changed (length inconsistent).
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=804.4s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=804.4s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=804.4s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=804.4s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=734.4s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=733.7s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=684.0s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=667.9s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=642.7s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=600.7s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=525.1s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=469.6s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=71 duration=375.8s
+2026-04-16 23:56:01 | DEBUG    | vision.tracking           | Track exited: ID=47 duration=65.6s
+2026-04-16 23:56:01 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 23:56:01 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-16 23:56:02 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-16 23:56:02 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-16 23:56:02 | INFO     | backend.app               | Inference Thread finished.
+2026-04-16 23:56:02 | INFO     | backend.app               | System stopped.
+2026-04-16 23:56:02 | INFO     | backend.app               | Inference Thread finished.
+2026-04-16 23:56:02 | INFO     | vision.video_input        | VideoCapture released: 0
+2026-04-16 23:56:02 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-16 23:58:40 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:00:30 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:00:42 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\normal flow.mp4' @ 30.0 fps
+2026-04-17 00:00:42 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-17 00:00:42 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:10:04 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:22:24 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:24:42 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:24:42 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:24:42 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:24:42 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:24:42 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:24:42 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:24:42 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:24:42 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:24:42 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:24:42 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:24:42 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:24:42 | INFO     | backend.app               | System started (mode=file, source=normal flow.mp4).
+2026-04-17 00:24:42 | INFO     | vision.detection          | Loading YOLOv8 model from: D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-17 00:24:42 | INFO     | vision.detection          | YOLOv8 initialized on device: CPU
+2026-04-17 00:24:42 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:24:42 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:24:42 | DEBUG    | vision.tracking           | New track: ID=11, class=2
+2026-04-17 00:24:42 | DEBUG    | vision.tracking           | New track: ID=12, class=2
+2026-04-17 00:24:43 | DEBUG    | vision.tracking           | New track: ID=17, class=2
+2026-04-17 00:24:43 | DEBUG    | vision.tracking           | New track: ID=21, class=2
+2026-04-17 00:24:43 | DEBUG    | vision.tracking           | New track: ID=31, class=2
+2026-04-17 00:24:44 | DEBUG    | vision.tracking           | New track: ID=48, class=2
+2026-04-17 00:24:44 | DEBUG    | vision.tracking           | New track: ID=53, class=2
+2026-04-17 00:24:45 | DEBUG    | vision.tracking           | New track: ID=82, class=2
+2026-04-17 00:24:45 | DEBUG    | vision.tracking           | New track: ID=96, class=2
+2026-04-17 00:24:45 | DEBUG    | vision.tracking           | New track: ID=101, class=2
+2026-04-17 00:24:45 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=10 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-17 00:24:45 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:24:46 | DEBUG    | vision.tracking           | New track: ID=111, class=2
+2026-04-17 00:24:46 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=11 | ACCIDENT ALERT: Entities 17 & 111 collided — sudden stop detected!
+2026-04-17 00:24:46 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:24:46 | DEBUG    | vision.tracking           | New track: ID=131, class=2
+2026-04-17 00:24:47 | DEBUG    | vision.tracking           | New track: ID=134, class=2
+2026-04-17 00:24:47 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=3.6s
+2026-04-17 00:24:47 | DEBUG    | vision.tracking           | New track: ID=138, class=2
+2026-04-17 00:24:48 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=5.0s
+2026-04-17 00:24:49 | DEBUG    | vision.tracking           | Track exited: ID=53 duration=4.6s
+2026-04-17 00:24:49 | DEBUG    | vision.tracking           | New track: ID=190, class=2
+2026-04-17 00:24:49 | DEBUG    | vision.tracking           | New track: ID=199, class=2
+2026-04-17 00:24:50 | DEBUG    | vision.tracking           | New track: ID=219, class=2
+2026-04-17 00:24:50 | DEBUG    | vision.tracking           | New track: ID=225, class=2
+2026-04-17 00:24:50 | DEBUG    | vision.tracking           | New track: ID=227, class=2
+2026-04-17 00:24:50 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-17 00:24:50 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:24:51 | DEBUG    | vision.tracking           | Track exited: ID=101 duration=5.3s
+2026-04-17 00:24:51 | DEBUG    | vision.tracking           | New track: ID=249, class=7
+2026-04-17 00:24:51 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=8.3s
+2026-04-17 00:24:51 | DEBUG    | vision.tracking           | Track exited: ID=111 duration=5.2s
+2026-04-17 00:24:51 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=7.6s
+2026-04-17 00:24:52 | DEBUG    | vision.tracking           | New track: ID=269, class=2
+2026-04-17 00:24:52 | DEBUG    | vision.tracking           | Track exited: ID=96 duration=6.3s
+2026-04-17 00:24:52 | DEBUG    | vision.tracking           | New track: ID=277, class=2
+2026-04-17 00:24:52 | DEBUG    | vision.tracking           | New track: ID=281, class=2
+2026-04-17 00:24:52 | DEBUG    | vision.tracking           | New track: ID=283, class=2
+2026-04-17 00:24:53 | DEBUG    | vision.tracking           | New track: ID=298, class=2
+2026-04-17 00:24:53 | DEBUG    | vision.tracking           | New track: ID=299, class=2
+2026-04-17 00:24:53 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:24:53 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:24:53 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-17 00:24:53 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:24:53 | INFO     | backend.app               | System stopped.
+2026-04-17 00:24:55 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:24:55 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:24:57 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 00:24:57 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:24:57 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:24:57 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:24:57 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:24:57 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:24:57 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:24:57 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:24:57 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:24:57 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:24:57 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:24:57 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:24:57 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:24:57 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:24:57 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-17 00:24:57 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:24:57 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:24:57 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:24:57 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:24:58 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:24:58 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=3 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:24:58 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:24:58 | DEBUG    | vision.tracking           | New track: ID=9, class=2
+2026-04-17 00:24:59 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=4 | ACCIDENT ALERT: Entities 2 & 9 collided — sudden stop detected!
+2026-04-17 00:24:59 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:24:59 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=1.1s
+2026-04-17 00:24:59 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=1.9s
+2026-04-17 00:25:00 | DEBUG    | vision.tracking           | New track: ID=13, class=0
+2026-04-17 00:25:00 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=3 | MEDICAL ALERT: Person 9 shows abnormal movement — sudden freeze from movement. P
+2026-04-17 00:25:00 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:25:00 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=2.1s
+2026-04-17 00:25:01 | DEBUG    | vision.tracking           | New track: ID=15, class=0
+2026-04-17 00:25:01 | DEBUG    | vision.tracking           | New track: ID=17, class=2
+2026-04-17 00:25:02 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=1.3s
+2026-04-17 00:25:02 | DEBUG    | vision.tracking           | New track: ID=18, class=0
+2026-04-17 00:25:02 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=1.4s
+2026-04-17 00:25:02 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-17 00:25:02 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:25:03 | DEBUG    | vision.tracking           | New track: ID=20, class=0
+2026-04-17 00:25:03 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=2.2s
+2026-04-17 00:25:03 | DEBUG    | vision.tracking           | New track: ID=22, class=2
+2026-04-17 00:25:04 | DEBUG    | vision.tracking           | New track: ID=23, class=0
+2026-04-17 00:25:04 | DEBUG    | vision.tracking           | New track: ID=25, class=2
+2026-04-17 00:25:04 | DEBUG    | vision.tracking           | Track exited: ID=20 duration=1.2s
+2026-04-17 00:25:05 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=7.1s
+2026-04-17 00:25:05 | DEBUG    | vision.tracking           | New track: ID=26, class=0
+2026-04-17 00:25:05 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=2.6s
+2026-04-17 00:25:05 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=1.3s
+2026-04-17 00:25:06 | DEBUG    | vision.tracking           | New track: ID=28, class=0
+2026-04-17 00:25:07 | DEBUG    | vision.tracking           | New track: ID=29, class=2
+2026-04-17 00:25:07 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=2.9s
+2026-04-17 00:25:07 | DEBUG    | vision.tracking           | New track: ID=32, class=2
+2026-04-17 00:25:07 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:25:07 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:25:07 | DEBUG    | vision.tracking           | New track: ID=33, class=2
+2026-04-17 00:25:07 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=2.4s
+2026-04-17 00:25:08 | DEBUG    | vision.tracking           | New track: ID=34, class=2
+2026-04-17 00:25:08 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=4.8s
+2026-04-17 00:25:09 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=1.9s
+2026-04-17 00:25:09 | DEBUG    | vision.tracking           | Track exited: ID=33 duration=2.1s
+2026-04-17 00:25:10 | DEBUG    | vision.tracking           | New track: ID=36, class=0
+2026-04-17 00:25:10 | DEBUG    | vision.tracking           | Track exited: ID=34 duration=2.4s
+2026-04-17 00:25:10 | DEBUG    | vision.tracking           | New track: ID=38, class=2
+2026-04-17 00:25:10 | DEBUG    | vision.tracking           | New track: ID=39, class=2
+2026-04-17 00:25:11 | DEBUG    | vision.tracking           | New track: ID=40, class=2
+2026-04-17 00:25:11 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=5.0s
+2026-04-17 00:25:12 | INFO     | services.email            | Alert email → 'Medical Emergency & Police' (2 recipients) | type=medical_emergency
+2026-04-17 00:25:12 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:25:12 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=1.9s
+2026-04-17 00:25:13 | DEBUG    | vision.tracking           | New track: ID=42, class=0
+2026-04-17 00:25:13 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=2.2s
+2026-04-17 00:25:13 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=2.4s
+2026-04-17 00:25:13 | DEBUG    | vision.tracking           | New track: ID=48, class=2
+2026-04-17 00:25:14 | DEBUG    | vision.tracking           | New track: ID=49, class=0
+2026-04-17 00:25:14 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=4.2s
+2026-04-17 00:25:16 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=2.7s
+2026-04-17 00:25:16 | DEBUG    | vision.tracking           | New track: ID=51, class=2
+2026-04-17 00:25:17 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=2.5s
+2026-04-17 00:25:17 | DEBUG    | vision.tracking           | New track: ID=54, class=2
+2026-04-17 00:25:17 | DEBUG    | vision.tracking           | New track: ID=55, class=0
+2026-04-17 00:25:18 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=11.3s
+2026-04-17 00:25:19 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=2.4s
+2026-04-17 00:25:20 | DEBUG    | vision.tracking           | New track: ID=56, class=0
+2026-04-17 00:25:20 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=2.3s
+2026-04-17 00:25:20 | DEBUG    | vision.tracking           | New track: ID=58, class=2
+2026-04-17 00:25:21 | DEBUG    | vision.tracking           | New track: ID=59, class=0
+2026-04-17 00:25:21 | DEBUG    | vision.tracking           | New track: ID=60, class=0
+2026-04-17 00:25:21 | DEBUG    | vision.tracking           | Track exited: ID=56 duration=1.8s
+2026-04-17 00:25:22 | DEBUG    | vision.tracking           | Track exited: ID=58 duration=2.4s
+2026-04-17 00:25:22 | DEBUG    | vision.tracking           | New track: ID=61, class=2
+2026-04-17 00:25:23 | DEBUG    | vision.tracking           | New track: ID=62, class=0
+2026-04-17 00:25:23 | DEBUG    | vision.tracking           | Track exited: ID=59 duration=2.1s
+2026-04-17 00:25:23 | DEBUG    | vision.tracking           | New track: ID=65, class=2
+2026-04-17 00:25:23 | DEBUG    | vision.tracking           | New track: ID=66, class=2
+2026-04-17 00:25:23 | DEBUG    | vision.tracking           | Track exited: ID=42 duration=10.7s
+2026-04-17 00:25:24 | DEBUG    | vision.tracking           | Track exited: ID=51 duration=7.6s
+2026-04-17 00:25:25 | DEBUG    | vision.tracking           | Track exited: ID=62 duration=1.9s
+2026-04-17 00:25:25 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=2.2s
+2026-04-17 00:25:25 | DEBUG    | vision.tracking           | New track: ID=68, class=0
+2026-04-17 00:25:27 | DEBUG    | vision.tracking           | New track: ID=70, class=2
+2026-04-17 00:25:27 | DEBUG    | vision.tracking           | Track exited: ID=66 duration=2.9s
+2026-04-17 00:25:29 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=4 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:25:29 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:25:29 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (93s remaining).
+2026-04-17 00:25:29 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:25:29 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=4 | ACCIDENT ALERT: Entity 70 made an abnormal sudden stop from high speed!
+2026-04-17 00:25:29 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:25:29 | DEBUG    | services.email            | Email cooldown active for 'collision' (98s remaining).
+2026-04-17 00:25:29 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:25:30 | DEBUG    | vision.tracking           | New track: ID=76, class=2
+2026-04-17 00:25:30 | DEBUG    | vision.tracking           | New track: ID=77, class=2
+2026-04-17 00:25:30 | DEBUG    | vision.tracking           | Track exited: ID=70 duration=3.8s
+2026-04-17 00:25:31 | DEBUG    | vision.tracking           | Track exited: ID=68 duration=5.1s
+2026-04-17 00:25:32 | DEBUG    | vision.tracking           | Track exited: ID=76 duration=2.7s
+2026-04-17 00:25:33 | DEBUG    | vision.tracking           | Track exited: ID=77 duration=2.7s
+2026-04-17 00:25:33 | DEBUG    | vision.tracking           | New track: ID=84, class=2
+2026-04-17 00:25:34 | DEBUG    | vision.tracking           | New track: ID=85, class=0
+2026-04-17 00:25:35 | DEBUG    | vision.tracking           | Track exited: ID=60 duration=13.5s
+2026-04-17 00:25:35 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:25:35 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:25:35 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:25:35 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:25:35 | INFO     | backend.app               | System stopped.
+2026-04-17 00:25:38 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-17 00:25:38 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-17 00:25:38 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:25:38 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:25:38 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:25:38 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:25:38 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:25:38 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:25:38 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:25:38 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:25:39 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:25:39 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:25:39 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:25:39 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:25:39 | INFO     | backend.app               | System started (mode=webcam, source=0).
+2026-04-17 00:25:39 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:25:39 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:26:10 | DEBUG    | vision.tracking           | New track: ID=1, class=0
+2026-04-17 00:26:13 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:26:14 | DEBUG    | vision.tracking           | New track: ID=5, class=0
+2026-04-17 00:26:15 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=2.0s
+2026-04-17 00:26:20 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:26:48 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:26:59 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 00:26:59 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:26:59 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:34:49 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 00:47:16 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:47:16 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:47:16 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:47:16 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:47:16 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:47:16 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:47:16 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:47:16 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:47:16 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:47:16 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:47:16 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:47:16 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-17 00:47:16 | INFO     | vision.detection          | Loading YOLOv8 model from: D:\SaaS\AI Surveillance System\models\yolov8n.pt
+2026-04-17 00:47:16 | INFO     | vision.detection          | YOLOv8 initialized on device: CPU
+2026-04-17 00:47:17 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:47:17 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:47:17 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:47:19 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:47:21 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:47:21 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:47:22 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=2.3s
+2026-04-17 00:47:22 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:47:22 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=0.8s
+2026-04-17 00:47:23 | DEBUG    | vision.tracking           | New track: ID=6, class=0
+2026-04-17 00:47:25 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-17 00:47:26 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-17 00:47:26 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:47:26 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=1.0s
+2026-04-17 00:47:26 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=2.9s
+2026-04-17 00:47:26 | DEBUG    | vision.tracking           | New track: ID=11, class=2
+2026-04-17 00:47:27 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=10.1s
+2026-04-17 00:47:30 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 11 made an abnormal sudden stop from high speed!
+2026-04-17 00:47:30 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:47:34 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:47:34 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:47:40 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-17 00:47:42 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=2.6s
+2026-04-17 00:47:42 | DEBUG    | vision.tracking           | New track: ID=13, class=0
+2026-04-17 00:47:43 | DEBUG    | vision.tracking           | Track exited: ID=13 duration=0.8s
+2026-04-17 00:47:46 | DEBUG    | vision.tracking           | New track: ID=14, class=0
+2026-04-17 00:47:50 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=3.9s
+2026-04-17 00:47:53 | DEBUG    | vision.tracking           | New track: ID=15, class=0
+2026-04-17 00:47:55 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:47:55 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:47:55 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (91s remaining).
+2026-04-17 00:47:55 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:47:56 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=2.4s
+2026-04-17 00:47:56 | DEBUG    | vision.tracking           | New track: ID=16, class=0
+2026-04-17 00:47:56 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=0.9s
+2026-04-17 00:47:57 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:47:57 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:47:57 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:47:57 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:47:57 | INFO     | backend.app               | System stopped.
+2026-04-17 00:48:03 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-17 00:48:03 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 00:48:03 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:48:03 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:48:03 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:48:03 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:48:03 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:48:03 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:48:03 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:48:03 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:48:03 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:48:03 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:48:03 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:48:03 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:48:03 | INFO     | backend.app               | System started (mode=file, source=car bike collision.mp4).
+2026-04-17 00:48:03 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:48:03 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=2, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=3, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=5, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=6, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=7, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=8, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=9, class=2
+2026-04-17 00:48:04 | DEBUG    | vision.tracking           | New track: ID=11, class=2
+2026-04-17 00:48:07 | DEBUG    | vision.tracking           | New track: ID=14, class=0
+2026-04-17 00:48:07 | DEBUG    | vision.tracking           | Track exited: ID=9 duration=2.8s
+2026-04-17 00:48:07 | DEBUG    | vision.tracking           | New track: ID=15, class=7
+2026-04-17 00:48:07 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=11 | ACCIDENT ALERT: Entities 2 & 15 collided — sudden stop detected!
+2026-04-17 00:48:07 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:48:08 | DEBUG    | vision.tracking           | New track: ID=17, class=0
+2026-04-17 00:48:08 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=3.9s
+2026-04-17 00:48:08 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=3.3s
+2026-04-17 00:48:10 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=3.3s
+2026-04-17 00:48:11 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=2.7s
+2026-04-17 00:48:11 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=6.9s
+2026-04-17 00:48:11 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:48:11 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:48:12 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=7.7s
+2026-04-17 00:48:14 | DEBUG    | vision.tracking           | New track: ID=22, class=2
+2026-04-17 00:48:17 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:48:17 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 00:48:17 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:48:17 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:48:17 | INFO     | backend.app               | System stopped.
+2026-04-17 00:48:53 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\de@th accident.mp4' @ 59.4 fps
+2026-04-17 00:48:53 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\de@th accident.mp4
+2026-04-17 00:48:53 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:48:54 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:48:54 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:48:54 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:48:54 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:48:54 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:48:54 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:48:54 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:48:54 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:48:54 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:48:54 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:48:54 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:48:54 | INFO     | backend.app               | System started (mode=file, source=de@th accident.mp4).
+2026-04-17 00:48:54 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:48:54 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:48:54 | DEBUG    | vision.tracking           | New track: ID=1, class=0
+2026-04-17 00:48:54 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:48:54 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:48:54 | DEBUG    | vision.tracking           | New track: ID=4, class=0
+2026-04-17 00:48:54 | DEBUG    | vision.tracking           | New track: ID=5, class=0
+2026-04-17 00:48:56 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-17 00:48:56 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=6 | ACCIDENT ALERT: Entities 2 & 12 collided — sudden stop detected!
+2026-04-17 00:48:57 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:48:57 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=2.4s
+2026-04-17 00:48:57 | DEBUG    | vision.tracking           | New track: ID=15, class=0
+2026-04-17 00:48:57 | DEBUG    | vision.tracking           | New track: ID=16, class=0
+2026-04-17 00:48:57 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=3.4s
+2026-04-17 00:48:58 | DEBUG    | vision.tracking           | New track: ID=17, class=24
+2026-04-17 00:48:58 | DEBUG    | vision.tracking           | New track: ID=18, class=24
+2026-04-17 00:48:58 | DEBUG    | vision.tracking           | New track: ID=19, class=1
+2026-04-17 00:48:58 | DEBUG    | vision.tracking           | New track: ID=21, class=24
+2026-04-17 00:48:58 | DEBUG    | vision.tracking           | New track: ID=22, class=1
+2026-04-17 00:48:59 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=2.5s
+2026-04-17 00:48:59 | DEBUG    | vision.tracking           | New track: ID=26, class=0
+2026-04-17 00:48:59 | DEBUG    | vision.tracking           | New track: ID=28, class=0
+2026-04-17 00:49:00 | DEBUG    | vision.tracking           | New track: ID=29, class=0
+2026-04-17 00:49:00 | DEBUG    | vision.tracking           | New track: ID=30, class=0
+2026-04-17 00:49:00 | DEBUG    | vision.tracking           | Track exited: ID=21 duration=1.9s
+2026-04-17 00:49:01 | DEBUG    | vision.tracking           | New track: ID=32, class=1
+2026-04-17 00:49:01 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=6.7s
+2026-04-17 00:49:01 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=3.0s
+2026-04-17 00:49:01 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:49:01 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:49:01 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=3.1s
+2026-04-17 00:49:01 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=1.4s
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | New track: ID=36, class=0
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=3.5s
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | Track exited: ID=32 duration=1.2s
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | New track: ID=37, class=0
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=5.1s
+2026-04-17 00:49:02 | DEBUG    | vision.tracking           | New track: ID=38, class=1
+2026-04-17 00:49:03 | DEBUG    | vision.tracking           | Track exited: ID=16 duration=5.9s
+2026-04-17 00:49:03 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=5.2s
+2026-04-17 00:49:03 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=8 | MEDICAL ALERT: Person 30 shows abnormal movement — sudden freeze from movement. 
+2026-04-17 00:49:03 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:49:03 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=1.2s
+2026-04-17 00:49:04 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=4.0s
+2026-04-17 00:49:04 | DEBUG    | vision.tracking           | New track: ID=42, class=0
+2026-04-17 00:49:04 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=4.2s
+2026-04-17 00:49:04 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=5.0s
+2026-04-17 00:49:04 | DEBUG    | vision.tracking           | New track: ID=44, class=24
+2026-04-17 00:49:05 | DEBUG    | vision.tracking           | New track: ID=45, class=0
+2026-04-17 00:49:05 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=10.5s
+2026-04-17 00:49:05 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=3.0s
+2026-04-17 00:49:06 | DEBUG    | vision.tracking           | New track: ID=48, class=0
+2026-04-17 00:49:06 | DEBUG    | vision.tracking           | New track: ID=51, class=1
+2026-04-17 00:49:07 | DEBUG    | vision.tracking           | New track: ID=53, class=1
+2026-04-17 00:49:07 | DEBUG    | vision.tracking           | New track: ID=54, class=24
+2026-04-17 00:49:07 | DEBUG    | vision.tracking           | New track: ID=55, class=24
+2026-04-17 00:49:07 | DEBUG    | vision.tracking           | New track: ID=56, class=24
+2026-04-17 00:49:07 | DEBUG    | vision.tracking           | New track: ID=62, class=0
+2026-04-17 00:49:08 | DEBUG    | vision.tracking           | New track: ID=64, class=0
+2026-04-17 00:49:08 | INFO     | services.email            | Alert email → 'Medical Emergency & Police' (2 recipients) | type=medical_emergency
+2026-04-17 00:49:08 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:49:08 | DEBUG    | vision.tracking           | New track: ID=65, class=0
+2026-04-17 00:49:08 | DEBUG    | vision.tracking           | New track: ID=66, class=0
+2026-04-17 00:49:08 | DEBUG    | vision.tracking           | Track exited: ID=44 duration=3.6s
+2026-04-17 00:49:08 | DEBUG    | vision.tracking           | Track exited: ID=48 duration=2.7s
+2026-04-17 00:49:09 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=1.8s
+2026-04-17 00:49:09 | DEBUG    | vision.tracking           | New track: ID=71, class=1
+2026-04-17 00:49:09 | DEBUG    | vision.tracking           | Track exited: ID=36 duration=7.1s
+2026-04-17 00:49:09 | DEBUG    | vision.tracking           | Track exited: ID=54 duration=2.5s
+2026-04-17 00:49:10 | DEBUG    | vision.tracking           | Track exited: ID=45 duration=4.9s
+2026-04-17 00:49:10 | DEBUG    | vision.tracking           | New track: ID=72, class=0
+2026-04-17 00:49:10 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=15.1s
+2026-04-17 00:49:10 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:49:10 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:49:10 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\de@th accident.mp4
+2026-04-17 00:49:10 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:49:10 | INFO     | backend.app               | System stopped.
+2026-04-17 00:49:13 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\signal people.mp4' @ 30.0 fps
+2026-04-17 00:49:13 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\signal people.mp4
+2026-04-17 00:49:13 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:49:13 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:49:13 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:49:13 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:49:13 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:49:13 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:49:13 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:49:13 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:49:13 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:49:13 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:49:13 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:49:13 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:49:13 | INFO     | backend.app               | System started (mode=file, source=signal people.mp4).
+2026-04-17 00:49:13 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:49:13 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:49:13 | DEBUG    | vision.tracking           | New track: ID=1, class=0
+2026-04-17 00:49:13 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:49:13 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:49:13 | DEBUG    | vision.tracking           | New track: ID=4, class=0
+2026-04-17 00:49:14 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-17 00:49:14 | DEBUG    | vision.tracking           | New track: ID=11, class=0
+2026-04-17 00:49:14 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-17 00:49:14 | DEBUG    | vision.tracking           | New track: ID=13, class=0
+2026-04-17 00:49:14 | DEBUG    | vision.tracking           | New track: ID=15, class=0
+2026-04-17 00:49:14 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=9 | ACCIDENT ALERT: Entities 2 & 15 collided — sudden stop detected!
+2026-04-17 00:49:15 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:49:15 | DEBUG    | vision.tracking           | New track: ID=17, class=0
+2026-04-17 00:49:15 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=10 | Overcrowding: Dense cluster of 10 people in a localised area.
+2026-04-17 00:49:15 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:49:15 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=2.2s
+2026-04-17 00:49:16 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=2.9s
+2026-04-17 00:49:17 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=3.4s
+2026-04-17 00:49:17 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=2.7s
+2026-04-17 00:49:17 | DEBUG    | vision.tracking           | New track: ID=24, class=0
+2026-04-17 00:49:17 | DEBUG    | vision.tracking           | New track: ID=25, class=0
+2026-04-17 00:49:18 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:49:18 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:49:18 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\signal people.mp4
+2026-04-17 00:49:18 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:49:18 | INFO     | backend.app               | System stopped.
+2026-04-17 00:49:20 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:49:20 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:49:20 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\normal flow.mp4' @ 30.0 fps
+2026-04-17 00:49:20 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-17 00:49:20 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:49:20 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:49:20 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:49:20 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:49:20 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:49:20 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:49:20 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:49:20 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:49:20 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:49:20 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:49:20 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:49:20 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:49:20 | INFO     | backend.app               | System started (mode=file, source=normal flow.mp4).
+2026-04-17 00:49:20 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:49:20 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=2, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=3, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=5, class=7
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=6, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=7, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=8, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=10, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=12, class=2
+2026-04-17 00:49:21 | DEBUG    | vision.tracking           | New track: ID=13, class=2
+2026-04-17 00:49:22 | DEBUG    | vision.tracking           | New track: ID=15, class=2
+2026-04-17 00:49:22 | WARNING  | services.alert            | ALERT dispatched | type=overcrowding | count=12 | Overcrowding: Dense cluster of 10 vehicles in a localised area.
+2026-04-17 00:49:22 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:49:22 | DEBUG    | vision.tracking           | New track: ID=17, class=2
+2026-04-17 00:49:22 | DEBUG    | vision.tracking           | New track: ID=18, class=5
+2026-04-17 00:49:22 | DEBUG    | vision.tracking           | New track: ID=19, class=2
+2026-04-17 00:49:22 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=15 | ACCIDENT ALERT: Entities 3 & 6 collided — sudden stop detected!
+2026-04-17 00:49:22 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=24, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=25, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=2.0s
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=28, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=29, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=2.3s
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=30, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | New track: ID=31, class=2
+2026-04-17 00:49:23 | DEBUG    | vision.tracking           | Track exited: ID=10 duration=2.6s
+2026-04-17 00:49:24 | DEBUG    | vision.tracking           | New track: ID=34, class=2
+2026-04-17 00:49:24 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=3.1s
+2026-04-17 00:49:24 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-17 00:49:24 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:49:24 | DEBUG    | vision.tracking           | New track: ID=36, class=2
+2026-04-17 00:49:24 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=3.4s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | New track: ID=38, class=2
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=4.1s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=4.1s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=15 duration=3.0s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=17 duration=2.6s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=4.4s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=4.4s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | New track: ID=40, class=2
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=4.0s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | Track exited: ID=24 duration=2.6s
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | New track: ID=41, class=2
+2026-04-17 00:49:25 | DEBUG    | vision.tracking           | New track: ID=42, class=2
+2026-04-17 00:49:26 | DEBUG    | vision.tracking           | New track: ID=44, class=2
+2026-04-17 00:49:26 | DEBUG    | vision.tracking           | New track: ID=45, class=2
+2026-04-17 00:49:26 | INFO     | services.email            | Alert email → 'Police Department' (1 recipients) | type=overcrowding
+2026-04-17 00:49:26 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:49:26 | DEBUG    | vision.tracking           | New track: ID=46, class=2
+2026-04-17 00:49:26 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=3.8s
+2026-04-17 00:49:26 | DEBUG    | vision.tracking           | New track: ID=48, class=2
+2026-04-17 00:49:27 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:49:27 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=4.3s
+2026-04-17 00:49:27 | DEBUG    | vision.tracking           | Track exited: ID=28 duration=3.6s
+2026-04-17 00:49:27 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\normal flow.mp4
+2026-04-17 00:49:27 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:49:27 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:49:27 | INFO     | backend.app               | System stopped.
+2026-04-17 00:49:30 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:49:30 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:53:00 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 00:53:00 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:53:00 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:53:01 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:53:01 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:53:01 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:53:01 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:53:01 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:53:01 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:53:01 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:53:01 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:53:01 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:53:01 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:53:01 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:53:01 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-17 00:53:01 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:53:01 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:53:01 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:53:01 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:53:04 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=3.0s
+2026-04-17 00:53:07 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 00:53:09 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:53:09 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:53:10 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=3.3s
+2026-04-17 00:53:11 | DEBUG    | vision.tracking           | New track: ID=6, class=0
+2026-04-17 00:53:13 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-17 00:53:13 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-17 00:53:13 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:53:14 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=0.9s
+2026-04-17 00:53:14 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=2.9s
+2026-04-17 00:53:14 | DEBUG    | vision.tracking           | New track: ID=10, class=2
+2026-04-17 00:53:15 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=13.6s
+2026-04-17 00:53:18 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=1 | ACCIDENT ALERT: Entity 10 made an abnormal sudden stop from high speed!
+2026-04-17 00:53:18 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:53:23 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:53:23 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:53:28 | DEBUG    | vision.tracking           | New track: ID=11, class=0
+2026-04-17 00:53:30 | DEBUG    | vision.tracking           | Track exited: ID=11 duration=2.6s
+2026-04-17 00:53:30 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-17 00:53:31 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=0.9s
+2026-04-17 00:53:34 | DEBUG    | vision.tracking           | New track: ID=13, class=0
+2026-04-17 00:53:37 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:53:37 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:53:37 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:53:37 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:53:37 | INFO     | backend.app               | System stopped.
+2026-04-17 00:53:48 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-17 00:53:48 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-17 00:53:48 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:53:48 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:53:48 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:53:48 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:53:48 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:53:48 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:53:48 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:53:48 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:53:48 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:53:48 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:53:48 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:53:48 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:53:48 | INFO     | backend.app               | System started (mode=webcam, source=0).
+2026-04-17 00:53:48 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:53:48 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:53:50 | DEBUG    | vision.tracking           | New track: ID=1, class=0
+2026-04-17 00:53:51 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=0.9s
+2026-04-17 00:53:55 | DEBUG    | vision.tracking           | New track: ID=4, class=0
+2026-04-17 00:53:56 | DEBUG    | vision.tracking           | New track: ID=5, class=0
+2026-04-17 00:53:56 | DEBUG    | vision.tracking           | New track: ID=6, class=0
+2026-04-17 00:53:57 | DEBUG    | vision.tracking           | New track: ID=7, class=0
+2026-04-17 00:53:57 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=4 | ACCIDENT ALERT: Entities 4 & 7 collided — sudden stop detected!
+2026-04-17 00:53:57 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:53:57 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-17 00:53:57 | DEBUG    | vision.tracking           | Track exited: ID=4 duration=1.9s
+2026-04-17 00:53:58 | DEBUG    | vision.tracking           | Track exited: ID=6 duration=1.3s
+2026-04-17 00:53:58 | DEBUG    | vision.tracking           | Track exited: ID=7 duration=1.3s
+2026-04-17 00:54:00 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=2 | MEDICAL ALERT: Person 8 shows abnormal movement — sudden freeze from movement. P
+2026-04-17 00:54:00 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:54:01 | DEBUG    | vision.tracking           | New track: ID=12, class=0
+2026-04-17 00:54:01 | INFO     | services.email            | Alert email → 'Police & Medical Emergency' (2 recipients) | type=collision
+2026-04-17 00:54:01 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:54:02 | DEBUG    | vision.tracking           | Track exited: ID=12 duration=1.6s
+2026-04-17 00:54:05 | DEBUG    | vision.tracking           | New track: ID=14, class=0
+2026-04-17 00:54:07 | INFO     | services.email            | Alert email → 'Medical Emergency & Police' (2 recipients) | type=medical_emergency
+2026-04-17 00:54:07 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 00:54:08 | DEBUG    | vision.tracking           | New track: ID=18, class=0
+2026-04-17 00:54:08 | DEBUG    | vision.tracking           | Track exited: ID=14 duration=2.8s
+2026-04-17 00:54:09 | DEBUG    | vision.tracking           | Track exited: ID=18 duration=0.9s
+2026-04-17 00:54:09 | DEBUG    | vision.tracking           | Track exited: ID=8 duration=12.1s
+2026-04-17 00:54:10 | DEBUG    | vision.tracking           | New track: ID=19, class=0
+2026-04-17 00:54:12 | DEBUG    | vision.tracking           | New track: ID=22, class=0
+2026-04-17 00:54:12 | DEBUG    | vision.tracking           | New track: ID=23, class=0
+2026-04-17 00:54:13 | DEBUG    | vision.tracking           | Track exited: ID=22 duration=1.0s
+2026-04-17 00:54:13 | DEBUG    | vision.tracking           | Track exited: ID=19 duration=3.0s
+2026-04-17 00:54:14 | DEBUG    | vision.tracking           | New track: ID=25, class=0
+2026-04-17 00:54:14 | DEBUG    | vision.tracking           | New track: ID=26, class=0
+2026-04-17 00:54:15 | DEBUG    | vision.tracking           | Track exited: ID=23 duration=2.9s
+2026-04-17 00:54:15 | DEBUG    | vision.tracking           | Track exited: ID=26 duration=1.2s
+2026-04-17 00:54:15 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=19.3s
+2026-04-17 00:54:16 | DEBUG    | vision.tracking           | New track: ID=27, class=0
+2026-04-17 00:54:16 | DEBUG    | vision.tracking           | New track: ID=29, class=0
+2026-04-17 00:54:16 | DEBUG    | vision.tracking           | New track: ID=30, class=0
+2026-04-17 00:54:18 | DEBUG    | vision.tracking           | Track exited: ID=29 duration=1.9s
+2026-04-17 00:54:19 | DEBUG    | vision.tracking           | New track: ID=34, class=0
+2026-04-17 00:54:19 | DEBUG    | vision.tracking           | New track: ID=37, class=0
+2026-04-17 00:54:21 | DEBUG    | vision.tracking           | Track exited: ID=25 duration=7.7s
+2026-04-17 00:54:22 | DEBUG    | vision.tracking           | New track: ID=38, class=0
+2026-04-17 00:54:22 | DEBUG    | vision.tracking           | New track: ID=39, class=0
+2026-04-17 00:54:23 | DEBUG    | vision.tracking           | New track: ID=40, class=0
+2026-04-17 00:54:24 | DEBUG    | vision.tracking           | Track exited: ID=34 duration=5.1s
+2026-04-17 00:54:24 | DEBUG    | vision.tracking           | Track exited: ID=38 duration=2.8s
+2026-04-17 00:54:25 | DEBUG    | vision.tracking           | Track exited: ID=30 duration=8.5s
+2026-04-17 00:54:25 | DEBUG    | vision.tracking           | Track exited: ID=37 duration=5.5s
+2026-04-17 00:54:27 | DEBUG    | vision.tracking           | New track: ID=42, class=0
+2026-04-17 00:54:28 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=4 | ACCIDENT ALERT: Entities 39 & 40 collided — sudden stop detected!
+2026-04-17 00:54:28 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:54:28 | DEBUG    | services.email            | Email cooldown active for 'collision' (93s remaining).
+2026-04-17 00:54:28 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:54:29 | DEBUG    | vision.tracking           | New track: ID=43, class=0
+2026-04-17 00:54:29 | DEBUG    | vision.tracking           | Track exited: ID=39 duration=6.1s
+2026-04-17 00:54:35 | DEBUG    | vision.tracking           | Track exited: ID=40 duration=12.0s
+2026-04-17 00:54:38 | DEBUG    | vision.tracking           | Track exited: ID=43 duration=9.7s
+2026-04-17 00:54:39 | DEBUG    | vision.tracking           | Track exited: ID=27 duration=23.0s
+2026-04-17 00:54:41 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=1 | MEDICAL ALERT: Person 42 shows abnormal movement — collapsed / motionless on gro
+2026-04-17 00:54:41 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:54:41 | DEBUG    | services.email            | Email cooldown active for 'medical_emergency' (86s remaining).
+2026-04-17 00:54:41 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:54:48 | DEBUG    | vision.tracking           | New track: ID=49, class=0
+2026-04-17 00:54:50 | DEBUG    | vision.tracking           | Track exited: ID=42 duration=23.6s
+2026-04-17 00:55:15 | DEBUG    | vision.tracking           | New track: ID=55, class=0
+2026-04-17 00:55:15 | DEBUG    | vision.tracking           | New track: ID=57, class=0
+2026-04-17 00:55:17 | WARNING  | services.alert            | ALERT dispatched | type=collision | count=3 | ACCIDENT ALERT: Entities 55 & 57 collided — sudden stop detected!
+2026-04-17 00:55:17 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:55:17 | DEBUG    | services.email            | Email cooldown active for 'collision' (44s remaining).
+2026-04-17 00:55:17 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:55:18 | DEBUG    | vision.tracking           | Track exited: ID=55 duration=3.0s
+2026-04-17 00:55:21 | DEBUG    | vision.tracking           | Track exited: ID=49 duration=33.1s
+2026-04-17 00:55:21 | WARNING  | services.alert            | ALERT dispatched | type=medical_emergency | count=1 | MEDICAL ALERT: Person 57 shows abnormal movement — collapsed / motionless on gro
+2026-04-17 00:55:21 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:55:21 | DEBUG    | services.email            | Email cooldown active for 'medical_emergency' (46s remaining).
+2026-04-17 00:55:21 | WARNING  | services.alert            | Email notification failed. Shifting to SMS fallback...
+2026-04-17 00:55:30 | DEBUG    | vision.tracking           | New track: ID=61, class=0
+2026-04-17 00:55:31 | DEBUG    | vision.tracking           | Track exited: ID=61 duration=0.9s
+2026-04-17 00:56:05 | DEBUG    | vision.tracking           | New track: ID=65, class=0
+2026-04-17 00:56:07 | DEBUG    | vision.tracking           | Track exited: ID=65 duration=1.9s
+2026-04-17 00:56:08 | DEBUG    | vision.tracking           | Track exited: ID=57 duration=52.8s
+2026-04-17 00:56:14 | DEBUG    | vision.tracking           | New track: ID=69, class=0
+2026-04-17 00:56:16 | DEBUG    | vision.tracking           | Track exited: ID=69 duration=1.7s
+2026-04-17 00:56:18 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:56:18 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:56:18 | INFO     | vision.video_input        | VideoCapture released: 0
+2026-04-17 00:56:18 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:56:18 | INFO     | backend.app               | System stopped.
+2026-04-17 00:56:24 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 00:56:24 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:56:24 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 00:56:24 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 00:56:24 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 00:56:24 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 00:56:24 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 00:56:24 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 00:56:24 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 00:56:24 | INFO     | backend.app               | All engines ready.
+2026-04-17 00:56:24 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 00:56:24 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 00:56:24 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 00:56:24 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 00:56:24 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-17 00:56:24 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 00:56:24 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 00:56:24 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 00:56:24 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 00:56:27 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=2.9s
+2026-04-17 00:56:30 | DEBUG    | vision.tracking           | New track: ID=4, class=0
+2026-04-17 00:56:32 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 00:56:32 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 00:56:33 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 00:56:33 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 00:56:33 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 00:56:33 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 00:56:33 | INFO     | backend.app               | System stopped.
+2026-04-17 00:56:37 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-17 00:56:37 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 01:01:36 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 01:01:36 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:01:36 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:01:36 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 01:01:36 | INFO     | logic.behavior            | BehaviorEngine initialised — 5 active modules.
+2026-04-17 01:01:36 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 01:01:36 | WARNING  | services.sms              | SmsService disabled – Twilio credentials not fully set in .env
+2026-04-17 01:01:36 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 01:01:36 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 01:01:36 | INFO     | backend.app               | All engines ready.
+2026-04-17 01:01:37 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 01:01:37 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 01:01:37 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 01:01:37 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 01:01:37 | INFO     | backend.app               | System started (mode=file, source=fire accident.mp4).
+2026-04-17 01:01:37 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 01:01:37 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 01:01:37 | DEBUG    | vision.tracking           | New track: ID=1, class=2
+2026-04-17 01:01:37 | DEBUG    | vision.tracking           | New track: ID=2, class=0
+2026-04-17 01:01:40 | DEBUG    | vision.tracking           | Track exited: ID=2 duration=3.0s
+2026-04-17 01:01:43 | DEBUG    | vision.tracking           | New track: ID=3, class=0
+2026-04-17 01:01:45 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=2 | CRITICAL: Fire/Combustion signature detected in visual feed!
+2026-04-17 01:01:45 | INFO     | services.alert            | Attempting Email notification...
+2026-04-17 01:01:45 | DEBUG    | vision.tracking           | Track exited: ID=3 duration=2.2s
+2026-04-17 01:01:45 | DEBUG    | vision.tracking           | Track exited: ID=1 duration=8.2s
+2026-04-17 01:01:45 | DEBUG    | vision.tracking           | New track: ID=4, class=2
+2026-04-17 01:01:45 | DEBUG    | vision.tracking           | New track: ID=5, class=0
+2026-04-17 01:01:46 | DEBUG    | vision.tracking           | Track exited: ID=5 duration=0.9s
+2026-04-17 01:01:47 | DEBUG    | vision.tracking           | New track: ID=8, class=0
+2026-04-17 01:01:49 | DEBUG    | vision.tracking           | New track: ID=10, class=0
+2026-04-17 01:01:49 | INFO     | services.email            | Alert email → 'Fire Department & Police' (2 recipients) | type=fire_hazard
+2026-04-17 01:01:49 | INFO     | services.alert            | Email sent successfully. No SMS fallback required.
+2026-04-17 01:01:49 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 01:01:49 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 01:01:49 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:01:49 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 01:01:49 | INFO     | backend.app               | System stopped.
+2026-04-17 01:28:48 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\car bike collision.mp4' @ 30.0 fps
+2026-04-17 01:28:48 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\car bike collision.mp4
+2026-04-17 01:28:48 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 01:29:01 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 01:29:38 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 01:29:38 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 01:29:38 | INFO     | backend.app               | Initialising detection engines (lazy load)…

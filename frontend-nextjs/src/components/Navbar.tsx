@@ -1,6 +1,6 @@
 "use client";
 
-import { ScanEye, Activity } from "lucide-react";
+import { ScanEye, Activity, Wifi, WifiOff } from "lucide-react";
 
 function fmtUptime(s: number) {
   const h = Math.floor(s / 3600);
@@ -9,7 +9,7 @@ function fmtUptime(s: number) {
   return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
 }
 
-export default function Navbar({ backendOnline, uptime }: { backendOnline: boolean; uptime: number }) {
+export default function Navbar({ backendOnline, uptime, internetConnected = false }: { backendOnline: boolean; uptime: number; internetConnected?: boolean }) {
   return (
     <nav className="sticky top-0 z-50 w-full bg-[#09090b]/80 backdrop-blur-md border-b border-[#27272a] px-8 py-4 flex items-center justify-between">
       <div className="flex items-center gap-3">
@@ -23,8 +23,22 @@ export default function Navbar({ backendOnline, uptime }: { backendOnline: boole
         </div>
       </div>
 
-      <div className="flex items-center gap-5">
-        <div className="flex items-center gap-2">
+      <div className="flex items-center gap-4">
+        
+        {/* Internet Status */}
+        <div className="flex items-center gap-2 px-3 py-1 bg-[#18181b] border border-[#27272a] rounded-full">
+          {internetConnected ? (
+            <Wifi size={14} className="text-emerald-500" />
+          ) : (
+            <WifiOff size={14} className="text-red-500" />
+          )}
+          <span className="text-xs font-medium text-[#a1a1aa] uppercase tracking-wider">
+            {internetConnected ? "Online" : "Offline"}
+          </span>
+        </div>
+
+        {/* Backend Status */}
+        <div className="flex items-center gap-2 pl-2 border-l border-[#27272a]">
           <span className={`w-2 h-2 rounded-full ${backendOnline ? 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]' : 'bg-red-500'}`}></span>
           <span className="text-sm font-medium text-[#a1a1aa]">
             {backendOnline ? "Connected" : "Disconnected"}
@@ -32,7 +46,7 @@ export default function Navbar({ backendOnline, uptime }: { backendOnline: boole
         </div>
 
         {uptime > 0 && (
-          <div className="flex items-center gap-2 text-sm font-mono text-[#fafafa] bg-[#18181b] px-3 py-1.5 rounded-md border border-[#27272a]">
+          <div className="flex items-center gap-2 text-sm font-mono text-[#fafafa] bg-[#18181b] px-3 py-1.5 rounded-md border border-[#27272a] ml-2">
             <Activity size={14} className="text-[#a1a1aa]" />
             {fmtUptime(uptime)}
           </div>

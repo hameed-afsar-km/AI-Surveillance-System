@@ -187,6 +187,9 @@ class AlertService:
     def toggle_ai(self, enabled: bool) -> None:
         self._ai_enabled = enabled
         log.info("AI insights %s.", "enabled" if enabled else "disabled")
+        
+    def reload_email_config(self) -> None:
+        self._email_svc.reload_config()
 
     # ── private ───────────────────────────────────────────────────────────────
 

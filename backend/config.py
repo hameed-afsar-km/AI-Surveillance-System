@@ -66,7 +66,7 @@ class Config:
     DEFAULT_WEBCAM_INDEX: int = int(os.getenv("DEFAULT_WEBCAM_INDEX", 0))
 
     # ── Paths ──────────────────────────────────────────────
-    YOLO_MODEL_PATH: Path = ROOT_DIR / os.getenv("YOLO_MODEL_PATH", "models/yolo11n.pt")
+    YOLO_MODEL_PATH: Path = ROOT_DIR / os.getenv("YOLO_MODEL_PATH", "models/yolov8n.pt")
     RULES_FILE: Path = ROOT_DIR / os.getenv("RULES_FILE", "backend/data/rules.json")
     LOGS_FILE: Path = ROOT_DIR / os.getenv("LOGS_FILE", "backend/data/logs.json")
     ALERT_SOUND_PATH: Path = ROOT_DIR / os.getenv(

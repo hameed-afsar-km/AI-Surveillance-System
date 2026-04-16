@@ -14,6 +14,7 @@ export interface Status {
   source_mode: string;
   source_name: string;
   periodic_summary: string | null;
+  internet_connected: boolean;
 }
 
 export interface Event {
@@ -56,9 +57,10 @@ export const api = {
   events: (n = 30) => call<Event[]>("GET", `/events?n=${n}`),
   clearEvents: () => call<{ status: string }>("POST", "/events/clear"),
   start: (mode: string, source: string) =>
-    call<{ status: string; error?: string }>("POST", "/start", { mode, source }),
+    call<{ status: string; error?: string; mode?: string; source?: string }>("POST", "/start", { mode, source }),
   stop: () => call<{ status: string }>("POST", "/stop"),
   settings: (s: object) => call<{ status: string }>("POST", "/settings", s),
+  getSettings: () => call<any>("GET", "/settings"),
   // MUST point directly to backend to avoid Next.js glitchy streaming proxy
   streamUrl: () => `${API_BASE}/video_feed`,
 };

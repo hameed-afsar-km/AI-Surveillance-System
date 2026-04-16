@@ -69,13 +69,20 @@ class VideoSource:
     def _reader_loop(self) -> None:
         """Frame Reader Thread: continuously reads frames and pushes to queue."""
         log.info("Frame Reader Thread started for source %s", self.source)
+        
+        # Calculate frame wait time to throttle MP4 files (webcams inherently block)
+        is_file = isinstance(self.source, str) and not self.source.isdigit()
+        frame_delay = 1.0 / self.fps if (is_file and self.fps > 0) else 0
+
         while not self._stopped:
+            t_start = time.time()
+
             if not self._cap or not self._cap.isOpened():
                 break
                 
             ok, frame = self._cap.read()
             if not ok:
-                if self.loop_file and isinstance(self.source, str):
+                if self.loop_file and is_file:
                     self._cap.set(cv2.CAP_PROP_POS_FRAMES, 0)
                     continue
                 else:
@@ -91,6 +98,13 @@ class VideoSource:
                     self.frame_queue.put_nowait(frame)
                 except queue.Empty:
                     pass
+                    
+            if is_file:
+                elapsed = time.time() - t_start
+                sleep_t = frame_delay - elapsed
+                if sleep_t > 0:
+                    time.sleep(sleep_t)
+                    
         log.info("Frame Reader Thread exiting.")
 
     def read(self) -> Tuple[bool, Optional[any]]:

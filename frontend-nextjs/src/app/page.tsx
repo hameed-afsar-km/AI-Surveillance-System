@@ -14,7 +14,9 @@ export default function Dashboard() {
   const [status, setStatus] = useState<Status | null>(null);
   const [events, setEvents] = useState<Event[]>([]);
   const [running, setRunning] = useState(false);
+  const [starting, setStarting] = useState(false);
   const [backendOnline, setBackendOnline] = useState(false);
+  const [internetConnected, setInternetConnected] = useState(false);
   const [soundEnabled, setSoundEnabled] = useState(true);
   const [aiEnabled, setAiEnabled] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,10 +26,14 @@ export default function Dashboard() {
     const [s, e] = await Promise.all([api.status(), api.events(30)]);
     if (s) {
       setStatus(s);
-      setRunning(s.running);
+      const raw = s as any;
+      setRunning(raw.running ?? false);
+      setStarting(raw.starting ?? false);
+      setInternetConnected(raw.internet_connected ?? false);
       setBackendOnline(true);
     } else {
       setBackendOnline(false);
+      setInternetConnected(false);
     }
     if (e) setEvents(e);
   }, []);
@@ -42,15 +48,22 @@ export default function Dashboard() {
 
   const handleStart = async (mode: string, source: string) => {
     setError(null);
+    setStarting(true); // Optimistic — show spinner immediately
     const res = await api.start(mode, source);
-    if (res?.error) setError(res.error);
-    else if (res?.status === "started") setRunning(true);
-    else setError("Backend offline.");
+    if (!res) {
+      setStarting(false);
+      setError("Failed to reach backend. Is it running?");
+    } else if (res.error) {
+      setStarting(false);
+      setError(res.error);
+    }
+    // On "starting" response polling will auto-update the true state
   };
 
   const handleStop = async () => {
     await api.stop();
     setRunning(false);
+    setStarting(false);
   };
 
   const handleSoundToggle = async (v: boolean) => {
@@ -65,14 +78,15 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-[#09090b] text-[#fafafa] selection:bg-blue-500/30 flex flex-col font-sans">
-      <Navbar backendOnline={backendOnline} uptime={status?.uptime ?? 0} />
+      <Navbar backendOnline={backendOnline} uptime={status?.uptime ?? 0} internetConnected={internetConnected} />
 
       <main className="flex-1 w-full max-w-[1720px] mx-auto p-4 md:p-6 lg:p-8 animate-fade-in flex flex-col xl:grid xl:grid-cols-[300px_minmax(0,1fr)_340px] gap-6">
-        
+
         {/* Left Column: Controls & AI */}
         <div className="flex flex-col gap-6 h-full">
           <ControlPanel
             running={running}
+            starting={starting}
             soundEnabled={soundEnabled}
             aiEnabled={aiEnabled}
             onStart={handleStart}
@@ -90,7 +104,7 @@ export default function Dashboard() {
         {/* Center Column: Primary Video & Metrics */}
         <div className="flex flex-col gap-6">
           <div className="flex-1 min-h-[460px]">
-             <VideoFeed running={running} />
+            <VideoFeed running={running} starting={starting} />
           </div>
           <AlertBanner status={status} />
           <MetricsBar status={status} />

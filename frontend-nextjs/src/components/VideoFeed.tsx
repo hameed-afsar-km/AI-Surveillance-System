@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { api } from "@/lib/api";
-import { VideoOff, Loader2 } from "lucide-react";
+import { VideoOff, Loader2, Cpu } from "lucide-react";
 
-export default function VideoFeed({ running }: { running: boolean }) {
+export default function VideoFeed({ running, starting }: { running: boolean; starting?: boolean }) {
   const imgRef = useRef<HTMLImageElement>(null);
   const [streamOk, setStreamOk] = useState(false);
   const [loading, setLoading] = useState(false);
-
   const streamActive = useRef(false);
 
   useEffect(() => {
@@ -27,13 +26,13 @@ export default function VideoFeed({ running }: { running: boolean }) {
     const url = api.streamUrl();
     const img = imgRef.current;
     if (!img) return;
-    
+
     img.src = `${url}?t=${Date.now()}`;
     const onLoad = () => { setStreamOk(true); setLoading(false); };
     const onError = () => { setStreamOk(false); setLoading(false); streamActive.current = false; };
     img.addEventListener("load", onLoad);
     img.addEventListener("error", onError);
-    
+
     return () => {
       img.removeEventListener("load", onLoad);
       img.removeEventListener("error", onError);
@@ -51,6 +50,16 @@ export default function VideoFeed({ running }: { running: boolean }) {
         style={{ display: running ? "block" : "none", opacity: streamOk ? 1 : 0 }}
       />
 
+      {/* Initialising: YOLO/DeepSort loading in background */}
+      {starting && !running && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#18181b]">
+          <Cpu size={28} className="text-blue-400 animate-pulse" />
+          <span className="text-sm font-medium text-[#a1a1aa] tracking-widest uppercase">Initialising AI Engines</span>
+          <span className="text-xs text-[#52525b]">Loading YOLO &amp; DeepSort — please wait…</span>
+        </div>
+      )}
+
+      {/* Running but stream not ready yet */}
       {running && loading && !streamOk && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#18181b]">
           <Loader2 size={28} className="animate-spin text-[#3b82f6]" />
@@ -58,6 +67,7 @@ export default function VideoFeed({ running }: { running: boolean }) {
         </div>
       )}
 
+      {/* Live badge */}
       {running && streamOk && (
         <div className="absolute top-4 left-4 flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#09090b]/80 backdrop-blur-md border border-[#27272a] shadow-lg">
           <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse shadow-[0_0_8px_rgba(239,68,68,0.6)]"></span>
@@ -65,7 +75,8 @@ export default function VideoFeed({ running }: { running: boolean }) {
         </div>
       )}
 
-      {!running && (
+      {/* Standby */}
+      {!running && !starting && (
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#18181b]/50">
           <div className="w-14 h-14 rounded-full bg-[#09090b] border border-[#27272a] flex items-center justify-center shadow-inner">
             <VideoOff size={24} className="text-[#52525b]" />
