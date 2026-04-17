@@ -1,6 +1,6 @@
 "use client";
 
-import { Users, AlertTriangle, Clock, Activity } from "lucide-react";
+import { Users, AlertTriangle, Clock, Car, Package } from "lucide-react";
 import { Status } from "@/lib/api";
 
 interface Props {
@@ -53,25 +53,25 @@ export default function MetricsBar({ status }: Props) {
   return (
     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
       <MetricCard
-        label="Subjects"
-        value={status?.people_count ?? 0}
-        icon={<Users size={24} />}
+        label="People"
+        value={status?.live_counts?.people ?? 0}
+        icon={<Users size={22} />}
+      />
+      <MetricCard
+        label="Cars"
+        value={status?.live_counts?.cars ?? 0}
+        icon={<Car size={22} />}
       />
       <MetricCard
         label="Threat Level"
         value={alertVal}
         highlightClass={alertCls}
-        icon={<AlertTriangle size={24} className={status?.alert ? "animate-pulse" : ""} />}
+        icon={<AlertTriangle size={22} className={status?.alert ? "animate-pulse" : ""} />}
       />
       <MetricCard
         label="Uptime"
         value={status?.running ? fmtUptime(status.uptime) : "00:00:00"}
-        icon={<Clock size={24} />}
-      />
-      <MetricCard
-        label="Frames"
-        value={status?.frame_count ?? 0}
-        icon={<Activity size={24} />}
+        icon={<Clock size={22} />}
       />
     </div>
   );

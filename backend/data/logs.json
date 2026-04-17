@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": 1,
+    "timestamp": "2026-04-17T04:43:33.084483+00:00",
+    "type": "fire_hazard",
+    "message": "CRITICAL: Fire/Combustion signature detected (HSV filter)!",
+    "people_count": 0,
+    "severity": "critical",
+    "ai_insight": ""
+  },
+  {
+    "id": 2,
+    "timestamp": "2026-04-17T04:43:58.140407+00:00",
+    "type": "fire_hazard",
+    "message": "CRITICAL: Fire/Combustion signature detected (HSV filter)!",
+    "people_count": 0,
+    "severity": "critical",
+    "ai_insight": ""
+  },
+  {
+    "id": 3,
+    "timestamp": "2026-04-17T04:50:54.760402+00:00",
+    "type": "fire_hazard",
+    "message": "CRITICAL: Fire/Combustion signature detected (HSV filter)!",
+    "people_count": 0,
+    "severity": "critical",
+    "ai_insight": ""
+  }
+]

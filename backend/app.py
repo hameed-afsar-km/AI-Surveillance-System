@@ -58,6 +58,7 @@ _system_state: dict = {
     "last_updated": time.time(),
     "internet_connected": False,
     "loading_progress": 0,
+    "live_counts": {"people": 0, "cars": 0, "other": 0},
 }
 
 # ── Dynamic Connectivity Checker ──────────────────────────────────────────────
@@ -87,6 +88,7 @@ _latest_raw_frame: Optional[np.ndarray] = None
 _tracks_lock = threading.Lock()
 _last_tracks: list = []
 _last_decision = None
+_last_custom_events: list = []
 
 _stop_event = threading.Event()
 _ai_ready = False
@@ -122,19 +124,37 @@ def _init_engines() -> None:
 def _boot_ai_background():
     """Background task to load AI models immediately on app start."""
     global _ai_ready, _ai_loading_error
-    log.info("EAGER LOADING: Initialising AI engines in background...")
+    log.info("EAGER LOADING: Initializing AI engines in background...")
     try:
+        with _state_lock: _system_state["loading_progress"] = 5
+        
+        # We'll use a local import trick to track progress if possible, 
+        # or just step through the init.
+        log.info("EAGER LOADING: Initializing Detectors...")
+        from vision.detection import ObjectDetector
+        with _state_lock: _system_state["loading_progress"] = 25
+        
         _init_engines()
+        with _state_lock: _system_state["loading_progress"] = 85
+        
         # Trigger an early warmup
-        _detector.detect(np.zeros((256, 256, 3), dtype=np.uint8))
-        _ai_ready = True
-        log.info("EAGER LOADING: AI engines are warm and ready.")
+        log.info("EAGER LOADING: Warming up neural pipelines...")
+        _detector.detect(np.zeros((cfg.YOLO_IMGSZ, cfg.YOLO_IMGSZ, 3), dtype=np.uint8))
+        
+        with _state_lock: 
+            _system_state["loading_progress"] = 100
+            _ai_ready = True
+        
+        log.info("EAGER LOADING: System fully calibrated and ready.")
+        
     except Exception as e:
         _ai_loading_error = str(e)
-        log.error("EAGER LOADING: Failed to boot AI: %s", e)
+        log.error("EAGER LOADING: Critical failure during boot: %s", e)
+        with _state_lock: _system_state["loading_progress"] = 0
 
 # Start physical boot immediately
-threading.Thread(target=_boot_ai_background, daemon=True, name="ai-boot-thread").start()
+_boot_thread = threading.Thread(target=_boot_ai_background, daemon=True, name="ai-boot-thread")
+_boot_thread.start()
 
 
 # ── Thread 1: Frame Grabber ───────────────────────────────────────────────────
@@ -234,23 +254,40 @@ def _inference_loop() -> None:
         frame = frame.copy()
         frame_count += 1
 
-        # ── 1. YOLO ──────────────────────────────────────────────────────────
+        # ── 1. Dual-Model Inference (COCO + Custom) ───────────────────────────
+        custom_events = []
         try:
-            detections = _detector.detect(frame)
+            dual_result = _detector.detect_dual(frame)
+            detections = dual_result.coco_detections
+            custom_events = dual_result.custom_events
         except Exception as e:
-            log.warning("YOLO error: %s", e)
+            log.warning("Detection error: %s", e)
             detections = []
+            custom_events = []
 
         # ── 2. DeepSORT ──────────────────────────────────────────────────────
         try:
             active_tracks = _tracker.update(frame, detections)
+            
+            # Update Live Counts
+            p_cnt = len([t for t in active_tracks if t.class_id == 0])
+            v_cnt = len([t for t in active_tracks if t.class_id in [2, 3, 5, 7]])
+            o_cnt = len(active_tracks) - p_cnt - v_cnt
+            with _state_lock:
+                _system_state["live_counts"] = {
+                    "people": p_cnt,
+                    "cars": v_cnt,
+                    "other": o_cnt
+                }
         except Exception as e:
             log.warning("Tracker error: %s", e)
             active_tracks = []
 
+        exited_tracks = list(_tracker.get_exited_states().values()) if _tracker else []
+
         # ── 3. Behavior ───────────────────────────────────────────────────────
         try:
-            behavior_alert = _behavior.analyse(active_tracks, frame)
+            behavior_alert = _behavior.analyse(active_tracks, frame, custom_events, exited_tracks)
         except Exception as e:
             log.warning("Behavior error: %s", e)
             behavior_alert = None
@@ -274,12 +311,23 @@ def _inference_loop() -> None:
             from services.alert_service import Decision
             decision = Decision(alert=False, alert_type="none", message="System nominal.", severity="none")
 
-        # ── 4. Store last-known tracks + decision (stream reads these) ─────────
+        # ── 4. Store last-known tracks + decision + custom events ──────────────
         with _tracks_lock:
             _last_tracks = active_tracks
             _last_decision = decision
+            _last_custom_events = custom_events
 
-        # ── 6. Measure inference FPS + update state ───────────────────────────
+        # ── 6. Immediate Alert Update (Critical for Latency) ────────────
+        with _state_lock:
+            _system_state.update({
+                "alert":          decision.alert,
+                "alert_type":     decision.alert_type,
+                "message":        decision.message,
+                "severity":       decision.severity,
+                "last_updated":   time.time(),
+            })
+
+        # ── 7. Throttled Metrics Update (Efficiency) ──────────────────────────
         fps_counter += 1
         uptime = time.time() - _start_time
 
@@ -293,16 +341,11 @@ def _inference_loop() -> None:
                 _system_state.update({
                     "running":        True,
                     "people_count":   len(active_tracks),
-                    "alert":          decision.alert,
-                    "alert_type":     decision.alert_type,
-                    "message":        decision.message,
                     "ai_insight":     decision.ai_insight,
-                    "severity":       decision.severity,
                     "active_ids":     [t.track_id for t in active_tracks],
                     "frame_count":    frame_count,
                     "uptime":         round(uptime, 1),
                     "inference_fps":  round(inference_fps, 1),
-                    "last_updated":   time.time(),
                 })
 
         # ── 7. Periodic Gemini Summary ────────────────────────────────────────
@@ -349,13 +392,18 @@ def _mjpeg_generator():
                 frame = raw.copy()
 
                 with _tracks_lock:
-                    tracks = list(_last_tracks)
-                    dec = _last_decision
+                    tracks    = list(_last_tracks)
+                    decision  = _last_decision
+                    cust_evts = list(_last_custom_events)
 
                 if _tracker is not None and tracks:
                     frame = _tracker.draw(frame, tracks)
 
-                _draw_overlay(frame, len(tracks), dec)
+                # Draw custom model event boxes (fire, accident, fall, garbage)
+                if _detector is not None and cust_evts:
+                    frame = _detector.draw_custom_events(frame, cust_evts)
+
+                _draw_overlay(frame, len(tracks), decision)
 
                 _, buf = cv2.imencode('.jpg', frame, encode_params)
                 yield (
@@ -452,26 +500,25 @@ def start_system():
             with _state_lock: _system_state["loading_progress"] = 10
             _stop_event.clear()
             
-            # If AI isn't ready yet, wait/init
-            max_wait = 600 # Wait up to 10 mins if needed for heavy first load
-            start_wait = time.time()
-            while not _ai_ready and (time.time() - start_wait < max_wait):
-                if _ai_loading_error: raise RuntimeError(_ai_loading_error)
-                time.sleep(0.5)
-                
-                elapsed = time.time() - start_wait
-                # Smooth progress: slower as it gets closer to 99%
-                if elapsed < 30:
-                    prog = 10 + int(elapsed * 2.5) # 10 -> 85
-                else:
-                    prog = min(99, 85 + int((elapsed - 30) * 0.1)) # slow creep to 99
-                
-                with _state_lock: _system_state["loading_progress"] = prog
+            # If AI isn't ready yet, wait/init (for requests coming from UI before boot)
+            if not _ai_ready:
+                max_wait = 600 
+                start_wait = time.time()
+                while not _ai_ready and (time.time() - start_wait < max_wait):
+                    if _ai_loading_error: raise RuntimeError(_ai_loading_error)
+                    time.sleep(0.5)
+                    elapsed = time.time() - start_wait
+                    if elapsed < 30: prog = 10 + int(elapsed * 2.5)
+                    else: prog = min(99, 85 + int((elapsed - 30) * 0.1))
+                    with _state_lock: _system_state["loading_progress"] = prog
 
             if not _ai_ready:
-                raise RuntimeError("AI engines failed to initialize within the time limit. Please check your system resources.")
+                raise RuntimeError("AI engines failed to initialize.")
             
-            with _state_lock: _system_state["loading_progress"] = 100
+            with _state_lock: 
+                _system_state["loading_progress"] = 100
+                _system_state["starting"] = True
+                _system_state["message"] = "Initializing Feed..."
             
             _tracker.reset()
             _behavior.reset()

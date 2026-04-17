@@ -1,0 +1,10 @@
+path: dataset
+
+train: images/train
+val: images/val
+
+names:
+  0: accident
+  1: fall
+  2: fire
+  3: garbage

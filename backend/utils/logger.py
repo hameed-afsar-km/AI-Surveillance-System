@@ -55,7 +55,7 @@ def get_logger(name: str) -> logging.Logger:
 # ── JSON event log (shared across all modules) ───────────────────────────────
 
 _event_log: list[dict] = []
-_MAX_EVENTS = 500
+_MAX_EVENTS = 2000
 
 
 def log_event(event_type: str, message: str, extra: dict | None = None) -> dict:
@@ -77,6 +77,8 @@ def log_event(event_type: str, message: str, extra: dict | None = None) -> dict:
 
 def get_events(last_n: int = 50) -> list[dict]:
     with _lock:
+        if last_n <= 0:
+            return list(_event_log)
         return list(_event_log[-last_n:])
 
 

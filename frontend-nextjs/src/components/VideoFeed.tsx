@@ -27,9 +27,11 @@ export default function VideoFeed({ running, starting, progress = 0 }: { running
     const img = imgRef.current;
     if (!img) return;
 
+    // Use a unique query string to bypass browser cache completely
     img.src = `${url}?t=${Date.now()}`;
     const onLoad = () => { setStreamOk(true); setLoading(false); };
     const onError = () => { setStreamOk(false); setLoading(false); streamActive.current = false; };
+    
     img.addEventListener("load", onLoad);
     img.addEventListener("error", onError);
 

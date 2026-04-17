@@ -194,20 +194,64 @@ class ObjectTracker:
         log.info("ObjectTracker reset.")
 
     def draw(self, frame: np.ndarray, states: list[TrackState]) -> np.ndarray:
-        """Overlay bounding boxes + IDs + duration on the frame."""
-        class_names = {0: "Person", 2: "Car", 3: "Moto", 5: "Bus", 7: "Truck", 24: "Item", 39: "Trash", 41: "Trash"}
-        out = frame.copy()
+        """
+        Clean minimal overlay. Shows a small pill label (icon + ID) per tracked entity.
+        No duration clutter. Only major classes get a label.
+        """
+        # Icon mapping — compact
+        # Icon mapping — full text for clarity
+        class_icons = {
+            0: "[Person]",
+            2: "[Car]",
+            3: "[Moto]",
+            5: "[Bus]",
+            7: "[Truck]",
+            24: "[Bag]", # Backpack
+            26: "[Bag]", # Handbag
+            28: "[Suitcase]",
+            63: "[Laptop]",
+            67: "[Phone]",
+        }
+        # Color mapping per class (consistent, not per-ID)
+        class_colors = {
+            0: (80, 220, 120),    # Green — Person
+            2: (60, 160, 255),    # Blue — Car
+            3: (255, 160, 60),    # Orange — Moto
+            5: (120, 80, 255),    # Purple — Bus
+            7: (200, 60, 255),    # Violet — Truck
+            24: (180, 180, 180),  # Gray — Bags/Items
+            26: (180, 180, 180),
+            28: (180, 180, 180),
+            63: (180, 180, 180),
+            67: (180, 180, 180),
+        }
+        out = frame
+
         for st in states:
             x1, y1, x2, y2 = st.bbox
-            color = self._id_color(st.track_id)
-            cv2.rectangle(out, (x1, y1), (x2, y2), color, 2)
-            cname = class_names.get(st.class_id, "Obj")
+            cid = st.class_id
 
-            label = f"[{cname}] ID:{st.track_id} {st.duration:.1f}s"
-            (tw, th), _ = cv2.getTextSize(label, cv2.FONT_HERSHEY_SIMPLEX, 0.55, 1)
-            cv2.rectangle(out, (x1, y1 - th - 8), (x1 + tw + 4, y1), color, -1)
-            cv2.putText(out, label, (x1 + 2, y1 - 4),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.55, (255, 255, 255), 1)
+            # Skip drawing tiny object classes entirely (declutter)
+            if cid not in class_icons:
+                continue
+
+            color = class_colors.get(cid, (180, 180, 180))
+
+            # Thin, clean bounding box
+            cv2.rectangle(out, (x1, y1), (x2, y2), color, 2)
+
+            # Minimal pill label: just "P#12" or "C#5"
+            icon = class_icons.get(cid, "?")
+            label = f"{icon}#{st.track_id}"
+            font = cv2.FONT_HERSHEY_SIMPLEX
+            font_scale = 0.45
+            thickness = 1
+            (tw, th), _ = cv2.getTextSize(label, font, font_scale, thickness)
+            pad = 3
+            # Draw pill background
+            cv2.rectangle(out, (x1, y1 - th - pad * 2), (x1 + tw + pad * 2, y1), color, -1)
+            cv2.putText(out, label, (x1 + pad, y1 - pad),
+                        font, font_scale, (0, 0, 0), thickness, cv2.LINE_AA)
 
         return out
 

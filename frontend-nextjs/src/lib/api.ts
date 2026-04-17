@@ -16,6 +16,7 @@ export interface Status {
   periodic_summary: string | null;
   internet_connected: boolean;
   loading_progress: number;
+  live_counts: { people: number, cars: number, other: number };
 }
 
 export interface Event {
@@ -25,6 +26,7 @@ export interface Event {
   severity: string;
   people_count: number;
   timestamp: string;
+  location?: string;
   ai_insight?: string;
 }
 

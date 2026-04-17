@@ -42,7 +42,12 @@ export default function ControlPanel({
     email_fire: "",
     email_garbage: "",
     email_health: "",
-    email_traffic: ""
+    email_traffic: "",
+    phone_accident: "",
+    phone_fire: "",
+    phone_garbage: "",
+    phone_health: "",
+    phone_traffic: "",
   });
   const [savingSettings, setSavingSettings] = useState(false);
   const [testStatus, setTestStatus] = useState<null | "loading" | "success" | "error">(null);
@@ -68,6 +73,11 @@ export default function ControlPanel({
           email_garbage: settings.email_garbage || "",
           email_health: settings.email_health || "",
           email_traffic: settings.email_traffic || "",
+          phone_accident: settings.phone_accident || "",
+          phone_fire: settings.phone_fire || "",
+          phone_garbage: settings.phone_garbage || "",
+          phone_health: settings.phone_health || "",
+          phone_traffic: settings.phone_traffic || "",
         });
       }
     };
@@ -101,16 +111,19 @@ export default function ControlPanel({
     }
   };
 
-  const [customDepts, setCustomDepts] = useState<{label: string, icon: string, key: string}[]>([]);
+  const [customDepts, setCustomDepts] = useState<{label: string, icon: string, key: string, phoneKey: string}[]>([]);
   const [showAddDeptModal, setShowAddDeptModal] = useState(false);
   const [newDeptName, setNewDeptName] = useState("");
+  const [newDeptPhone, setNewDeptPhone] = useState("");
   
   const handleAddCategory = () => {
     if (!newDeptName.trim()) return;
     const key = `email_custom_${Date.now()}`;
-    setCustomDepts(prev => [...prev, { label: newDeptName.trim(), icon: "📁", key }]);
-    setEmailConfig(prev => ({ ...prev, [key]: "" }));
+    const pKey = `phone_custom_${Date.now()}`;
+    setCustomDepts(prev => [...prev, { label: newDeptName.trim(), icon: "📁", key, phoneKey: pKey }]);
+    setEmailConfig(prev => ({ ...prev, [key]: "", [pKey]: "" }));
     setNewDeptName("");
+    setNewDeptPhone("");
     setShowAddDeptModal(false);
   };
 
@@ -337,18 +350,42 @@ export default function ControlPanel({
                       <div className="w-1.5 h-4 bg-blue-500 rounded-full"></div>
                       <h3 className="text-sm font-semibold tracking-wide text-white uppercase">Department Routing</h3>
                     </div>
-                    <button onClick={addCategory} className="text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded hover:bg-blue-600/40 transition-all font-bold">+ ADD CATEGORY</button>
+                    <button onClick={() => setShowAddDeptModal(true)} className="text-[10px] bg-blue-600/20 text-blue-400 border border-blue-500/30 px-2 py-1 rounded hover:bg-blue-600/40 transition-all font-bold">+ ADD CATEGORY</button>
                   </div>
 
-                  <div className="space-y-3">
-                    <DeptInput label="Accident (Police/Traffic)" icon="🚔" value={emailConfig.email_accident} onChange={v => setEmailConfig(p => ({...p, email_accident: v}))} onTest={() => handleTestEmail("collision")} />
-                    <DeptInput label="Fire Department" icon="🔥" value={emailConfig.email_fire} onChange={v => setEmailConfig(p => ({...p, email_fire: v}))} onTest={() => handleTestEmail("fire_hazard")} />
-                    <DeptInput label="Garbage/Municipal" icon="🗑️" value={emailConfig.email_garbage} onChange={v => setEmailConfig(p => ({...p, email_garbage: v}))} onTest={() => handleTestEmail("littering")} />
-                    <DeptInput label="Health Department" icon="🚑" value={emailConfig.email_health} onChange={v => setEmailConfig(p => ({...p, email_health: v}))} onTest={() => handleTestEmail("medical_emergency")} />
-                    <DeptInput label="Traffic / Crowding" icon="🚦" value={emailConfig.email_traffic} onChange={v => setEmailConfig(p => ({...p, email_traffic: v}))} onTest={() => handleTestEmail("overcrowding")} />
+                  <div className="space-y-4">
+                    <DeptInput 
+                      label="Police / Traffic" icon="🚔" 
+                      email={emailConfig.email_accident} onEmailChange={v => setEmailConfig(p => ({...p, email_accident: v}))}
+                      phone={emailConfig.phone_accident} onPhoneChange={v => setEmailConfig(p => ({...p, phone_accident: v}))}
+                      onTest={() => handleTestEmail("collision")} 
+                    />
+                    <DeptInput 
+                      label="Fire Department" icon="🔥" 
+                      email={emailConfig.email_fire} onEmailChange={v => setEmailConfig(p => ({...p, email_fire: v}))}
+                      phone={emailConfig.phone_fire} onPhoneChange={v => setEmailConfig(p => ({...p, phone_fire: v}))}
+                      onTest={() => handleTestEmail("fire_hazard")} 
+                    />
+                    <DeptInput 
+                      label="Garbage/Municipal" icon="🗑️" 
+                      email={emailConfig.email_garbage} onEmailChange={v => setEmailConfig(p => ({...p, email_garbage: v}))}
+                      phone={emailConfig.phone_garbage} onPhoneChange={v => setEmailConfig(p => ({...p, phone_garbage: v}))}
+                      onTest={() => handleTestEmail("littering")} 
+                    />
+                    <DeptInput 
+                      label="Health Department" icon="🚑" 
+                      email={emailConfig.email_health} onEmailChange={v => setEmailConfig(p => ({...p, email_health: v}))}
+                      phone={emailConfig.phone_health} onPhoneChange={v => setEmailConfig(p => ({...p, phone_health: v}))}
+                      onTest={() => handleTestEmail("medical_emergency")} 
+                    />
                     
                     {customDepts.map(d => (
-                      <DeptInput key={d.key} label={d.label} icon={d.icon} value={emailConfig[d.key as keyof typeof emailConfig] as string} onChange={v => setEmailConfig(p => ({...p, [d.key]: v}))} onTest={() => handleTestEmail("test_connection")} />
+                      <DeptInput 
+                        key={d.key} label={d.label} icon={d.icon} 
+                        email={emailConfig[d.key as keyof typeof emailConfig] as string} onEmailChange={v => setEmailConfig(p => ({...p, [d.key]: v}))}
+                        phone={emailConfig[d.phoneKey as keyof typeof emailConfig] as string} onPhoneChange={v => setEmailConfig(p => ({...p, [d.phoneKey]: v}))}
+                        onTest={() => handleTestEmail("test_connection")} 
+                      />
                     ))}
                   </div>
                 </div>
@@ -406,14 +443,28 @@ export default function ControlPanel({
                       <h3 className="text-lg font-bold text-white mb-1">New Ministry / Dept</h3>
                       <p className="text-xs text-[#a1a1aa]">Register a custom alert category for the AI surveillance suite.</p>
                     </div>
-                    <input 
-                      autoFocus
-                      placeholder="e.g. Navigation Branch"
-                      value={newDeptName}
-                      onChange={e => setNewDeptName(e.target.value)}
-                      onKeyDown={e => e.key === "Enter" && handleAddCategory()}
-                      className="w-full bg-[#09090b] border border-[#27272a] rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500 outline-none transition-all"
-                    />
+                    <div className="space-y-3">
+                      <div>
+                        <label className="text-[10px] text-[#a1a1aa] uppercase font-bold mb-1 block">Department Name</label>
+                        <input 
+                          autoFocus
+                          placeholder="e.g. Navigation Branch"
+                          value={newDeptName}
+                          onChange={e => setNewDeptName(e.target.value)}
+                          className="w-full bg-[#09090b] border border-[#27272a] rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500 outline-none transition-all"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-[10px] text-[#a1a1aa] uppercase font-bold mb-1 block">Primary Phone (SMS)</label>
+                        <input 
+                          placeholder="+1 234 567 8900"
+                          value={newDeptPhone}
+                          onChange={e => setNewDeptPhone(e.target.value)}
+                          onKeyDown={e => e.key === "Enter" && handleAddCategory()}
+                          className="w-full bg-[#09090b] border border-[#27272a] rounded-lg px-3 py-2 text-sm text-white focus:border-blue-500 outline-none transition-all"
+                        />
+                      </div>
+                    </div>
                     <div className="flex gap-3 pt-2">
                        <button onClick={() => setShowAddDeptModal(false)} className="flex-1 px-4 py-2 text-sm text-[#a1a1aa] hover:text-white transition-colors">Cancel</button>
                        <button onClick={handleAddCategory} className="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 rounded text-sm transition-all">Add Dept</button>
@@ -429,25 +480,44 @@ export default function ControlPanel({
   );
 }
 
-function DeptInput({ label, icon, value, onChange, onTest }: { label: string, icon: string, value: string, onChange: (v: string) => void, onTest: () => void }) {
+function DeptInput({ 
+  label, icon, email, onEmailChange, phone, onPhoneChange, onTest 
+}: { 
+  label: string, icon: string, 
+  email: string, onEmailChange: (v: string) => void,
+  phone: string, onPhoneChange: (v: string) => void,
+  onTest: () => void 
+}) {
   return (
-    <div className="flex items-center gap-3 group/item">
-      <div className="w-8 h-8 rounded shrink-0 bg-[#27272a]/50 text-base flex items-center justify-center grayscale opacity-80">{icon}</div>
-      <div className="flex-1 relative flex items-center">
-        <input 
-          placeholder={`Email for ${label}...`}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-[#09090b] border border-[#27272a] rounded px-3 py-1.5 text-[13px] text-white focus:border-blue-500 outline-none transition-colors placeholder-[#52525b] pr-10"
-        />
+    <div className="flex flex-col gap-1.5 p-3 rounded-lg bg-[#18181b]/50 border border-[#27272a] hover:border-[#3f3f46] transition-colors group/item">
+      <div className="flex items-center justify-between mb-0.5">
+        <div className="flex items-center gap-2">
+           <span className="grayscale group-hover/item:grayscale-0 transition-all">{icon}</span>
+           <span className="text-[11px] font-bold text-[#fafafa] uppercase tracking-wider">{label}</span>
+        </div>
         <button 
           onClick={onTest}
-          disabled={!value}
-          title={`Test ${label} Receiver`}
-          className="absolute right-2 text-[#52525b] hover:text-emerald-400 transition-colors disabled:opacity-0"
+          disabled={!email && !phone}
+          title={`Test ${label} Channels`}
+          className="text-[#52525b] hover:text-emerald-400 transition-colors disabled:opacity-0"
         >
           <Radio size={14} />
         </button>
+      </div>
+      
+      <div className="grid grid-cols-2 gap-2">
+        <input 
+          placeholder="Email Address"
+          value={email}
+          onChange={(e) => onEmailChange(e.target.value)}
+          className="w-full bg-[#09090b] border border-[#27272a] rounded px-2 py-1 text-[12px] text-white focus:border-blue-500 outline-none transition-colors placeholder-[#3f3f46]"
+        />
+        <input 
+          placeholder="SMS (Mobile)"
+          value={phone}
+          onChange={(e) => onPhoneChange(e.target.value)}
+          className="w-full bg-[#09090b] border border-[#27272a] rounded px-2 py-1 text-[12px] text-white focus:border-blue-500 outline-none transition-all placeholder-[#3f3f46]"
+        />
       </div>
     </div>
   );

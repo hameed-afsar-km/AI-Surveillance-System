@@ -40,6 +40,7 @@ class Decision:
     people_count: int = 0
     involved_ids: list[int] = field(default_factory=list)
     zone: Optional[str] = None
+    location: str = field(default_factory=lambda: cfg.CAMERA_LOCATION)
     timestamp: float = field(default_factory=time.time)
 
     def to_dict(self) -> dict:
@@ -52,6 +53,7 @@ class Decision:
             "people_count": self.people_count,
             "involved_ids": self.involved_ids,
             "zone": self.zone,
+            "location": self.location,
             "timestamp": self.timestamp,
         }
 
@@ -88,6 +90,7 @@ class AlertService:
 
         # Per-type alert cooldown tracking
         self._last_alert_times: dict[str, float] = {}
+        self._last_global_alert_time: float = 0.0
         self._alert_cooldown: int = cfg.SOUND_ALERT_COOLDOWN
         log.info("AlertService initialised.")
 
@@ -156,24 +159,18 @@ class AlertService:
         return decision
 
     def _dispatch_notifications(self, decision: Decision, people_count: int, ai_insight: str):
-        """Orchestrate the sequence: Sound -> Email -> (Fallback) SMS."""
-        
-        # 1. Sound (Immediate)
+        """Orchestrate the dispatch sequence."""
         self._play_sound()
 
-        # 2. Email (Ministry Notification)
-        log.info("Attempting Email notification...")
-        email_success = self._email_svc.send_alert(
+        # Phase 1: Email (Standard Internet Route)
+        log.info("Dispatching Email notification...")
+        self._email_svc.send_alert(
             decision.alert_type, people_count, decision.message, ai_insight
         )
 
-        # 3. SMS Fallback (Twilio Local SMS)
-        # Shift to SMS if Email fails (usually due to network issues)
-        if not email_success:
-            log.warning("Email notification failed. Shifting to SMS fallback...")
-            self._sms_svc.send_alert(decision.alert_type, decision.message)
-        else:
-            log.info("Email sent successfully. No SMS fallback required.")
+        # Phase 2: SMS (Dual Route: Cloud or Local-Offline)
+        log.info("Dispatching SMS notification...")
+        self._sms_svc.send_alert(decision.alert_type, decision.message)
 
     def get_periodic_summary(self, people_count: int, uptime: float, history: list) -> str | None:
         if not self._ai_enabled:
@@ -234,6 +231,10 @@ class AlertService:
 
     def _should_dispatch(self, alert_type: str) -> bool:
         now = time.time()
+        last = self._last_alert_times.get(alert_type, 0.0)
+        # 10 second cooldown timer for each specific error/detection
+        return (now - last) >= 10.0
+
         last = self._last_alert_times.get(alert_type, 0.0)
         return (now - last) >= self._alert_cooldown
 

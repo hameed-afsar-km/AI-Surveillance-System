@@ -45,11 +45,20 @@ class Config:
     SMTP_HOST: str = "smtp.gmail.com"
     SMTP_PORT: int = 587
     
-    # ── SMS (Twilio) ───────────────────────────────────────
+    # ── SMS / Mobile Alerting ──────────────────────────────────
+    SMS_MODE: str = os.getenv("SMS_MODE", "cloud") # "cloud", "local", "email_gateway"
+    MOBILE_GATEWAY_URL: str = os.getenv("MOBILE_GATEWAY_URL", "http://192.168.1.15:8080")
+    
+    PHONE_ACCIDENT: str = os.getenv("PHONE_ACCIDENT", "")
+    PHONE_FIRE: str = os.getenv("PHONE_FIRE", "")
+    PHONE_GARBAGE: str = os.getenv("PHONE_GARBAGE", "")
+    PHONE_HEALTH: str = os.getenv("PHONE_HEALTH", "")
+    PHONE_TRAFFIC: str = os.getenv("PHONE_TRAFFIC", "")
+
+    # Legacy (keeping for compat)
     TWILIO_SID: str = os.getenv("TWILIO_SID", "")
     TWILIO_AUTH_TOKEN: str = os.getenv("TWILIO_AUTH_TOKEN", "")
     TWILIO_PHONE_NUMBER: str = os.getenv("TWILIO_PHONE_NUMBER", "")
-    RECIPIENT_PHONE: str = os.getenv("RECIPIENT_PHONE", "")
 
     # ── Thresholds ─────────────────────────────────────────
     OVERCROWDING_THRESHOLD: int = int(os.getenv("OVERCROWDING_THRESHOLD", 5))
@@ -62,9 +71,10 @@ class Config:
     SOUND_ALERT_COOLDOWN: int = int(os.getenv("SOUND_ALERT_COOLDOWN", 30))
     EMAIL_ALERT_COOLDOWN: int = int(os.getenv("EMAIL_ALERT_COOLDOWN", 120))
 
-    # ── Video ──────────────────────────────────────────────
+    # ── Video & Spatial ────────────────────────────────────
     DEFAULT_VIDEO_SOURCE: str = os.getenv("DEFAULT_VIDEO_SOURCE", "webcam")
     DEFAULT_WEBCAM_INDEX: int = int(os.getenv("DEFAULT_WEBCAM_INDEX", 0))
+    CAMERA_LOCATION: str = os.getenv("CAMERA_LOCATION", "Terminal A - Checkpoint 1")
 
     # ── Paths ──────────────────────────────────────────────
     YOLO_MODEL_PATH: Path = ROOT_DIR / os.getenv("YOLO_MODEL_PATH", "models/yolov8n.pt")
@@ -76,10 +86,14 @@ class Config:
     VIDEOS_DIR: Path = ROOT_DIR / "videos"
 
     # ── Detection ──────────────────────────────────────────────
-    YOLO_CONFIDENCE: float = 0.35   # Higher = faster (discards weak hits early)
-    YOLO_IMGSZ: int = 256           # 256 = ULTRA fast CPU inference
-    # COCO classes: 0=person, 1=bicycle, 2=car, 3=motorcycle, 5=bus, 7=truck, 9=traffic light, 10=fire hydrant, 11=stop sign, 24=backpack, 39=bottle, 41=cup
-    TRACKED_CLASSES: list[int] = [0, 1, 2, 3, 5, 7, 24, 39, 41]
+    # Custom trained model for event detection (accident, fall, fire, garbage)
+    CUSTOM_MODEL_PATH: Path = ROOT_DIR / os.getenv("CUSTOM_MODEL_PATH", "models/custom_best.pt")
+    CUSTOM_CONFIDENCE: float = float(os.getenv("CUSTOM_CONFIDENCE", "0.25"))
+
+    YOLO_CONFIDENCE: float = 0.28
+    YOLO_IMGSZ: int = 416 # Optimized for speed
+    # COCO classes: 0=person, 1=bicycle, 2=car, 3=motorcycle, 5=bus, 7=truck, 24=backpack, 26=handbag, 28=suitcase, 39=bottle, 41=cup, 63=laptop, 67=cell phone
+    TRACKED_CLASSES: list[int] = [0, 1, 2, 3, 5, 7, 24, 26, 28, 39, 41, 63, 67]
     TARGET_FPS: int = 30       # Camera capture target FPS
     STREAM_FPS: int = 30       # MJPEG stream target FPS (decoupled from inference)
     MAX_STREAM_WIDTH: int = 640

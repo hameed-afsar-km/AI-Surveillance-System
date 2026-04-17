@@ -132,12 +132,22 @@ class EmailService:
 
     # Map alert_type → which env variables hold the recipient addresses
     DEPT_ROUTING: dict = {
-        "fire_hazard":       ["EMAIL_DEPT_FIRE"],
-        "collision":         ["EMAIL_DEPT_ACCIDENT"],
-        "medical_emergency": ["EMAIL_DEPT_MEDICAL"],
+        # Traffic Department mapping (Traffic + Accidents)
+        "collision":         ["EMAIL_DEPT_ACCIDENT", "EMAIL_DEPT_TRAFFIC"],
+        "overcrowding":      ["EMAIL_DEPT_TRAFFIC"],
+
+        # Fire Department mapping (Fire + Blast)
+        "fire_hazard":       ["EMAIL_DEPT_FIRE", "EMAIL_DEPT_ACCIDENT"], # Accident email is Police
+        "blast":             ["EMAIL_DEPT_FIRE", "EMAIL_DEPT_ACCIDENT"],
+
+        # Police Mapping (Accident, Fire, Blast, Theft)
+        # Note: Accident email field is being used as 'Police' contact for MVP
+        "theft":             ["EMAIL_DEPT_ACCIDENT"],
+
+        # Municipality Mapping (Garbage)
         "littering":         ["EMAIL_DEPT_MUNICIPAL"],
         "garbage_hotspot":   ["EMAIL_DEPT_MUNICIPAL"],
-        "overcrowding":      ["EMAIL_DEPT_TRAFFIC"],
+        
         "test_connection":   ["EMAIL_SENDER"],
     }
 
@@ -148,6 +158,7 @@ class EmailService:
         "littering":         "Garbage/Municipal Department",
         "garbage_hotspot":   "Garbage/Municipal Department",
         "overcrowding":      "Traffic Department",
+        "theft":             "Police Department",
         "test_connection":   "System Debug",
     }
 
@@ -224,7 +235,42 @@ class EmailService:
             return False
 
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        subject = f"🚨 [{dept_label}] Surveillance Alert: {alert_type.replace('_', ' ').title()}"
+
+        # Map types to User's specific requirements
+        type_meta = {
+            "overcrowding": {
+                "subject": "Emergency Alert: Overcrowding",
+                "content": "High crowd density has been detected in the monitored area. This may lead to safety risks and public disturbance. Immediate police intervention is recommended to manage the situation."
+            },
+            "littering": {
+                "subject": "Sanitation Alert",
+                "content": "Garbage accumulation has been detected in the monitored area. This may lead to hygiene issues and environmental concerns. Prompt clean-up action is required."
+            },
+             "garbage_hotspot": {
+                "subject": "Sanitation Alert",
+                "content": "Garbage accumulation has been detected in the monitored area. This may lead to hygiene issues and environmental concerns. Prompt clean-up action is required."
+            },
+            "fire_hazard": {
+                "subject": "Fire Hazard Alert",
+                "content": "Possible fire or smoke has been detected in the monitored area. This poses a serious safety risk. Immediate response from fire and rescue services is required."
+            },
+            "medical_emergency": {
+                "subject": "Medical Emergency Alert",
+                "content": "A person collapse or abnormal inactivity has been detected in the monitored area. This may indicate a medical emergency. Immediate medical assistance is required."
+            },
+            "collision": {
+                "subject": "Emergency Alert: Accident",
+                "content": "A vehicular accident or high-impact collision has been detected. Immediate police and emergency response are required."
+            }
+        }
+
+        meta = type_meta.get(alert_type, {
+            "subject": f"[{dept_label}] Surveillance Alert: {alert_type.replace('_', ' ').title()}",
+            "content": message
+        })
+
+        subject = f"🚨 {meta['subject']}"
+        specific_content = meta['content']
 
         msg = MIMEMultipart("alternative")
         msg["Subject"] = subject
@@ -232,14 +278,14 @@ class EmailService:
         msg["To"]      = ", ".join(recipients)
 
         plain = (
-            f"SURVEILLANCE ALERT\n"
+            f"{subject.upper()}\n\n"
             f"Department: {dept_label}\n"
-            f"Type: {alert_type}\n"
-            f"Time: {timestamp}\n"
-            f"Message: {message}\n"
-            f"AI Insight: {ai_insight}"
+            f"Time: {timestamp}\n\n"
+            f"Alert Details:\n{specific_content}\n\n"
+            f"AI Analysis:\n{ai_insight}\n"
+            f"People Count: {people_count}"
         )
-        html = _html_template(alert_type, people_count, message, ai_insight, timestamp, dept_label)
+        html = _html_template(alert_type, people_count, specific_content, ai_insight, timestamp, dept_label)
 
         msg.attach(MIMEText(plain, "plain"))
         msg.attach(MIMEText(html, "html"))

@@ -40,24 +40,48 @@ export default function Dashboard() {
 
   useEffect(() => {
     poll();
-    pollRef.current = setInterval(poll, 1000);
+    pollRef.current = setInterval(poll, 200);
     return () => {
       if (pollRef.current) clearInterval(pollRef.current);
     };
   }, [poll]);
 
+  const [showSplash, setShowSplash] = useState(true);
+  const autoStarted = useRef(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowSplash(false), 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Auto-Start logic: Trigger 'Engage' automatically once AI is warm
+  useEffect(() => {
+    if (backendOnline && status?.loading_progress === 100 && !running && !starting && !autoStarted.current) {
+      console.log("System Calibration Complete - Engaging default feed...");
+      autoStarted.current = true;
+      handleStart("webcam", "0");
+    }
+  }, [backendOnline, status?.loading_progress, running, starting]);
+
+  // Hide splash only when running actually starts
+  useEffect(() => {
+     if (running && showSplash) {
+        const timer = setTimeout(() => setShowSplash(false), 800);
+        return () => clearTimeout(timer);
+     }
+  }, [running, showSplash]);
+
   const handleStart = async (mode: string, source: string) => {
     setError(null);
-    setStarting(true); // Optimistic — show spinner immediately
+    setStarting(true); 
     const res = await api.start(mode, source);
     if (!res) {
       setStarting(false);
-      setError("Failed to reach backend. Is it running?");
+      setError("Failed to reach backend.");
     } else if (res.error) {
       setStarting(false);
       setError(res.error);
     }
-    // On "starting" response polling will auto-update the true state
   };
 
   const handleStop = async () => {
@@ -77,7 +101,11 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="min-h-screen bg-[#09090b] text-[#fafafa] selection:bg-blue-500/30 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#09090b] text-[#fafafa] selection:bg-blue-500/30 flex flex-col font-sans overflow-x-hidden">
+      <AnimatePresence>
+        {showSplash && <SplashScreen progress={status?.loading_progress ?? 0} />}
+      </AnimatePresence>
+
       <Navbar backendOnline={backendOnline} uptime={status?.uptime ?? 0} internetConnected={internetConnected} />
 
       <main className="flex-1 w-full max-w-[1720px] mx-auto p-4 md:p-6 lg:p-8 animate-fade-in flex flex-col xl:grid xl:grid-cols-[300px_minmax(0,1fr)_340px] gap-6">
@@ -116,6 +144,87 @@ export default function Dashboard() {
         </div>
 
       </main>
+    </div>
+  );
+}
+
+import { motion, AnimatePresence } from "framer-motion";
+import { Shield, Eye, Cpu, Network } from "lucide-react";
+
+function SplashScreen({ progress }: { progress: number }) {
+  return (
+    <motion.div 
+      exit={{ opacity: 0, scale: 1.05, filter: "blur(10px)", transition: { duration: 1, ease: "easeInOut" } }}
+      className="fixed inset-0 z-[200] bg-[#09090b] flex flex-col items-center justify-center p-6"
+    >
+      <div className="relative">
+        {/* Animated Background Rings */}
+        {[1, 2, 3].map((i) => (
+          <motion.div
+            key={i}
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1 + i * 0.5, opacity: [0, 0.2, 0] }}
+            transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
+            className="absolute inset-0 rounded-full border border-blue-500/30"
+          />
+        ))}
+
+        <motion.div
+          initial={{ scale: 0.9, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="relative z-10 bg-[#18181b] border border-[#27272a] p-12 rounded-[2.5rem] shadow-2xl flex flex-col items-center gap-8"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-16 h-16 rounded-2xl bg-blue-600 flex items-center justify-center shadow-[0_0_30px_rgba(37,99,235,0.4)]">
+              <Shield size={32} className="text-white" />
+            </div>
+            <div className="h-12 w-[2px] bg-[#27272a]" />
+            <div className="text-left">
+              <h1 className="text-4xl font-extrabold tracking-tighter text-white">NEXUS<span className="text-blue-500">VISION</span></h1>
+              <p className="text-[10px] font-bold tracking-[0.3em] text-[#52525b] uppercase">AI Surveillance Suite</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-3 gap-6 w-full max-w-sm">
+             <SplashFeature icon={<Eye size={18}/>} label="Neural Edge" />
+             <SplashFeature icon={<Cpu size={18}/>} label="GPU Accel" />
+             <SplashFeature icon={<Network size={18}/>} label="Realtime" />
+          </div>
+
+          <div className="space-y-4 w-full">
+            <div className="h-1 w-full bg-[#09090b] rounded-full overflow-hidden border border-[#27272a]">
+               <motion.div 
+                 initial={false}
+                 animate={{ width: `${progress}%` }}
+                 transition={{ duration: 0.5, ease: "linear" }}
+                 className="h-full bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.6)]"
+               />
+            </div>
+            <p className="text-center text-[11px] font-medium text-blue-400 tracking-widest uppercase animate-pulse">
+              {progress < 100 ? "Loading Neural Weights..." : "Calibration Finalizing..."}
+            </p>
+          </div>
+        </motion.div>
+      </div>
+      
+      <motion.p 
+        initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
+        className="mt-12 text-[#52525b] text-xs max-w-xs text-center leading-relaxed italic"
+      >
+        Enterprise-grade behavioral analysis and multi-departmental emergency routing platform.
+      </motion.p>
+    </motion.div>
+  );
+}
+
+function SplashFeature({ icon, label }: { icon: React.ReactNode, label: string }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <div className="w-10 h-10 rounded-xl bg-[#09090b] border border-[#27272a] flex items-center justify-center text-[#a1a1aa]">
+        {icon}
+      </div>
+      <span className="text-[9px] font-bold text-[#52525b] uppercase tracking-tighter">{label}</span>
     </div>
   );
 }
