@@ -12310,3 +12310,271 @@ D:\SaaS\AI Surveillance System\backend\data\rules.json
 2026-04-17 10:09:20 | INFO     | services.alert            | Dispatching SMS notification...
 2026-04-17 10:09:20 | INFO     | services.alert            | Dispatching SMS notification...
 2026-04-17 10:09:20 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:12:59 | INFO     | backend.app               | EAGER LOADING: Initializing AI engines in background...
+2026-04-17 10:12:59 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 10:12:59 | INFO     | backend.app               | EAGER LOADING: Initializing Detectors...
+2026-04-17 10:12:59 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 10:13:03 | INFO     | vision.detection          | ObjectDetector initialized (Async Redesign).
+2026-04-17 10:13:20 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 10:13:20 | INFO     | logic.behavior            | BehaviorEngine initialised — 6 active modules (incl. custom model).
+2026-04-17 10:13:20 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 10:13:20 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 10:13:20 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 10:13:20 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 10:13:20 | INFO     | backend.app               | All engines ready.
+2026-04-17 10:13:20 | INFO     | backend.app               | EAGER LOADING: Warming up neural pipelines...
+2026-04-17 10:13:20 | INFO     | services.alert            | AI insights disabled.
+2026-04-17 10:13:20 | INFO     | vision.detection          | Loading COCO model: D:\SaaS\AI Surveillance System\models\yolov8m.pt
+2026-04-17 10:13:22 | INFO     | vision.detection          | Loading CUSTOM model: D:\SaaS\AI Surveillance System\models\custom_best.pt
+2026-04-17 10:13:23 | INFO     | vision.detection          | COCO Worker Started.
+2026-04-17 10:13:23 | INFO     | vision.detection          | Custom Worker Started.
+2026-04-17 10:13:23 | INFO     | backend.app               | EAGER LOADING: System fully calibrated and ready.
+2026-04-17 10:13:23 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 10:13:23 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 10:13:25 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:13:25 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:13:25 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:13:25 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:13:25 | INFO     | backend.app               | System startup initiated (mode=file, source=fire accident.mp4).
+2026-04-17 10:13:25 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:13:25 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:13:33 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:13:33 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:13:38 | INFO     | services.email            | Alert email → 'Fire Department' (1 recipients) | type=fire_hazard
+2026-04-17 10:13:38 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:13:48 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:13:48 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:13:48 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 10:13:48 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:13:48 | INFO     | backend.app               | System stopped.
+2026-04-17 10:13:49 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire accident.mp4' @ 30.0 fps
+2026-04-17 10:13:49 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 10:13:49 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:13:49 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:13:49 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:13:49 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:13:49 | INFO     | backend.app               | System startup initiated (mode=file, source=fire accident.mp4).
+2026-04-17 10:13:49 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:13:49 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:13:58 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:13:58 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:13:58 | DEBUG    | services.email            | Email cooldown active for 'fire_hazard' (101s remaining).
+2026-04-17 10:13:58 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:14:06 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:14:06 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:14:06 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire accident.mp4
+2026-04-17 10:14:06 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:14:06 | INFO     | backend.app               | System stopped.
+2026-04-17 10:20:46 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-17 10:20:46 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-17 10:20:47 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:20:47 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:20:47 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:20:47 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:20:47 | INFO     | backend.app               | System startup initiated (mode=webcam, source=0).
+2026-04-17 10:20:47 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:20:47 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:20:54 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:20:55 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:21:10 | INFO     | services.email            | Alert email → 'Fire Department' (1 recipients) | type=fire_hazard
+2026-04-17 10:21:10 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:22:46 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:22:47 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:22:47 | INFO     | vision.video_input        | VideoCapture released: 0
+2026-04-17 10:22:47 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:22:47 | INFO     | backend.app               | System stopped.
+2026-04-17 10:24:04 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-17 10:24:04 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-17 10:24:04 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:24:04 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:24:04 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:24:04 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:24:04 | INFO     | backend.app               | System startup initiated (mode=webcam, source=0).
+2026-04-17 10:24:04 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:24:04 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:24:07 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:24:07 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:24:08 | INFO     | vision.video_input        | VideoCapture released: 0
+2026-04-17 10:24:08 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:24:08 | INFO     | backend.app               | System stopped.
+2026-04-17 10:33:14 | INFO     | backend.app               | EAGER LOADING: Initializing AI engines in background...
+2026-04-17 10:33:14 | INFO     | backend.app               | Starting Flask API on 0.0.0.0:5050
+2026-04-17 10:33:14 | INFO     | backend.app               | EAGER LOADING: Initializing Detectors...
+2026-04-17 10:33:14 | INFO     | backend.app               | Initialising detection engines (lazy load)…
+2026-04-17 10:33:18 | INFO     | vision.detection          | ObjectDetector initialized (Async Redesign).
+2026-04-17 10:33:25 | INFO     | vision.tracking           | ObjectTracker initialised (DeepSORT).
+2026-04-17 10:33:25 | INFO     | logic.behavior            | BehaviorEngine initialised — 6 active modules (incl. custom model).
+2026-04-17 10:33:25 | INFO     | logic.rule_engine         | Rules loaded: 0 rules from D:\SaaS\AI Surveillance System\backend\data\rules.json
+2026-04-17 10:33:25 | INFO     | services.email            | Email alerts ENABLED for sender: aicivimonitor@gmail.com
+2026-04-17 10:33:25 | WARNING  | services.gemini           | GEMINI_API_KEY not set – AI insights will be disabled.
+2026-04-17 10:33:25 | INFO     | services.alert            | AlertService initialised.
+2026-04-17 10:33:25 | INFO     | backend.app               | All engines ready.
+2026-04-17 10:33:25 | INFO     | backend.app               | EAGER LOADING: Warming up neural pipelines...
+2026-04-17 10:33:25 | INFO     | vision.detection          | Loading COCO model: D:\SaaS\AI Surveillance System\models\yolov8m.pt
+2026-04-17 10:33:26 | INFO     | vision.detection          | Loading CUSTOM model: D:\SaaS\AI Surveillance System\models\custom_best.pt
+2026-04-17 10:33:26 | INFO     | vision.detection          | COCO Worker Started.
+2026-04-17 10:33:26 | INFO     | vision.detection          | Custom Worker Started.
+2026-04-17 10:33:26 | INFO     | backend.app               | EAGER LOADING: System fully calibrated and ready.
+2026-04-17 10:35:00 | INFO     | services.alert            | AI insights disabled.
+2026-04-17 10:35:05 | INFO     | vision.video_input        | Opened source '0' @ 30.0 fps
+2026-04-17 10:35:05 | INFO     | vision.video_input        | Frame Reader Thread started for source 0
+2026-04-17 10:35:05 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:35:05 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:35:05 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:35:05 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:35:05 | INFO     | backend.app               | System startup initiated (mode=webcam, source=0).
+2026-04-17 10:35:05 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:35:05 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:35:10 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:35:10 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:35:10 | INFO     | vision.video_input        | VideoCapture released: 0
+2026-04-17 10:35:10 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:35:10 | INFO     | backend.app               | System stopped.
+2026-04-17 10:35:15 | INFO     | services.alert            | AI insights disabled.
+2026-04-17 10:35:23 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4' @ 30.0 fps
+2026-04-17 10:35:23 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:35:23 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:35:23 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:35:23 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:35:23 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:35:23 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 1.mp4).
+2026-04-17 10:35:23 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:35:23 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:35:31 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:35:32 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:35:37 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:35:37 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:35:37 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:35:37 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:35:37 | INFO     | backend.app               | System stopped.
+2026-04-17 10:35:41 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 2.mp4' @ 30.0 fps
+2026-04-17 10:35:41 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 2.mp4
+2026-04-17 10:35:41 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:35:41 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:35:41 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:35:41 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:35:41 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 2.mp4).
+2026-04-17 10:35:41 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:35:41 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:35:43 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:35:43 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:35:44 | WARNING  | services.email            | Email attempt 1/3 failed: [Errno 11001] getaddrinfo failed (retry in 2s)
+2026-04-17 10:35:48 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:35:48 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:35:48 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 2.mp4
+2026-04-17 10:35:48 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:35:48 | INFO     | backend.app               | System stopped.
+2026-04-17 10:35:51 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4' @ 30.0 fps
+2026-04-17 10:35:51 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4
+2026-04-17 10:35:51 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:35:51 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:35:51 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:35:51 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:35:51 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 3.mp4).
+2026-04-17 10:35:51 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:35:51 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:35:53 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:35:53 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:35:57 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:35:57 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:35:57 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4
+2026-04-17 10:35:57 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:35:57 | INFO     | backend.app               | System stopped.
+2026-04-17 10:35:58 | WARNING  | services.email            | Email attempt 2/3 failed: [Errno 11001] getaddrinfo failed (retry in 4s)
+2026-04-17 10:36:14 | WARNING  | services.email            | Email attempt 3/3 failed: [Errno 11001] getaddrinfo failed (retry in 8s)
+2026-04-17 10:36:14 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:36:14 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:36:31 | WARNING  | services.email            | Email attempt 1/3 failed: Connection unexpectedly closed: timed out (retry in 2s)
+2026-04-17 10:36:58 | WARNING  | services.email            | Email attempt 2/3 failed: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1032) (retry in 4s)
+2026-04-17 10:37:19 | WARNING  | services.email            | Email attempt 3/3 failed: Connection unexpectedly closed: timed out (retry in 8s)
+2026-04-17 10:37:19 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:37:19 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:37:35 | WARNING  | services.email            | Email attempt 1/3 failed: Connection unexpectedly closed: timed out (retry in 2s)
+2026-04-17 10:37:54 | WARNING  | services.email            | Email attempt 2/3 failed: Connection unexpectedly closed: timed out (retry in 4s)
+2026-04-17 10:38:27 | WARNING  | services.email            | Email attempt 3/3 failed: Connection unexpectedly closed: timed out (retry in 8s)
+2026-04-17 10:38:27 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:38:27 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:45:30 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4' @ 30.0 fps
+2026-04-17 10:45:30 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4
+2026-04-17 10:45:30 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:45:30 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:45:30 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:45:30 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:45:30 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 3.mp4).
+2026-04-17 10:45:30 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:45:30 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:45:30 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:45:30 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:45:34 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:45:34 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:45:34 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 3.mp4
+2026-04-17 10:45:34 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:45:34 | INFO     | backend.app               | System stopped.
+2026-04-17 10:45:38 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4' @ 30.0 fps
+2026-04-17 10:45:38 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:45:38 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:45:38 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:45:38 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:45:38 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:45:38 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 1.mp4).
+2026-04-17 10:45:39 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:45:39 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:45:42 | WARNING  | services.email            | Email attempt 1/3 failed: [Errno 11001] getaddrinfo failed (retry in 2s)
+2026-04-17 10:45:47 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:45:47 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:45:51 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:45:51 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:45:51 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:45:51 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:45:51 | INFO     | backend.app               | System stopped.
+2026-04-17 10:45:56 | WARNING  | services.email            | Email attempt 2/3 failed: [Errno 11001] getaddrinfo failed (retry in 4s)
+2026-04-17 10:46:00 | WARNING  | services.email            | Email attempt 3/3 failed: [Errno 11001] getaddrinfo failed (retry in 8s)
+2026-04-17 10:46:00 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:46:00 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:46:00 | WARNING  | services.email            | Email attempt 1/3 failed: [Errno 11001] getaddrinfo failed (retry in 2s)
+2026-04-17 10:46:02 | WARNING  | services.email            | Email attempt 2/3 failed: [Errno 11001] getaddrinfo failed (retry in 4s)
+2026-04-17 10:46:12 | WARNING  | services.email            | Email attempt 3/3 failed: [Errno 11001] getaddrinfo failed (retry in 8s)
+2026-04-17 10:46:12 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:46:12 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 10:50:55 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4' @ 30.0 fps
+2026-04-17 10:50:55 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:50:55 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 10:50:55 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 10:50:55 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 10:50:55 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 10:50:55 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 1.mp4).
+2026-04-17 10:50:55 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 10:50:55 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 10:51:03 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 10:51:04 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 10:51:13 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 10:51:13 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 10:51:13 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 10:51:13 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 10:51:13 | INFO     | backend.app               | System stopped.
+2026-04-17 10:51:16 | WARNING  | services.email            | Email attempt 1/3 failed: [Errno 11001] getaddrinfo failed (retry in 2s)
+2026-04-17 10:51:30 | WARNING  | services.email            | Email attempt 2/3 failed: [Errno 11001] getaddrinfo failed (retry in 4s)
+2026-04-17 10:51:46 | WARNING  | services.email            | Email attempt 3/3 failed: [Errno 11001] getaddrinfo failed (retry in 8s)
+2026-04-17 10:51:46 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 10:51:46 | INFO     | services.alert            | Dispatching SMS notification...
+2026-04-17 11:43:53 | INFO     | vision.video_input        | Opened source 'D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4' @ 30.0 fps
+2026-04-17 11:43:53 | INFO     | vision.video_input        | Frame Reader Thread started for source D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 11:43:53 | INFO     | vision.tracking           | ObjectTracker reset.
+2026-04-17 11:43:53 | INFO     | logic.behavior            | BehaviorEngine reset.
+2026-04-17 11:43:53 | INFO     | backend.app               | Frame Grabber Thread started.
+2026-04-17 11:43:53 | INFO     | backend.app               | Warming up YOLO… (first run may take up to 30s)
+2026-04-17 11:43:53 | INFO     | backend.app               | System startup initiated (mode=file, source=fire issue 1.mp4).
+2026-04-17 11:43:53 | INFO     | backend.app               | YOLO warmup complete.
+2026-04-17 11:43:53 | INFO     | backend.app               | Inference Thread started.
+2026-04-17 11:44:01 | WARNING  | services.alert            | ALERT dispatched | type=fire_hazard | count=0 | CRITICAL: Fire/Combustion signature detected (HSV filter)!
+2026-04-17 11:44:02 | INFO     | services.alert            | Dispatching Email notification...
+2026-04-17 11:44:07 | INFO     | backend.app               | Inference Thread finished.
+2026-04-17 11:44:07 | INFO     | vision.video_input        | Frame Reader Thread exiting.
+2026-04-17 11:44:07 | INFO     | vision.video_input        | VideoCapture released: D:\SaaS\AI Surveillance System\videos\fire issue 1.mp4
+2026-04-17 11:44:07 | INFO     | backend.app               | Frame Grabber Thread finished.
+2026-04-17 11:44:07 | INFO     | backend.app               | System stopped.
+2026-04-17 11:44:14 | WARNING  | services.email            | Email attempt 1/3 failed: [Errno 11001] getaddrinfo failed (retry in 2s)
+2026-04-17 11:44:16 | WARNING  | services.email            | Email attempt 2/3 failed: [Errno 11001] getaddrinfo failed (retry in 4s)
+2026-04-17 11:44:28 | WARNING  | services.email            | Email attempt 3/3 failed: [Errno 11001] getaddrinfo failed (retry in 8s)
+2026-04-17 11:44:28 | ERROR    | services.email            | All email retry attempts failed for alert_type='fire_hazard'.
+2026-04-17 11:44:28 | INFO     | services.alert            | Dispatching SMS notification...
